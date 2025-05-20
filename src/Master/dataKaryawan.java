@@ -485,7 +485,7 @@ public class dataKaryawan extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
         );
 
         pack();
@@ -580,21 +580,6 @@ public class dataKaryawan extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 
     }//GEN-LAST:event_formWindowOpened
-
-    private void bUnggahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bUnggahActionPerformed
-        JFileChooser chooser = new JFileChooser();
-        chooser.showOpenDialog(null);
-        File f = chooser.getSelectedFile();
-        String path = f.getAbsolutePath();
-        pathFoto.setText(path);
-        try {
-            BufferedImage bi = ImageIO.read(new File(path));
-            Image img = bi.getScaledInstance(109, 140, Image.SCALE_SMOOTH);
-            ImageIcon icon = new ImageIcon(img);
-            foto.setIcon(icon);
-        } catch (IOException ex) {
-        }
-    }//GEN-LAST:event_bUnggahActionPerformed
 
     private void tableDataKaryawanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDataKaryawanMouseClicked
         int baris = tableDataKaryawan.getSelectedRow();
@@ -775,6 +760,21 @@ public class dataKaryawan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Gagal Mencari Data Karyawan!\n" + e.getMessage());
         }
     }//GEN-LAST:event_bCariActionPerformed
+
+    private void bUnggahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bUnggahActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f = chooser.getSelectedFile();
+        String path = f.getAbsolutePath();
+        pathFoto.setText(path);
+        try {
+            BufferedImage bi = ImageIO.read(new File(path));
+            Image img = bi.getScaledInstance(109, 140, Image.SCALE_SMOOTH);
+            ImageIcon icon = new ImageIcon(img);
+            foto.setIcon(icon);
+        } catch (IOException ex) {
+        }
+    }//GEN-LAST:event_bUnggahActionPerformed
 
     /**
      * @param args the command line arguments
