@@ -49,7 +49,7 @@ public class login extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Montserrat ExtraBold", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(53, 146, 199));
+        jLabel1.setForeground(new java.awt.Color(52, 122, 87));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("LOGIN");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 400, -1));
@@ -72,8 +72,10 @@ public class login extends javax.swing.JFrame {
         jLabel3.setText("Password");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, 65, -1));
 
-        bMasuk.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        bMasuk.setText("MASUK");
+        bMasuk.setBackground(new java.awt.Color(41, 76, 55));
+        bMasuk.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        bMasuk.setForeground(new java.awt.Color(255, 255, 255));
+        bMasuk.setText("LOGIN");
         bMasuk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bMasukActionPerformed(evt);
@@ -81,8 +83,10 @@ public class login extends javax.swing.JFrame {
         });
         getContentPane().add(bMasuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 100, -1));
 
-        bKeluar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        bKeluar.setText("KELUAR");
+        bKeluar.setBackground(new java.awt.Color(41, 76, 55));
+        bKeluar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        bKeluar.setForeground(new java.awt.Color(255, 255, 255));
+        bKeluar.setText("EXIT");
         bKeluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bKeluarActionPerformed(evt);
@@ -97,7 +101,7 @@ public class login extends javax.swing.JFrame {
         });
         getContentPane().add(lPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 360, 30));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\dafaa\\Downloads\\Copyright.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/loginPage.png"))); // NOI18N
         jLabel4.setText("jLabel4");
         jLabel4.setMaximumSize(new java.awt.Dimension(800, 500));
         jLabel4.setMinimumSize(new java.awt.Dimension(800, 500));
