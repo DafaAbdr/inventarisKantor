@@ -31,13 +31,14 @@ public class stokBarang extends javax.swing.JFrame {
     final private Connection conn = new koneksi().connect();
     private DefaultTableModel tabmode;
     final private JTextField pathFoto;
-
+    
     /**
      * Creates new form stokBarang
      */
     
     public stokBarang() {
         initComponents();
+        dataTable();
         isiComboBoxIdBarang();
         pathFoto = new JTextField();
         pathFoto.setVisible(false);
@@ -143,7 +144,6 @@ public class stokBarang extends javax.swing.JFrame {
         }catch (Exception e){
         }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -156,16 +156,11 @@ public class stokBarang extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jumlah = new javax.swing.JTextField();
-        cari = new javax.swing.JTextField();
         bCari = new javax.swing.JButton();
-        bTambah = new javax.swing.JButton();
-        bEdit = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        bHapus = new javax.swing.JButton();
-        bKeluar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         idStok = new javax.swing.JTextField();
@@ -178,7 +173,12 @@ public class stokBarang extends javax.swing.JFrame {
         tanggal = new com.toedter.calendar.JDateChooser();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        bEdit = new javax.swing.JButton();
+        bTambah = new javax.swing.JButton();
+        bHapus = new javax.swing.JButton();
         bKembali = new javax.swing.JButton();
+        bKeluar = new javax.swing.JButton();
+        cari = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -193,33 +193,15 @@ public class stokBarang extends javax.swing.JFrame {
             }
         });
 
-        cari.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cariActionPerformed(evt);
-            }
-        });
-
         bCari.setBackground(new java.awt.Color(41, 76, 55));
         bCari.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bCari.setForeground(new java.awt.Color(255, 255, 255));
         bCari.setText("Search");
-
-        bTambah.setBackground(new java.awt.Color(41, 76, 55));
-        bTambah.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        bTambah.setForeground(new java.awt.Color(255, 255, 255));
-        bTambah.setText("Add");
-        bTambah.setPreferredSize(new java.awt.Dimension(74, 23));
-        bTambah.addActionListener(new java.awt.event.ActionListener() {
+        bCari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bTambahActionPerformed(evt);
+                bCariActionPerformed(evt);
             }
         });
-
-        bEdit.setBackground(new java.awt.Color(41, 76, 55));
-        bEdit.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        bEdit.setForeground(new java.awt.Color(255, 255, 255));
-        bEdit.setText("Edit");
-        bEdit.setPreferredSize(new java.awt.Dimension(74, 23));
 
         jLabel2.setText("ID Stok");
 
@@ -230,23 +212,6 @@ public class stokBarang extends javax.swing.JFrame {
         jLabel6.setText("Tanggal");
         jLabel6.setMaximumSize(new java.awt.Dimension(72, 16));
         jLabel6.setMinimumSize(new java.awt.Dimension(72, 16));
-
-        bHapus.setBackground(new java.awt.Color(41, 76, 55));
-        bHapus.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        bHapus.setForeground(new java.awt.Color(255, 255, 255));
-        bHapus.setText("Delete");
-        bHapus.setPreferredSize(new java.awt.Dimension(74, 23));
-
-        bKeluar.setBackground(new java.awt.Color(41, 76, 55));
-        bKeluar.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        bKeluar.setForeground(new java.awt.Color(255, 255, 255));
-        bKeluar.setText("Exit");
-        bKeluar.setPreferredSize(new java.awt.Dimension(74, 23));
-        bKeluar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bKeluarActionPerformed(evt);
-            }
-        });
 
         jLabel9.setText("Jumlah");
 
@@ -294,6 +259,9 @@ public class stokBarang extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tableStokBarang);
 
+        namaBarang.setEditable(false);
+        namaBarang.setFocusable(false);
+
         idBarang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jPanel2.setBackground(new java.awt.Color(41, 76, 55));
@@ -323,35 +291,71 @@ public class stokBarang extends javax.swing.JFrame {
                 .addGap(28, 28, 28))
         );
 
+        bEdit.setBackground(new java.awt.Color(41, 76, 55));
+        bEdit.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        bEdit.setForeground(new java.awt.Color(255, 255, 255));
+        bEdit.setText("EDIT");
+        bEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bEditActionPerformed(evt);
+            }
+        });
+
+        bTambah.setBackground(new java.awt.Color(41, 76, 55));
+        bTambah.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        bTambah.setForeground(new java.awt.Color(255, 255, 255));
+        bTambah.setText("ADD");
+        bTambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bTambahActionPerformed(evt);
+            }
+        });
+
+        bHapus.setBackground(new java.awt.Color(41, 76, 55));
+        bHapus.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        bHapus.setForeground(new java.awt.Color(255, 255, 255));
+        bHapus.setText("DELETE");
+        bHapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bHapusActionPerformed(evt);
+            }
+        });
+
         bKembali.setBackground(new java.awt.Color(41, 76, 55));
         bKembali.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bKembali.setForeground(new java.awt.Color(255, 255, 255));
-        bKembali.setText("Back");
-        bKembali.setPreferredSize(new java.awt.Dimension(74, 23));
+        bKembali.setText("KEMBALI");
+        bKembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bKembaliActionPerformed(evt);
+            }
+        });
+
+        bKeluar.setBackground(new java.awt.Color(41, 76, 55));
+        bKeluar.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        bKeluar.setForeground(new java.awt.Color(255, 255, 255));
+        bKeluar.setText("EXIT");
+        bKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bKeluarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(236, 236, 236)
-                        .addComponent(bTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22)
-                        .addComponent(bEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(bHapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(bKembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)
                                 .addComponent(bCari))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -383,11 +387,19 @@ public class stokBarang extends javax.swing.JFrame {
                                             .addComponent(jumlah))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane2))))
+                            .addComponent(jScrollPane2)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(197, 197, 197)
+                        .addComponent(bTambah)
+                        .addGap(45, 45, 45)
+                        .addComponent(bEdit)
+                        .addGap(45, 45, 45)
+                        .addComponent(bHapus)
+                        .addGap(39, 39, 39)
+                        .addComponent(bKembali)
+                        .addGap(38, 38, 38)
+                        .addComponent(bKeluar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -429,17 +441,16 @@ public class stokBarang extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bCari))
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bTambah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(bHapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(bKembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(bEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(16, 16, 16))
+                    .addComponent(bCari)
+                    .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -525,7 +536,7 @@ public class stokBarang extends javax.swing.JFrame {
 
                 if (fileName != null) {
                     String fullPath = destDir + fileName;
-                    pathFoto.setText(fullPath); // ✅ Simpan path ke JTextField tersembunyi
+                    pathFoto.setText(fullPath);
                     BufferedImage bi = ImageIO.read(new File(fullPath));
                     Image img = bi.getScaledInstance(143, 109, Image.SCALE_SMOOTH);
                     foto.setIcon(new ImageIcon(img));
@@ -540,6 +551,131 @@ public class stokBarang extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_tableStokBarangMouseClicked
+
+    private void bCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCariActionPerformed
+        Object[] baris = {"id_stok", "id_barang", "nama_barang", "tanggal", "jumlah", "satuan"};
+        tabmode = new DefaultTableModel(null, baris);
+        tableStokBarang.setModel(tabmode);
+
+        String keyword = cari.getText();
+        
+        String sql = "SELECT * FROM stokBarang WHERE " +
+                     "id_stok LIKE ? OR " +
+                     "id_barang LIKE ? OR " +
+                     "nama_barang LIKE ? OR " +
+                     "tanggal LIKE ? OR " +
+                     "jumlah LIKE ? OR " +
+                     "satuan LIKE ? ";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            for (int i = 1; i <= 6; i++) {
+                ps.setString(i, "%" + keyword + "%");
+            }
+
+            ResultSet hasil = ps.executeQuery();
+            
+            while (hasil.next()) {
+                String a = hasil.getString("id_stok");
+                String b = hasil.getString("id_barang");
+                String c = hasil.getString("nama_barang");
+                String d = hasil.getString("tanggal");
+                String e = hasil.getString("jumlah");
+                String f = hasil.getString("satuan");
+                
+                String[] data = {a, b, c, d, e, f};
+                tabmode.addRow(data);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal Mencari Data Stok!\n" + e.getMessage());
+        }
+    }//GEN-LAST:event_bCariActionPerformed
+
+    private void bEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditActionPerformed
+        try {
+            String sql = "UPDATE stokBarang SET `id_barang`=?, `nama_barang`=?, `tanggal`=?, `jumlah`=?, `satuan`=? WHERE `id_stok`=?";
+            
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, idBarang.getSelectedItem().toString());
+            ps.setString(2, namaBarang.getText());
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String tanggal1 = sdf.format(tanggal.getDate());
+            ps.setString(3, tanggal1);
+            ps.setString(4, jumlah.getText());
+            ps.setString(5, satuan.getText());
+            ps.setString(6, idStok.getText());
+
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Data Stok Berhasil Diedit.");
+            dataTable();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal Mengedi Data Stok!\n" + e.getMessage());
+        }
+    }//GEN-LAST:event_bEditActionPerformed
+
+    private void bTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTambahActionPerformed
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String tanggal2 = sdf.format(tanggal.getDate());
+        
+        Object[] baris = {"id_stok", "id_barang", "nama_barang", "tanggal", "jumlah", "satuan"};
+        tabmode = new DefaultTableModel(null, baris);
+        tableStokBarang.setModel(tabmode);
+
+        String sql = "INSERT INTO stokBarang (id_stok, id_barang, nama_barang, tanggal, jumlah, satuan) VALUES (?, ?, ?, ?, ?, ?)";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, idStok.getText());
+            ps.setString(2, idBarang.getSelectedItem().toString());
+            ps.setString(3, namaBarang.getText());
+            ps.setString(4, tanggal2); 
+            ps.setString(5, jumlah.getText());
+            ps.setString(6, satuan.getText());
+            
+
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Data Stok Barang Berhasil Disimpan");
+
+            kosong();
+            dataTable();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal Menyimpan Data Stok Barang: " + e.getMessage());
+        }
+    }//GEN-LAST:event_bTambahActionPerformed
+
+    private void bHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHapusActionPerformed
+        try {
+            String sql = "DELETE FROM stokBarang WHERE id_stok=?";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1, idStok.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Data Stok Berhasil Dihapus.");
+            kosong();
+            dataTable();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal Menghapus Data Stok!\n" + e.getMessage());
+        }
+    }//GEN-LAST:event_bHapusActionPerformed
+
+    private void bKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKembaliActionPerformed
+        this.dispose();
+        new tampilanMenu.menuAdmin().setVisible(true);
+    }//GEN-LAST:event_bKembaliActionPerformed
+
+    private void bKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKeluarActionPerformed
+        int konfirmasi = JOptionPane.showConfirmDialog (
+            this,
+            "Apakah Anda yakin ingin keluar?",
+            "Konfirmasi Keluar",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE
+        );
+
+        if (konfirmasi == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_bKeluarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -566,6 +702,9 @@ public class stokBarang extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(stokBarang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
