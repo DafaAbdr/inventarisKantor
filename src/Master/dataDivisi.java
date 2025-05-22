@@ -176,6 +176,11 @@ public class dataDivisi extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Search");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         bKembali.setBackground(new java.awt.Color(41, 76, 55));
         bKembali.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
@@ -267,7 +272,7 @@ public class dataDivisi extends javax.swing.JFrame {
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(idDivisi, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
@@ -388,24 +393,80 @@ public class dataDivisi extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField9ActionPerformed
 
     private void bKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKembaliActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        new tampilanMenu.menuAdmin().setVisible(true);
     }//GEN-LAST:event_bKembaliActionPerformed
 
     private void bHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHapusActionPerformed
+        try {
+            String sql = "DELETE FROM dataDivisi WHERE `id_divisi`=?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, idDivisi.getText());
 
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Data Divisi Berhasil Dihapus.");
+            dataTable();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal Menghapus Data Divisi!\n" + e.getMessage());
+        }
     }//GEN-LAST:event_bHapusActionPerformed
 
     private void bKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKeluarActionPerformed
-        // TODO add your handling code here:
+        int konfirmasi = JOptionPane.showConfirmDialog (
+            this,
+            "Apakah Anda yakin ingin keluar?",
+            "Konfirmasi Keluar",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE
+        );
+
+        if (konfirmasi == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
     }//GEN-LAST:event_bKeluarActionPerformed
 
     private void bTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTambahActionPerformed
+        Object[] baris = {"id_divisi", "nama_divisi", "lokasi"};
+        tabmode = new DefaultTableModel(null, baris);
+        tableDivisi.setModel(tabmode);
         
+        String sql = "INSERT INTO dataDivisi (id_divisi, nama_divisi, lokasi) VALUES (?, ?, ?)";
+        
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, idDivisi.getText());
+            ps.setString(2, namaDivisi.getText());
+            ps.setString(3, lokasi.getText());
+            
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Data Divisi Berhasil Disimpan");
+
+            kosong();
+            dataTable();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal Menyimpan Data Divisi: " + e.getMessage());
+        } 
     }//GEN-LAST:event_bTambahActionPerformed
 
     private void bEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditActionPerformed
-
+        try {
+            String sql = "UPDATE dataDivisi SET `nama_divisi`=?, `lokasi`=? WHERE `id_karyawan`=?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, namaDivisi.getText());
+            ps.setString(2, lokasi.getText());
+            ps.setString(2, idDivisi.getText());
+            
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Data Divisi Berhasil Diedit.");
+            dataTable();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal Mengedit Data Divisi!\n" + e.getMessage());
+        }
     }//GEN-LAST:event_bEditActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+                // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

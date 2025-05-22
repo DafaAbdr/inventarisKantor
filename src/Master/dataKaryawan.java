@@ -562,11 +562,11 @@ public class dataKaryawan extends javax.swing.JFrame {
 
     private void bKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKeluarActionPerformed
         int konfirmasi = JOptionPane.showConfirmDialog (
-        this,
-        "Apakah Anda yakin ingin keluar?",
-        "Konfirmasi Keluar",
-        JOptionPane.YES_NO_OPTION,
-        JOptionPane.QUESTION_MESSAGE
+            this,
+            "Apakah Anda yakin ingin keluar?",
+            "Konfirmasi Keluar",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE
         );
 
         if (konfirmasi == JOptionPane.YES_OPTION) {
@@ -697,6 +697,15 @@ public class dataKaryawan extends javax.swing.JFrame {
             String destDir = System.getProperty("user.dir") + File.separator + "src" + File.separator + "imagesKaryawan" + File.separator;
             String newFileName = null;
 
+            String oldFileName = null;
+            String queryOld = "SELECT gambar FROM dataKaryawan WHERE id_karyawan= ?";
+            PreparedStatement psOld = conn.prepareStatement(queryOld);
+            psOld.setString(1, id);
+            ResultSet rsOld = psOld.executeQuery();
+            if (rsOld.next()) {
+                oldFileName = rsOld.getString("gambar");
+            }
+
             if (!sourcePath.isEmpty()) {
                 File sourceFile = new File(sourcePath);
                 if (!sourceFile.exists()) {
@@ -707,33 +716,27 @@ public class dataKaryawan extends javax.swing.JFrame {
                 String ext = sourcePath.substring(sourcePath.lastIndexOf("."));
                 newFileName = id + ext;
 
-                String queryOld = "SELECT gambar FROM dataKaryawan WHERE id_Karyawan = ?";
-                PreparedStatement psOld = conn.prepareStatement(queryOld);
-                psOld.setString(1, id);
-                ResultSet rsOld = psOld.executeQuery();
-
-                if (rsOld.next()) {
-                    String oldFileName = rsOld.getString("gambar");
+                if (!newFileName.equals(oldFileName)) {
                     File oldFile = new File(destDir + oldFileName);
-
                     if (oldFile.exists()) {
                         oldFile.delete();
                     }
-                }
 
-                File destFile = new File(destDir + newFileName);
-                try {
-                    Files.copy(sourceFile.toPath(), destFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-                } catch (IOException ioex) {
-                    JOptionPane.showMessageDialog(null, "Gagal menyalin file gambar: " + ioex.getMessage());
-                    return;
+                    File destFile = new File(destDir + newFileName);
+                    try {
+                        Files.copy(sourceFile.toPath(), destFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                    } catch (IOException ioex) {
+                        JOptionPane.showMessageDialog(null, "Gagal menyalin file gambar: " + ioex.getMessage());
+                        return;
+                    }
+                } else {
+                    newFileName = oldFileName;
                 }
+            } else {
+                newFileName = oldFileName;
             }
 
-            String sql = "UPDATE dataKaryawan SET `nama_Karyawan`=?, `tempat_Lahir`=?, `tanggal_Lahir`=?, `jenis_Kelamin`=?, `divisi`=?, `jabatan`=?, `no_Telp`=?, `alamat`=?" +
-                         (newFileName != null ? ", `gambar`=?" : "") +
-                         " WHERE `id_Karyawan`=?";
-
+            String sql = "UPDATE dataKaryawan SET nama_karyawan=?, tempat_lahir=?, tanggal_lahir=?, jenis_kelamin=?, divisi=?, jabatan=?, no_telp=?, alamat=?, gambar=? WHERE id_karyawan=?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, namaKaryawan.getText());
             ps.setString(2, tempatLahir.getText());
@@ -743,12 +746,8 @@ public class dataKaryawan extends javax.swing.JFrame {
             ps.setString(6, jabatan.getSelectedItem().toString());
             ps.setString(7, noTelp.getText());
             ps.setString(8, alamat.getText());
-
-            int paramIndex = 9;
-            if (newFileName != null) {
-                ps.setString(paramIndex++, newFileName);
-            }
-            ps.setString(paramIndex, id);
+            ps.setString(9, newFileName);
+            ps.setString(10, id);
 
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Data Karyawan Berhasil Diedit.");

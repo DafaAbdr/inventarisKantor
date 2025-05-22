@@ -113,7 +113,7 @@ public class dataAkun extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jTextField9 = new javax.swing.JTextField();
+        cari = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -146,10 +146,15 @@ public class dataAkun extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Search");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        cari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cariActionPerformed(evt);
             }
         });
 
@@ -309,7 +314,7 @@ public class dataAkun extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -371,7 +376,7 @@ public class dataAkun extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -482,13 +487,57 @@ public class dataAkun extends javax.swing.JFrame {
     }//GEN-LAST:event_bHapus1ActionPerformed
 
     private void bHapus2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHapus2ActionPerformed
-        this.dispose();
-        new tampilan.login().setVisible(true);
+        int konfirmasi = JOptionPane.showConfirmDialog (
+            this,
+            "Apakah Anda yakin ingin keluar?",
+            "Konfirmasi Keluar",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE
+        );
+
+        if (konfirmasi == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
     }//GEN-LAST:event_bHapus2ActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    }//GEN-LAST:event_cariActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Object[] baris = {"id_karyawan", "nama_karyawan", "username", "password", "hak_akses"};
+        tabmode = new DefaultTableModel(null, baris);
+        tableAkun.setModel(tabmode);
+
+        String keyword = cari.getText();
+        String sql = "SELECT * FROM dataAkun WHERE " +
+                     "`id_karyawan` LIKE ? OR " +
+                     "`nama_karyawan` LIKE ? OR " +
+                     "`username` LIKE ? OR " +
+                     "`password` LIKE ? OR " +
+                     "`hak_akses` LIKE ? ";
+
+        try {
+            PreparedStatement pst = conn.prepareStatement(sql);
+            for (int i = 1; i <= 5; i++) {
+                pst.setString(i, "%" + keyword + "%");
+            }
+
+            ResultSet hasil = pst.executeQuery();
+            while (hasil.next()) {
+                String a = hasil.getString("id_karyawan");
+                String b = hasil.getString("nama_karyawan");
+                String c = hasil.getString("username");
+                String d = hasil.getString("password");
+                String e = hasil.getString("hak_akses");
+
+                String[] data = {a, b, c, d, e};
+                tabmode.addRow(data);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal mencari data!\n" + e.getMessage());
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -531,6 +580,7 @@ public class dataAkun extends javax.swing.JFrame {
     private javax.swing.JButton bHapus1;
     private javax.swing.JButton bHapus2;
     private javax.swing.JButton bTambah;
+    private javax.swing.JTextField cari;
     private javax.swing.JComboBox<String> hakAkses;
     private javax.swing.JComboBox<String> idKaryawan;
     private javax.swing.JButton jButton1;
@@ -543,7 +593,6 @@ public class dataAkun extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField namaKaryawan;
     private javax.swing.JPasswordField password;
     private javax.swing.JTable tableAkun;

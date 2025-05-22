@@ -147,6 +147,11 @@ public class dataJabatan extends javax.swing.JFrame {
         bKembali.setForeground(new java.awt.Color(255, 255, 255));
         bKembali.setText("Back");
         bKembali.setPreferredSize(new java.awt.Dimension(74, 23));
+        bKembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bKembaliActionPerformed(evt);
+            }
+        });
 
         bKeluar.setBackground(new java.awt.Color(41, 76, 55));
         bKeluar.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
@@ -346,7 +351,7 @@ public class dataJabatan extends javax.swing.JFrame {
             ps.setString(1, idJabatan.getText());
 
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Data Divisi Berhasil Disimpan.");
+            JOptionPane.showMessageDialog(null, "Data Jabatan Berhasil Dihapus.");
             dataTable();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Gagal Menghapus Data Divisi!\n" + e.getMessage());
@@ -354,7 +359,17 @@ public class dataJabatan extends javax.swing.JFrame {
     }//GEN-LAST:event_bHapusActionPerformed
 
     private void bKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKeluarActionPerformed
-        System.exit(100);
+        int konfirmasi = JOptionPane.showConfirmDialog (
+            this,
+            "Apakah Anda yakin ingin keluar?",
+            "Konfirmasi Keluar",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE
+        );
+
+        if (konfirmasi == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
     }//GEN-LAST:event_bKeluarActionPerformed
 
     private void bTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTambahActionPerformed
@@ -394,6 +409,11 @@ public class dataJabatan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Gagal Mengedi Data Divisi!\n" + e.getMessage());
         }
     }//GEN-LAST:event_bEditActionPerformed
+
+    private void bKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKembaliActionPerformed
+        this.dispose();
+        new tampilanMenu.menuAdmin().setVisible(true);
+    }//GEN-LAST:event_bKembaliActionPerformed
 
     /**
      * @param args the command line arguments

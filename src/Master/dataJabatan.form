@@ -238,6 +238,9 @@
               <Dimension value="[74, 23]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bKembaliActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bKeluar">
           <Properties>
