@@ -288,6 +288,11 @@ public class dataKaryawan extends javax.swing.JFrame {
         bKembali.setForeground(new java.awt.Color(255, 255, 255));
         bKembali.setText("Back");
         bKembali.setPreferredSize(new java.awt.Dimension(74, 23));
+        bKembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bKembaliActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Jabatan");
 
@@ -556,7 +561,17 @@ public class dataKaryawan extends javax.swing.JFrame {
     }//GEN-LAST:event_idKaryawanActionPerformed
 
     private void bKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKeluarActionPerformed
-        System.exit(1000);
+        int konfirmasi = JOptionPane.showConfirmDialog (
+        this,
+        "Apakah Anda yakin ingin keluar?",
+        "Konfirmasi Keluar",
+        JOptionPane.YES_NO_OPTION,
+        JOptionPane.QUESTION_MESSAGE
+        );
+
+        if (konfirmasi == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
     }//GEN-LAST:event_bKeluarActionPerformed
 
     private void bTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTambahActionPerformed
@@ -819,6 +834,11 @@ public class dataKaryawan extends javax.swing.JFrame {
         } catch (IOException ex) {
         }
     }//GEN-LAST:event_bUnggahActionPerformed
+
+    private void bKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKembaliActionPerformed
+        this.dispose();
+        new tampilanMenu.menuAdmin().setVisible(true);
+    }//GEN-LAST:event_bKembaliActionPerformed
 
     /**
      * @param args the command line arguments

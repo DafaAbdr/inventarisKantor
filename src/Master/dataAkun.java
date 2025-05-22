@@ -477,11 +477,13 @@ public class dataAkun extends javax.swing.JFrame {
     }//GEN-LAST:event_bHapusActionPerformed
 
     private void bHapus1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHapus1ActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        new tampilanMenu.menuAdmin().setVisible(true);
     }//GEN-LAST:event_bHapus1ActionPerformed
 
     private void bHapus2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHapus2ActionPerformed
-        System.exit(100);
+        this.dispose();
+        new tampilan.login().setVisible(true);
     }//GEN-LAST:event_bHapus2ActionPerformed
 
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
