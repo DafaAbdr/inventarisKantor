@@ -314,8 +314,8 @@ public class dataJabatan extends javax.swing.JFrame {
 
         String keyword = cari.getText();
         String sql = "SELECT * FROM dataJabatan WHERE " +
-        "`id_jabatan` LIKE ? OR " +
-        "`nama_jabatan` LIKE ?";
+                     "`id_jabatan` LIKE ? OR " +
+                     "`nama_jabatan` LIKE ?";
 
         try {
             PreparedStatement pst = conn.prepareStatement(sql);
