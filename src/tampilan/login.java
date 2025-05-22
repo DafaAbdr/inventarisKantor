@@ -4,8 +4,10 @@
  */
 package tampilan;
 
-import java.sql.*;
-import javax.swing.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import koneksi.koneksi;
 
@@ -22,7 +24,6 @@ public class login extends javax.swing.JFrame {
      */
     public login() {
         initComponents();
-        
     }
 
     /**
@@ -34,6 +35,7 @@ public class login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         lUsername = new javax.swing.JTextField();
@@ -41,7 +43,11 @@ public class login extends javax.swing.JFrame {
         bMasuk = new javax.swing.JButton();
         bKeluar = new javax.swing.JButton();
         lPassword = new javax.swing.JPasswordField();
-        jLabel4 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/InventarisLogo.png"))); // NOI18N
+        jLabel5.setText("jLabel5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -81,7 +87,7 @@ public class login extends javax.swing.JFrame {
                 bMasukActionPerformed(evt);
             }
         });
-        getContentPane().add(bMasuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 100, -1));
+        getContentPane().add(bMasuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 100, 30));
 
         bKeluar.setBackground(new java.awt.Color(41, 76, 55));
         bKeluar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
@@ -92,7 +98,7 @@ public class login extends javax.swing.JFrame {
                 bKeluarActionPerformed(evt);
             }
         });
-        getContentPane().add(bKeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 350, 100, -1));
+        getContentPane().add(bKeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 350, 100, 30));
 
         lPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,12 +107,33 @@ public class login extends javax.swing.JFrame {
         });
         getContentPane().add(lPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 360, 30));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/loginPage.png"))); // NOI18N
-        jLabel4.setText("jLabel4");
-        jLabel4.setMaximumSize(new java.awt.Dimension(800, 500));
-        jLabel4.setMinimumSize(new java.awt.Dimension(800, 500));
-        jLabel4.setPreferredSize(new java.awt.Dimension(800, 500));
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, -1));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMaximumSize(new java.awt.Dimension(800, 500));
+        jPanel1.setMinimumSize(new java.awt.Dimension(800, 500));
+        jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
+
+        jPanel2.setBackground(new java.awt.Color(41, 76, 55));
+        jPanel2.setMaximumSize(new java.awt.Dimension(400, 500));
+        jPanel2.setMinimumSize(new java.awt.Dimension(400, 500));
+        jPanel2.setPreferredSize(new java.awt.Dimension(400, 500));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 400, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();
         setLocationRelativeTo(null);
@@ -117,7 +144,42 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_bKeluarActionPerformed
 
     private void bMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMasukActionPerformed
-
+        String username = lUsername.getText();
+        String password = new String(lPassword.getPassword());
+        
+        if (username.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Username dan Password wajib diisi");
+            return;
+        }
+        
+        try {
+            String sql = "SELECT * FROM dataAkun WHERE username = ? AND password = ?";
+            PreparedStatement st = conn.prepareStatement(sql);
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1, username);
+            pst.setString(2, password);
+            
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                String hakAkses = rs.getString("hak_akses");
+                if ("admin".equalsIgnoreCase(hakAkses)) {
+                    JOptionPane.showMessageDialog(this, "Login berhasil sebagai Admin");
+                    new tampilanMenu.menuAdmin().setVisible(true);
+                    this.dispose();
+                } else if ("karyawan".equalsIgnoreCase(hakAkses)) {
+                    JOptionPane.showMessageDialog(this, "Login berhasil sebagai Karyawan");
+                    new tampilanMenu.menuKaryawan().setVisible(true);
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Hak akses tidak dikenal");
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Username atau Password salah");
+            }
+            rs.close();
+            pst.close();
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_bMasukActionPerformed
 
     private void lUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lUsernameActionPerformed
@@ -169,7 +231,9 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField lPassword;
     private javax.swing.JTextField lUsername;
     // End of variables declaration//GEN-END:variables

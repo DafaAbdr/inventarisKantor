@@ -181,6 +181,7 @@ public class dataAkun extends javax.swing.JFrame {
 
         namaKaryawan.setEditable(false);
         namaKaryawan.setBackground(new java.awt.Color(255, 255, 255));
+        namaKaryawan.setFocusable(false);
         namaKaryawan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 namaKaryawanActionPerformed(evt);
@@ -243,7 +244,7 @@ public class dataAkun extends javax.swing.JFrame {
 
         jLabel4.setText("Hak Akses");
 
-        hakAkses.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Karyawan", "KaryawanInventaris", " " }));
+        hakAkses.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Karyawan" }));
 
         idKaryawan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
