@@ -72,7 +72,7 @@ public class dataAkun extends javax.swing.JFrame {
         DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
 
         while (rs.next()) {
-            String idKaryawan = rs.getString("id_Karyawan");
+            String idKaryawan = rs.getString("id_karyawan");
             model.addElement(idKaryawan);
         }
 
@@ -82,7 +82,7 @@ public class dataAkun extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 try {
-                    String query = "SELECT nama_Karyawan FROM dataKaryawan WHERE id_Karyawan=?";
+                    String query = "SELECT nama_Karyawan FROM dataKaryawan WHERE id_karyawan=?";
                     PreparedStatement ps = conn.prepareStatement(query);
                     ps.setString(1, idKaryawan.getSelectedItem().toString());
                     ResultSet rs = ps.executeQuery();
