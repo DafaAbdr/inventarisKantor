@@ -230,7 +230,7 @@ public class menuAdmin extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         this.dispose();
-        new tampilan.permintaanBarang().setVisible(true);
+        new transaksi.permintaanBarang().setVisible(true);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     /**

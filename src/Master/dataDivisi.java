@@ -75,8 +75,6 @@ public class dataDivisi extends javax.swing.JFrame {
         bCari = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         bKembali = new javax.swing.JButton();
         bHapus = new javax.swing.JButton();
         bKeluar = new javax.swing.JButton();
@@ -166,22 +164,6 @@ public class dataDivisi extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
-            }
-        });
-
-        jButton1.setBackground(new java.awt.Color(41, 76, 55));
-        jButton1.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Search");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         bKembali.setBackground(new java.awt.Color(41, 76, 55));
         bKembali.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bKembali.setForeground(new java.awt.Color(255, 255, 255));
@@ -246,23 +228,16 @@ public class dataDivisi extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(bTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(17, 17, 17)
-                                .addComponent(bEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(17, 17, 17)
-                                .addComponent(bHapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(bKembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton1))))
+                        .addComponent(bTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addComponent(bEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addComponent(bHapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(bKembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -304,11 +279,7 @@ public class dataDivisi extends javax.swing.JFrame {
                     .addComponent(bCari))
                 .addGap(44, 44, 44)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(52, 52, 52)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bTambah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -316,7 +287,7 @@ public class dataDivisi extends javax.swing.JFrame {
                         .addComponent(bHapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(bKembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -336,17 +307,77 @@ public class dataDivisi extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void idDivisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idDivisiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idDivisiActionPerformed
+    private void bEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditActionPerformed
+        try {
+            String sql = "UPDATE dataDivisi SET `nama_divisi`=?, `lokasi`=? WHERE `id_divisi`=?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, namaDivisi.getText());
+            ps.setString(2, lokasi.getText());
+            ps.setString(3, idDivisi.getText());
 
-    private void namaDivisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaDivisiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_namaDivisiActionPerformed
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Data Divisi Berhasil Diedit.");
+            dataTable();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal Mengedit Data Divisi!\n" + e.getMessage());
+        }
+    }//GEN-LAST:event_bEditActionPerformed
 
-    private void lokasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lokasiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lokasiActionPerformed
+    private void bTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTambahActionPerformed
+        Object[] baris = {"id_divisi", "nama_divisi", "lokasi"};
+        tabmode = new DefaultTableModel(null, baris);
+        tableDivisi.setModel(tabmode);
+
+        String sql = "INSERT INTO dataDivisi (id_divisi, nama_divisi, lokasi) VALUES (?, ?, ?)";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, idDivisi.getText());
+            ps.setString(2, namaDivisi.getText());
+            ps.setString(3, lokasi.getText());
+
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Data Divisi Berhasil Disimpan");
+
+            kosong();
+            dataTable();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal Menyimpan Data Divisi: " + e.getMessage());
+        }
+    }//GEN-LAST:event_bTambahActionPerformed
+
+    private void bKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKeluarActionPerformed
+        int konfirmasi = JOptionPane.showConfirmDialog (
+            this,
+            "Apakah Anda yakin ingin keluar?",
+            "Konfirmasi Keluar",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE
+        );
+
+        if (konfirmasi == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_bKeluarActionPerformed
+
+    private void bHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHapusActionPerformed
+        try {
+            String sql = "DELETE FROM dataDivisi WHERE `id_divisi`=?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, idDivisi.getText());
+
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Data Divisi Berhasil Dihapus.");
+            dataTable();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal Menghapus Data Divisi!\n" + e.getMessage());
+        }
+    }//GEN-LAST:event_bHapusActionPerformed
+
+    private void bKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKembaliActionPerformed
+        this.dispose();
+        new tampilanMenu.menuAdmin().setVisible(true);
+    }//GEN-LAST:event_bKembaliActionPerformed
 
     private void bCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCariActionPerformed
         Object[] baris = {"id_divisi", "nama_divisi", "lokasi"};
@@ -355,9 +386,9 @@ public class dataDivisi extends javax.swing.JFrame {
 
         String keyword = cari.getText();
         String sql = "SELECT * FROM dataDivisi WHERE " +
-                     "`id_divisi` LIKE ? OR " +
-                     "`nama_divisi` LIKE ? OR " +
-                     "`lokasi` LIKE ? ";
+        "`id_divisi` LIKE ? OR " +
+        "`nama_divisi` LIKE ? OR " +
+        "`lokasi` LIKE ? ";
 
         try {
             PreparedStatement pst = conn.prepareStatement(sql);
@@ -379,6 +410,10 @@ public class dataDivisi extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bCariActionPerformed
 
+    private void lokasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lokasiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lokasiActionPerformed
+
     private void tableDivisiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDivisiMouseClicked
         int baris = tableDivisi.getSelectedRow();
         if (baris != -1) {
@@ -388,85 +423,13 @@ public class dataDivisi extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tableDivisiMouseClicked
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void namaDivisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaDivisiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    }//GEN-LAST:event_namaDivisiActionPerformed
 
-    private void bKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKembaliActionPerformed
-        this.dispose();
-        new tampilanMenu.menuAdmin().setVisible(true);
-    }//GEN-LAST:event_bKembaliActionPerformed
-
-    private void bHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHapusActionPerformed
-        try {
-            String sql = "DELETE FROM dataDivisi WHERE `id_divisi`=?";
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, idDivisi.getText());
-
-            ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Data Divisi Berhasil Dihapus.");
-            dataTable();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Gagal Menghapus Data Divisi!\n" + e.getMessage());
-        }
-    }//GEN-LAST:event_bHapusActionPerformed
-
-    private void bKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKeluarActionPerformed
-        int konfirmasi = JOptionPane.showConfirmDialog (
-            this,
-            "Apakah Anda yakin ingin keluar?",
-            "Konfirmasi Keluar",
-            JOptionPane.YES_NO_OPTION,
-            JOptionPane.QUESTION_MESSAGE
-        );
-
-        if (konfirmasi == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
-    }//GEN-LAST:event_bKeluarActionPerformed
-
-    private void bTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTambahActionPerformed
-        Object[] baris = {"id_divisi", "nama_divisi", "lokasi"};
-        tabmode = new DefaultTableModel(null, baris);
-        tableDivisi.setModel(tabmode);
-        
-        String sql = "INSERT INTO dataDivisi (id_divisi, nama_divisi, lokasi) VALUES (?, ?, ?)";
-        
-        try {
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, idDivisi.getText());
-            ps.setString(2, namaDivisi.getText());
-            ps.setString(3, lokasi.getText());
-            
-            ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Data Divisi Berhasil Disimpan");
-
-            kosong();
-            dataTable();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Gagal Menyimpan Data Divisi: " + e.getMessage());
-        } 
-    }//GEN-LAST:event_bTambahActionPerformed
-
-    private void bEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditActionPerformed
-        try {
-            String sql = "UPDATE dataDivisi SET `nama_divisi`=?, `lokasi`=? WHERE `id_karyawan`=?";
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, namaDivisi.getText());
-            ps.setString(2, lokasi.getText());
-            ps.setString(2, idDivisi.getText());
-            
-            ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Data Divisi Berhasil Diedit.");
-            dataTable();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Gagal Mengedit Data Divisi!\n" + e.getMessage());
-        }
-    }//GEN-LAST:event_bEditActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-                // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void idDivisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idDivisiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idDivisiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -512,7 +475,6 @@ public class dataDivisi extends javax.swing.JFrame {
     private javax.swing.JButton bTambah;
     private javax.swing.JTextField cari;
     private javax.swing.JTextField idDivisi;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -520,7 +482,6 @@ public class dataDivisi extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField lokasi;
     private javax.swing.JTextField namaDivisi;
     private javax.swing.JTable tableDivisi;

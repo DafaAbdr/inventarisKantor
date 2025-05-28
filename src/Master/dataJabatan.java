@@ -65,8 +65,6 @@ public class dataJabatan extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         idJabatan = new javax.swing.JTextField();
-        namaJabatan = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         bCari = new javax.swing.JButton();
         cari = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -78,6 +76,8 @@ public class dataJabatan extends javax.swing.JFrame {
         bEdit = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        namaJabatan = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -94,14 +94,6 @@ public class dataJabatan extends javax.swing.JFrame {
                 idJabatanActionPerformed(evt);
             }
         });
-
-        namaJabatan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                namaJabatanActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setText("Nama Jabatan");
 
         bCari.setBackground(new java.awt.Color(41, 76, 55));
         bCari.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
@@ -211,6 +203,14 @@ public class dataJabatan extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
+        namaJabatan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                namaJabatanActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Nama Jabatan");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -219,7 +219,7 @@ public class dataJabatan extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 760, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -228,28 +228,29 @@ public class dataJabatan extends javax.swing.JFrame {
                         .addComponent(bCari)))
                 .addGap(48, 48, 48))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(204, 204, 204)
+                .addComponent(bTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bHapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bKembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(namaJabatan)
-                            .addComponent(idJabatan, javax.swing.GroupLayout.PREFERRED_SIZE, 654, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(namaJabatan, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(204, 204, 204)
-                        .addComponent(bTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(bEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(bHapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(bKembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(idJabatan)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,15 +261,15 @@ public class dataJabatan extends javax.swing.JFrame {
                     .addComponent(idJabatan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(namaJabatan)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(namaJabatan))
+                .addGap(55, 55, 55)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bCari))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bTambah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -303,12 +304,8 @@ public class dataJabatan extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_idJabatanActionPerformed
 
-    private void namaJabatanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaJabatanActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_namaJabatanActionPerformed
-
     private void bCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCariActionPerformed
-        Object[] baris = {"id_jabatan", "nama_jabatan"};
+        Object[] baris = {"id_jabatan", "nama_jabatan", "kode_jabatan"};
         tabmode = new DefaultTableModel(null, baris);
         tableJabatan.setModel(tabmode);
 
@@ -354,7 +351,7 @@ public class dataJabatan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Data Jabatan Berhasil Dihapus.");
             dataTable();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Gagal Menghapus Data Divisi!\n" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Gagal Menghapus Data Jabatan!\n" + e.getMessage());
         }
     }//GEN-LAST:event_bHapusActionPerformed
 
@@ -385,12 +382,12 @@ public class dataJabatan extends javax.swing.JFrame {
             ps.setString(2, namaJabatan.getText());
 
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Data Karyawan Berhasil Disimpan");
+            JOptionPane.showMessageDialog(null, "Data Jabatan Berhasil Disimpan");
 
             kosong();
             dataTable();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Gagal Menyimpan Data Karyawan: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Gagal Menyimpan Data Jabatan: " + e.getMessage());
         }
     }//GEN-LAST:event_bTambahActionPerformed
 
@@ -403,10 +400,10 @@ public class dataJabatan extends javax.swing.JFrame {
             ps.setString(2, idJabatan.getText());
 
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Data Divisi Berhasil Diedit.");
+            JOptionPane.showMessageDialog(null, "Data Jabatan Berhasil Diedit.");
             dataTable();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Gagal Mengedi Data Divisi!\n" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Gagal Mengedit Data Jabatan!\n" + e.getMessage());
         }
     }//GEN-LAST:event_bEditActionPerformed
 
@@ -414,6 +411,10 @@ public class dataJabatan extends javax.swing.JFrame {
         this.dispose();
         new tampilanMenu.menuAdmin().setVisible(true);
     }//GEN-LAST:event_bKembaliActionPerformed
+
+    private void namaJabatanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaJabatanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_namaJabatanActionPerformed
 
     /**
      * @param args the command line arguments
@@ -461,7 +462,7 @@ public class dataJabatan extends javax.swing.JFrame {
     private javax.swing.JTextField idJabatan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

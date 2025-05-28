@@ -46,9 +46,7 @@ public class stokBarang extends javax.swing.JFrame {
     
     protected void isiComboBoxIdBarang() {
         try {
-            String sql = "SELECT id_barang FROM dataBarangPermintaan " +
-                         "UNION " +
-                         "SELECT id_barang FROM dataBarangPeminjaman";
+            String sql = "SELECT id_barang FROM dataBarang";
             PreparedStatement st = conn.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
 
@@ -65,12 +63,9 @@ public class stokBarang extends javax.swing.JFrame {
                 try {
                     String selectedId = idBarang.getSelectedItem().toString();
 
-                    String query = "SELECT nama_barang, gambar FROM dataBarangPermintaan WHERE id_barang = ? " +
-                                   "UNION " +
-                                   "SELECT nama_barang, gambar FROM dataBarangPeminjaman WHERE id_barang = ?";
+                    String query = "SELECT nama_barang, gambar FROM dataBarang WHERE id_barang = ? ";
                     PreparedStatement ps = conn.prepareStatement(query);
                     ps.setString(1, selectedId);
-                    ps.setString(2, selectedId);
                     ResultSet rs = ps.executeQuery();
 
                     if (rs.next()) {
@@ -701,6 +696,34 @@ public class stokBarang extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(stokBarang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
