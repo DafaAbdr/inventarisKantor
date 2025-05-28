@@ -26,7 +26,7 @@ import koneksi.koneksi;
  *
  * @author dafaa
  */
-public class stokBarang extends javax.swing.JFrame {
+public class stokBarangInfo extends javax.swing.JFrame {
     final private Connection conn = new koneksi().connect();
     private DefaultTableModel tabmode;
     final private JTextField pathFoto;
@@ -35,7 +35,7 @@ public class stokBarang extends javax.swing.JFrame {
      * Creates new form stokBarang
      */
     
-    public stokBarang() {
+    public stokBarangInfo() {
         initComponents();
         dataTable();
         isiComboBoxIdBarang();
@@ -107,26 +107,32 @@ public class stokBarang extends javax.swing.JFrame {
     }
     
     protected void kosong(){
+        idStok.setText("");
         idBarang.setSelectedIndex(0);
         namaBarang.setText("");
+        tanggal.setDate(null);
         jumlah.setText("");
+        satuan.setText("");
         foto.setIcon(null);
     }
     
     protected void dataTable(){
-        Object[] baris = {"id_barang", "nama_barang", "jumlah"};
+        Object[] baris = {"id_stok", "id_barang", "nama_barang", "tanggal", "jumlah", "satuan"};
         tabmode = new DefaultTableModel(null, baris);
         tableStokBarang.setModel(tabmode);
-        String sql = "SELECT * FROM stokBarang";
+        String sql = "SELECT * FROM stokBarangInfo";
         try{
             java.sql.Statement stat = conn.createStatement();
             ResultSet hasil = stat.executeQuery(sql);
             while(hasil.next()){
-                String a = hasil.getString("id_barang");
-                String b = hasil.getString("nama_barang");
-                String c = hasil.getString("jumlah");
+                String a = hasil.getString("id_stok");
+                String b = hasil.getString("id_barang");
+                String c = hasil.getString("nama_barang");
+                String d = hasil.getString("tanggal");
+                String e = hasil.getString("jumlah");
+                String f = hasil.getString("satuan");
                 
-                String[] data = {a, b, c};
+                String[] data = {a, b, c, d, e, f};
                 tabmode.addRow(data);
             }
         }catch (Exception e){
@@ -145,14 +151,20 @@ public class stokBarang extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jumlah = new javax.swing.JTextField();
         bCari = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        idStok = new javax.swing.JTextField();
         foto = new javax.swing.JLabel();
+        satuan = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableStokBarang = new javax.swing.JTable();
         namaBarang = new javax.swing.JTextField();
         idBarang = new javax.swing.JComboBox<>();
+        tanggal = new com.toedter.calendar.JDateChooser();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         bEdit = new javax.swing.JButton();
@@ -185,28 +197,48 @@ public class stokBarang extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("ID Stok");
+
         jLabel3.setText("ID Barang");
 
         jLabel5.setText("Nama Barang");
 
-        jLabel9.setText("Stok");
+        jLabel6.setText("Tanggal");
+        jLabel6.setMaximumSize(new java.awt.Dimension(72, 16));
+        jLabel6.setMinimumSize(new java.awt.Dimension(72, 16));
+
+        jLabel9.setText("Jumlah");
+
+        jLabel10.setText("Satuan");
+
+        idStok.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idStokActionPerformed(evt);
+            }
+        });
 
         foto.setBackground(new java.awt.Color(255, 0, 248));
         foto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        satuan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                satuanActionPerformed(evt);
+            }
+        });
+
         tableStokBarang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID Barang ", "Nama Barang", "Jumlah"
+                "ID Barang ", "Kode Barang", "Nama Barang", "Spesifikasi", "Tanggal", "Harga Barang", "Kondisi", "Jumlah", "Satuan"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -322,18 +354,32 @@ public class stokBarang extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(42, 42, 42)
-                                        .addComponent(idBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(idBarang, 0, 234, Short.MAX_VALUE)
+                                            .addComponent(idStok)))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                                         .addComponent(namaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(42, 42, 42)
-                                .addComponent(jLabel9)
-                                .addGap(83, 83, 83)
-                                .addComponent(jumlah, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(42, 42, 42)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(tanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(19, 19, 19))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(satuan, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                                            .addComponent(jumlah))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane2)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -357,20 +403,34 @@ public class stokBarang extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel2)
+                                .addComponent(idStok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tanggal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
+                                .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel9)
                                     .addComponent(jLabel3)
                                     .addComponent(idBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jumlah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(namaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel10)
+                                    .addComponent(satuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(namaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGap(46, 46, 46)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -418,13 +478,33 @@ public class stokBarang extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void idStokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idStokActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idStokActionPerformed
+
+    private void satuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_satuanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_satuanActionPerformed
+
     private void tableStokBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableStokBarangMouseClicked
         int baris = tableStokBarang.getSelectedRow();
 
         if (baris != -1) {
-            idBarang.setSelectedItem(tabmode.getValueAt(baris, 0).toString());
-            namaBarang.setText(tabmode.getValueAt(baris, 1).toString());
-            jumlah.setText(tabmode.getValueAt(baris, 2).toString());
+            idStok.setText(tabmode.getValueAt(baris, 0).toString());
+            idBarang.setSelectedItem(tabmode.getValueAt(baris, 1).toString());
+            namaBarang.setText(tabmode.getValueAt(baris, 2).toString());
+
+            try {
+                String tglString = tabmode.getValueAt(baris, 3).toString();
+                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+                Date tgl = sdf.parse(tglString);
+                tanggal.setDate(tgl);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            jumlah.setText(tabmode.getValueAt(baris, 4).toString());
+            satuan.setText(tabmode.getValueAt(baris, 5).toString());
 
             String id = idBarang.getSelectedItem().toString();
             String destDir = System.getProperty("user.dir") + File.separator + "src" + File.separator + "imagesBarang" + File.separator;
@@ -467,31 +547,37 @@ public class stokBarang extends javax.swing.JFrame {
     }//GEN-LAST:event_tableStokBarangMouseClicked
 
     private void bCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCariActionPerformed
-        Object[] baris = {"id_barang", "nama_barang", "jumlah"};
+        Object[] baris = {"id_stok", "id_barang", "nama_barang", "tanggal", "jumlah", "satuan"};
         tabmode = new DefaultTableModel(null, baris);
         tableStokBarang.setModel(tabmode);
 
         String keyword = cari.getText();
         
-        String sql = "SELECT * FROM stokBarang WHERE " +
+        String sql = "SELECT * FROM stokBarangInfo WHERE " +
+                     "id_stok LIKE ? OR " +
                      "id_barang LIKE ? OR " +
                      "nama_barang LIKE ? OR " +
-                     "jumlah LIKE ? ";
+                     "tanggal LIKE ? OR " +
+                     "jumlah LIKE ? OR " +
+                     "satuan LIKE ? ";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
-            for (int i = 1; i <= 3; i++) {
+            for (int i = 1; i <= 6; i++) {
                 ps.setString(i, "%" + keyword + "%");
             }
 
             ResultSet hasil = ps.executeQuery();
             
             while (hasil.next()) {
-                String a = hasil.getString("id_barang");
-                String b = hasil.getString("nama_barang");
-                String c = hasil.getString("jumlah");
+                String a = hasil.getString("id_stok");
+                String b = hasil.getString("id_barang");
+                String c = hasil.getString("nama_barang");
+                String d = hasil.getString("tanggal");
+                String e = hasil.getString("jumlah");
+                String f = hasil.getString("satuan");
                 
-                String[] data = {a, b, c};
+                String[] data = {a, b, c, d, e, f};
                 tabmode.addRow(data);
             }
         } catch (Exception e) {
@@ -501,33 +587,46 @@ public class stokBarang extends javax.swing.JFrame {
 
     private void bEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditActionPerformed
         try {
-            String sql = "UPDATE stokBarang SET `jumlah`=? WHERE `id_barang`=?";
+            String sql = "UPDATE stokBarangInfo SET `id_barang`=?, `nama_barang`=?, `tanggal`=?, `jumlah`=?, `satuan`=? WHERE `id_stok`=?";
             
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, jumlah.getText());
-            ps.setString(2, idBarang.getSelectedItem().toString());
+            ps.setString(1, idBarang.getSelectedItem().toString());
+            ps.setString(2, namaBarang.getText());
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String tanggal1 = sdf.format(tanggal.getDate());
+            ps.setString(3, tanggal1);
+            ps.setString(4, jumlah.getText());
+            ps.setString(5, satuan.getText());
+            ps.setString(6, idStok.getText());
 
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Data Stok Berhasil Diedit.");
             dataTable();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Gagal Mengedit Data Stok!\n" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Gagal Mengedi Data Stok!\n" + e.getMessage());
         }
     }//GEN-LAST:event_bEditActionPerformed
 
     private void bTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTambahActionPerformed
-        Object[] baris = {"id_barang", "nama_barang", "jumlah"};
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String tanggal2 = sdf.format(tanggal.getDate());
+        
+        Object[] baris = {"id_stok", "id_barang", "nama_barang", "tanggal", "jumlah", "satuan"};
         tabmode = new DefaultTableModel(null, baris);
         tableStokBarang.setModel(tabmode);
 
-        String sql = "INSERT INTO stokBarang (id_barang, nama_barang, jumlah VALUES (?, ?, ?)";
+        String sql = "INSERT INTO stokBarangInfo (id_stok, id_barang, nama_barang, tanggal, jumlah, satuan) VALUES (?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, idBarang.getSelectedItem().toString());
-            ps.setString(2, namaBarang.getText());
-            ps.setString(3, jumlah.getText());
+            ps.setString(1, idStok.getText());
+            ps.setString(2, idBarang.getSelectedItem().toString());
+            ps.setString(3, namaBarang.getText());
+            ps.setString(4, tanggal2); 
+            ps.setString(5, jumlah.getText());
+            ps.setString(6, satuan.getText());
             
+
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Data Stok Barang Berhasil Disimpan");
 
@@ -540,9 +639,9 @@ public class stokBarang extends javax.swing.JFrame {
 
     private void bHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHapusActionPerformed
         try {
-            String sql = "DELETE FROM stokBarang WHERE id_barang=?";
+            String sql = "DELETE FROM stokBarangInfo WHERE id_stok=?";
             PreparedStatement pst = conn.prepareStatement(sql);
-            pst.setString(1, idBarang.getSelectedItem().toString());
+            pst.setString(1, idStok.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Data Stok Berhasil Dihapus.");
@@ -589,78 +688,14 @@ public class stokBarang extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(stokBarang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(stokBarangInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(stokBarang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(stokBarangInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(stokBarang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(stokBarangInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(stokBarang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(stokBarangInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -729,7 +764,7 @@ public class stokBarang extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new stokBarang().setVisible(true);
+                new stokBarangInfo().setVisible(true);
             }
         });
     }
@@ -744,15 +779,21 @@ public class stokBarang extends javax.swing.JFrame {
     private javax.swing.JTextField cari;
     private javax.swing.JLabel foto;
     private javax.swing.JComboBox<String> idBarang;
+    private javax.swing.JTextField idStok;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jumlah;
     private javax.swing.JTextField namaBarang;
+    private javax.swing.JTextField satuan;
     private javax.swing.JTable tableStokBarang;
+    private com.toedter.calendar.JDateChooser tanggal;
     // End of variables declaration//GEN-END:variables
 }
