@@ -15,7 +15,7 @@ import koneksi.koneksi;
  *
  * @author dafaa
  */
-public class login extends javax.swing.JFrame {
+public class loginPage extends javax.swing.JFrame {
     final private Connection conn = new koneksi().connect();
     private DefaultTableModel tabmode;
     
@@ -23,7 +23,7 @@ public class login extends javax.swing.JFrame {
      * Creates new form login2
      */
     
-    public login() {
+    public loginPage() {
         initComponents();
     }
 
@@ -48,9 +48,9 @@ public class login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 500));
         setMinimumSize(new java.awt.Dimension(800, 500));
-        setPreferredSize(new java.awt.Dimension(800, 500));
+        setUndecorated(true);
+        setResizable(false);
 
         kGradientPanel2.setkEndColor(new java.awt.Color(41, 76, 55));
         kGradientPanel2.setkGradientFocus(250);
@@ -140,7 +140,7 @@ public class login extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bMasuk1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bKeluar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -148,9 +148,6 @@ public class login extends javax.swing.JFrame {
         );
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logof.png"))); // NOI18N
-        jLabel1.setMaximumSize(new java.awt.Dimension(174, 186));
-        jLabel1.setMinimumSize(new java.awt.Dimension(174, 186));
-        jLabel1.setPreferredSize(new java.awt.Dimension(174, 186));
 
         javax.swing.GroupLayout kGradientPanel2Layout = new javax.swing.GroupLayout(kGradientPanel2);
         kGradientPanel2.setLayout(kGradientPanel2Layout);
@@ -187,18 +184,68 @@ public class login extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void lUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lUsernameActionPerformed
 
-    private void bMasuk1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMasuk1ActionPerformed
+    private void bMasuk1ActionPerformed(java.awt.event.ActionEvent evt) {                                                                                
+        String username = lUsername.getText();
+        String password = new String(lPassword.getPassword());
 
-    }//GEN-LAST:event_bMasuk1ActionPerformed
+        if (username.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Username dan Password wajib diisi");
+            return;
+        }
+
+        try {
+            String sql = "SELECT * FROM dataAkun WHERE username = ? AND password = ?";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1, username);
+            pst.setString(2, password);
+
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                String hakAkses = rs.getString("hak_akses");
+                String idKaryawan = rs.getString("id_karyawan");
+                String namaKaryawan = rs.getString("nama_karyawan");
+
+                loginSesi.setUser(username, hakAkses, idKaryawan, namaKaryawan);
+
+                if ("admin".equalsIgnoreCase(hakAkses)) {
+                    new tampilanMenu.menuAdmin().setVisible(true);
+                    this.dispose();
+                } else if ("karyawan".equalsIgnoreCase(hakAkses)) {
+                    new tampilanMenu.menuKaryawan().setVisible(true);
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Hak akses tidak dikenal");
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Username atau Password salah");
+            }
+            rs.close();
+            pst.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Terjadi kesalahan: " + e.getMessage());
+        }
+    }                                       
 
     private void bKeluar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKeluar1ActionPerformed
-        System.exit(0);
+        int konfirmasi = JOptionPane.showConfirmDialog (
+            this,
+            "Apakah Anda yakin ingin keluar?",
+            "Konfirmasi Keluar",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE
+        );
+
+        if (konfirmasi == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
     }//GEN-LAST:event_bKeluar1ActionPerformed
 
     /**
@@ -218,21 +265,23 @@ public class login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(loginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(loginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(loginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(loginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new login().setVisible(true);
+                new loginPage().setVisible(true);
             }
         });
     }

@@ -42,7 +42,7 @@ public class dataTransaksi extends javax.swing.JFrame {
         tabmode = new DefaultTableModel(null, baris);
         tablePeminjaman.setModel(tabmode);
         
-        String sql = "SELECT * FROM dataPeminjamanBarang";
+        String sql = "SELECT * FROM dataTransaksi";
         
         try{
             java.sql.Statement stat = conn.createStatement();
@@ -395,7 +395,7 @@ public class dataTransaksi extends javax.swing.JFrame {
         tabmode = new DefaultTableModel(null, baris);
         tablePeminjaman.setModel(tabmode);
 
-        String sql = "INSERT INTO dataPeminjamanBarang (id_peminjaman, id_karyawan, nama_karyawan, tanggal) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO dataTransaksi (id_peminjaman, id_karyawan, nama_karyawan, tanggal) VALUES (?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -427,7 +427,7 @@ public class dataTransaksi extends javax.swing.JFrame {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String tanggal2 = sdf.format(tanggal.getDate());
             
-            String sql = "UPDATE dataPeminjamanBarang SET `id_karyawan`=?, `nama_karyawan`=?, `tanggal`=?  WHERE `id_peminjaman`=?";
+            String sql = "UPDATE dataTransaksi SET `id_karyawan`=?, `nama_karyawan`=?, `tanggal`=?  WHERE `id_peminjaman`=?";
             
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, idKaryawan.getText());
@@ -451,7 +451,7 @@ public class dataTransaksi extends javax.swing.JFrame {
 
     private void bHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHapusActionPerformed
         try {
-            String sql = "DELETE FROM dataPeminjamanBarang WHERE `id_peminjaman`=?";
+            String sql = "DELETE FROM dataTransaksi WHERE `id_peminjaman`=?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, idPeminjaman.getText());
 
@@ -470,7 +470,7 @@ public class dataTransaksi extends javax.swing.JFrame {
         tablePeminjaman.setModel(tabmode);
 
         String keyword = cari.getText();
-        String sql = "SELECT * FROM dataPeminjamanBarang WHERE " +
+        String sql = "SELECT * FROM dataTransaksi WHERE " +
                      "`id_peminjaman` LIKE ? OR " +
                      "`id_karyawan` LIKE ? OR " +
                      "`nama_karyawan` LIKE ? OR " +

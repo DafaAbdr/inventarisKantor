@@ -12,7 +12,10 @@ import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import koneksi.koneksi;
@@ -38,6 +41,7 @@ public class permintaanBarang extends javax.swing.JFrame {
         initComponents();
         dataTableBarang();
         isiComboBoxIdBarang();
+        generateIdPermintaan();
         pathFoto = new JTextField();
         pathFoto.setVisible(false);
         add(pathFoto);
@@ -46,20 +50,46 @@ public class permintaanBarang extends javax.swing.JFrame {
         String loginNamaKaryawan = loginSesi.getNamaKaryawan();
         namaKaryawan.setText(loginNamaKaryawan);
     }
+
+    private String generateIdPermintaan() {
+        String idBaru = "PR001";
+        try {
+            String sql = "SELECT MAX(RIGHT(id_transaksi, 3)) AS nomor FROM dataTransaksi";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                
+                int nomor = rs.getInt("nomor") + 1;
+                idBaru = String.format("PR%03d", nomor);
+                String a = rs.getString("id_transaksi");
+                
+                String[] data = {a};
+                tabmode.addRow(data);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal generate ID Permintaan: " + e.getMessage());
+        }
+        return idBaru;
+    }
+
     
     protected void dataTableBarang(){
         Object[] baris = {"nama_barang", "jumlah"};
         tabmode = new DefaultTableModel(null, baris);
         tableBarang.setModel(tabmode);
         
-        String sql = "SELECT databarang.nama_barang, stokBarang.jumlah FROM databarang INNER JOIN stokBarang WHERE databarang.id_barang = stokBarang.id_barang";
+        String sql = "SELECT databarang.nama_barang, stokBarang.stok_barang " +
+                     "FROM databarang " +
+                     "INNER JOIN stokBarang ON databarang.id_barang = stokBarang.id_barang " +
+                     "WHERE databarang.id_barang LIKE 'BB%'";
         
         try{
             java.sql.Statement stat = conn.createStatement();
             ResultSet hasil = stat.executeQuery(sql);
             while(hasil.next()){
                 String a = hasil.getString("nama_barang");
-                String b = hasil.getString("jumlah");
+                String b = hasil.getString("stok_barang");
                 
                 String[] data = {a, b};
                 tabmode.addRow(data);
@@ -108,6 +138,7 @@ public class permintaanBarang extends javax.swing.JFrame {
                                             foto.getWidth(),
                                             foto.getHeight(),
                                             Image.SCALE_SMOOTH);
+                                    foto.setIcon(null);
                                     foto.setIcon(new ImageIcon(img));
                                 } else {
                                     foto.setIcon(null);
@@ -158,7 +189,7 @@ public class permintaanBarang extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        idPermintaan = new javax.swing.JTextField();
+        idTransaksi = new javax.swing.JTextField();
         jumlah = new javax.swing.JTextField();
         tanggal = new com.toedter.calendar.JDateChooser();
         bTambah = new javax.swing.JButton();
@@ -245,6 +276,9 @@ public class permintaanBarang extends javax.swing.JFrame {
         });
 
         foto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        foto.setMaximumSize(new java.awt.Dimension(186, 143));
+        foto.setMinimumSize(new java.awt.Dimension(186, 143));
+        foto.setPreferredSize(new java.awt.Dimension(186, 143));
 
         tableBarang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -373,14 +407,14 @@ public class permintaanBarang extends javax.swing.JFrame {
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bTambah, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(idPermintaan, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(idTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(namaBarang)
                     .addComponent(idBarang, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(foto, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
+                        .addComponent(foto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -400,7 +434,7 @@ public class permintaanBarang extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(idPermintaan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(idTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel6)
@@ -473,7 +507,26 @@ public class permintaanBarang extends javax.swing.JFrame {
     }//GEN-LAST:event_bKeluarActionPerformed
 
     private void bSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSimpanActionPerformed
-        // TODO add your handling code here:
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String tanggal2 = sdf.format(tanggal.getDate());
+        
+        Object[] baris = {"id_transaksi", "id_karyawan", "nama_karyawan", "tanggal"};
+        
+        String sql = "INSERT INTO dataTransaksi (id_transaksi, id_karyawan, nama_karyawan, tanggal) VALUES (?, ?, ?, ?)";
+        
+        try{
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, idTransaksi.getText());
+            ps.setString(2, idKaryawan.getText());
+            ps.setString(3, namaKaryawan.getText());
+            ps.setString(4, tanggal2);
+            
+            JOptionPane.showMessageDialog(null, "Transaksi Permintaan Barang Berhasil di Simpan");
+
+            kosong();
+        } catch (SQLException ex) {
+            Logger.getLogger(permintaanBarang.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_bSimpanActionPerformed
 
     private void bHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHapusActionPerformed
@@ -487,14 +540,14 @@ public class permintaanBarang extends javax.swing.JFrame {
     private void bTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTambahActionPerformed
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String tanggal2 = sdf.format(tanggal.getDate());
-
+        String idPermintaan = generateIdPermintaan();
         tabmode = (DefaultTableModel) tableTransaksi.getModel();
 
-        String sqlInsert = "INSERT INTO databarang (id_permintaan, id_barang, nama_barang, jumlah_barang, tanggal) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO databarang (id_permintaan, id_barang, nama_barang, jumlah_barang, tanggal) VALUES (?, ?, ?, ?, ?)";
 
         try {
-            PreparedStatement ps = conn.prepareStatement(sqlInsert);
-            ps.setString(1, idPermintaan.getText());
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, idPermintaan);
             ps.setString(2, idBarang.getSelectedItem().toString());
             ps.setString(3, namaBarang.getText());
             ps.setString(4, jumlah.getText());
@@ -503,7 +556,7 @@ public class permintaanBarang extends javax.swing.JFrame {
             ps.executeUpdate();
 
             String[] data = {
-                idPermintaan.getText(),
+                idPermintaan,
                 idBarang.getSelectedItem().toString(),
                 namaBarang.getText(),
                 jumlah.getText(),
@@ -564,7 +617,7 @@ public class permintaanBarang extends javax.swing.JFrame {
     private javax.swing.JLabel foto;
     private javax.swing.JComboBox<String> idBarang;
     private javax.swing.JTextField idKaryawan;
-    private javax.swing.JTextField idPermintaan;
+    private javax.swing.JTextField idTransaksi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

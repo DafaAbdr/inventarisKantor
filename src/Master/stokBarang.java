@@ -114,7 +114,7 @@ public class stokBarang extends javax.swing.JFrame {
     }
     
     protected void dataTable(){
-        Object[] baris = {"id_barang", "nama_barang", "jumlah"};
+        Object[] baris = {"id_barang", "nama_barang", "stok_barang"};
         tabmode = new DefaultTableModel(null, baris);
         tableStokBarang.setModel(tabmode);
         String sql = "SELECT * FROM stokBarang";
@@ -124,7 +124,7 @@ public class stokBarang extends javax.swing.JFrame {
             while(hasil.next()){
                 String a = hasil.getString("id_barang");
                 String b = hasil.getString("nama_barang");
-                String c = hasil.getString("jumlah");
+                String c = hasil.getString("stok_barang");
                 
                 String[] data = {a, b, c};
                 tabmode.addRow(data);
@@ -476,7 +476,7 @@ public class stokBarang extends javax.swing.JFrame {
         String sql = "SELECT * FROM stokBarang WHERE " +
                      "id_barang LIKE ? OR " +
                      "nama_barang LIKE ? OR " +
-                     "jumlah LIKE ? ";
+                     "stok_barang LIKE ? ";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -489,7 +489,7 @@ public class stokBarang extends javax.swing.JFrame {
             while (hasil.next()) {
                 String a = hasil.getString("id_barang");
                 String b = hasil.getString("nama_barang");
-                String c = hasil.getString("jumlah");
+                String c = hasil.getString("stok_barang");
                 
                 String[] data = {a, b, c};
                 tabmode.addRow(data);
@@ -501,7 +501,7 @@ public class stokBarang extends javax.swing.JFrame {
 
     private void bEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditActionPerformed
         try {
-            String sql = "UPDATE stokBarang SET `jumlah`=? WHERE `id_barang`=?";
+            String sql = "UPDATE stokBarang SET `stok_barang`=? WHERE `id_barang`=?";
             
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, jumlah.getText());
@@ -516,11 +516,11 @@ public class stokBarang extends javax.swing.JFrame {
     }//GEN-LAST:event_bEditActionPerformed
 
     private void bTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTambahActionPerformed
-        Object[] baris = {"id_barang", "nama_barang", "jumlah"};
+        Object[] baris = {"id_barang", "nama_barang", "stok_barang"};
         tabmode = new DefaultTableModel(null, baris);
         tableStokBarang.setModel(tabmode);
 
-        String sql = "INSERT INTO stokBarang (id_barang, nama_barang, jumlah VALUES (?, ?, ?)";
+        String sql = "INSERT INTO stokBarang (id_barang, nama_barang, stok_barang) VALUES (?, ?, ?)";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);

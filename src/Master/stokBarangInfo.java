@@ -117,7 +117,7 @@ public class stokBarangInfo extends javax.swing.JFrame {
     }
     
     protected void dataTable(){
-        Object[] baris = {"id_stok", "id_barang", "nama_barang", "tanggal", "jumlah", "satuan"};
+        Object[] baris = {"id_stok", "id_barang", "nama_barang", "tanggal", "stok_barang", "satuan"};
         tabmode = new DefaultTableModel(null, baris);
         tableStokBarang.setModel(tabmode);
         String sql = "SELECT * FROM stokBarangInfo";
@@ -129,7 +129,7 @@ public class stokBarangInfo extends javax.swing.JFrame {
                 String b = hasil.getString("id_barang");
                 String c = hasil.getString("nama_barang");
                 String d = hasil.getString("tanggal");
-                String e = hasil.getString("jumlah");
+                String e = hasil.getString("stok_barang");
                 String f = hasil.getString("satuan");
                 
                 String[] data = {a, b, c, d, e, f};
@@ -611,11 +611,11 @@ public class stokBarangInfo extends javax.swing.JFrame {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String tanggal2 = sdf.format(tanggal.getDate());
         
-        Object[] baris = {"id_stok", "id_barang", "nama_barang", "tanggal", "jumlah", "satuan"};
+        Object[] baris = {"id_stok", "id_barang", "nama_barang", "tanggal", "stok_barang", "satuan"};
         tabmode = new DefaultTableModel(null, baris);
         tableStokBarang.setModel(tabmode);
 
-        String sql = "INSERT INTO stokBarangInfo (id_stok, id_barang, nama_barang, tanggal, jumlah, satuan) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO stokBarangInfo (id_stok, id_barang, nama_barang, tanggal, stok_barang, satuan) VALUES (?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);

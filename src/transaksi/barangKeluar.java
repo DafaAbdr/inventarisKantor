@@ -278,9 +278,9 @@ public class barangKeluar extends javax.swing.JFrame {
                                     .addComponent(jLabel8)
                                     .addComponent(jLabel7))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(idPermintaan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(namaKaryawan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(namaKaryawan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(idPermintaan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -334,37 +334,7 @@ public class barangKeluar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTambahActionPerformed
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String tanggal2 = sdf.format(tanggal.getDate());
-
-        tabmode = (DefaultTableModel) tableTransaksi.getModel();
-
-        String sqlInsert = "INSERT INTO databarang (id_permintaan, id_barang, nama_barang, jumlah_barang, tanggal) VALUES (?, ?, ?, ?, ?)";
-
-        try {
-            PreparedStatement ps = conn.prepareStatement(sqlInsert);
-            ps.setString(1, idPermintaan.getText());
-            ps.setString(2, idBarang.getSelectedItem().toString());
-            ps.setString(3, namaBarang.getText());
-            ps.setString(4, jumlah.getText());
-            ps.setString(5, tanggal2);
-
-            ps.executeUpdate();
-
-            String[] data = {
-                idPermintaan.getText(),
-                idBarang.getSelectedItem().toString(),
-                namaBarang.getText(),
-                jumlah.getText(),
-                tanggal2
-            };
-            tabmode.insertRow(0, data);
-
-            kosong();
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Gagal Menyimpan Data Barang: " + e.getMessage());
-        }
+        
     }//GEN-LAST:event_bTambahActionPerformed
 
     private void bCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCetakActionPerformed
@@ -380,17 +350,7 @@ public class barangKeluar extends javax.swing.JFrame {
     }//GEN-LAST:event_bSimpanActionPerformed
 
     private void bKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKeluarActionPerformed
-        int konfirmasi = JOptionPane.showConfirmDialog (
-            this,
-            "Apakah Anda yakin ingin keluar?",
-            "Konfirmasi Keluar",
-            JOptionPane.YES_NO_OPTION,
-            JOptionPane.QUESTION_MESSAGE
-        );
 
-        if (konfirmasi == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
     }//GEN-LAST:event_bKeluarActionPerformed
 
     /**
