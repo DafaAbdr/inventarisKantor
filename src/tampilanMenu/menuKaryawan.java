@@ -48,7 +48,7 @@ public class menuKaryawan extends javax.swing.JFrame {
         jButton1.setMinimumSize(new java.awt.Dimension(200, 100));
         jButton1.setPreferredSize(new java.awt.Dimension(200, 100));
 
-        jButton2.setText("Item Incoming");
+        jButton2.setText("Item Return");
         jButton2.setMaximumSize(new java.awt.Dimension(200, 100));
         jButton2.setMinimumSize(new java.awt.Dimension(200, 100));
         jButton2.setPreferredSize(new java.awt.Dimension(200, 100));
@@ -58,7 +58,7 @@ public class menuKaryawan extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Item Outgoing");
+        jButton3.setText("Item Request");
         jButton3.setMaximumSize(new java.awt.Dimension(200, 100));
         jButton3.setMinimumSize(new java.awt.Dimension(200, 100));
         jButton3.setPreferredSize(new java.awt.Dimension(200, 100));
