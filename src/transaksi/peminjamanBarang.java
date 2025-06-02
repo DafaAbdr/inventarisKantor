@@ -49,7 +49,7 @@ public class peminjamanBarang extends javax.swing.JFrame {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jButton1 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        bKembali = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -101,13 +101,13 @@ public class peminjamanBarang extends javax.swing.JFrame {
             }
         });
 
-        jButton10.setBackground(new java.awt.Color(41, 76, 55));
-        jButton10.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jButton10.setText("Clear");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        bKembali.setBackground(new java.awt.Color(41, 76, 55));
+        bKembali.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        bKembali.setForeground(new java.awt.Color(255, 255, 255));
+        bKembali.setText("Back");
+        bKembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                bKembaliActionPerformed(evt);
             }
         });
 
@@ -229,7 +229,7 @@ public class peminjamanBarang extends javax.swing.JFrame {
                         .addGap(46, 46, 46)
                         .addComponent(jButton7)
                         .addGap(46, 46, 46)
-                        .addComponent(jButton10)
+                        .addComponent(bKembali)
                         .addGap(46, 46, 46)
                         .addComponent(bExit)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
@@ -311,7 +311,7 @@ public class peminjamanBarang extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton7)
                             .addComponent(jButton11)))
-                    .addComponent(jButton10)
+                    .addComponent(bKembali)
                     .addComponent(bExit))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
@@ -339,9 +339,9 @@ public class peminjamanBarang extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void bKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKembaliActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_bKembaliActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
@@ -388,8 +388,8 @@ public class peminjamanBarang extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bExit;
+    private javax.swing.JButton bKembali;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton7;
     private com.toedter.calendar.JDateChooser jDateChooser1;

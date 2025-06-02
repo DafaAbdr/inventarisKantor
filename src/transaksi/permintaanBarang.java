@@ -207,7 +207,6 @@ public class permintaanBarang extends javax.swing.JFrame {
         jumlah = new javax.swing.JTextField();
         tanggal = new com.toedter.calendar.JDateChooser();
         bCetak = new javax.swing.JButton();
-        bHapus = new javax.swing.JButton();
         bSimpan = new javax.swing.JButton();
         foto = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -259,16 +258,6 @@ public class permintaanBarang extends javax.swing.JFrame {
         bCetak.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bCetakActionPerformed(evt);
-            }
-        });
-
-        bHapus.setBackground(new java.awt.Color(41, 76, 55));
-        bHapus.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        bHapus.setForeground(new java.awt.Color(255, 255, 255));
-        bHapus.setText("Clear");
-        bHapus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bHapusActionPerformed(evt);
             }
         });
 
@@ -392,7 +381,7 @@ public class permintaanBarang extends javax.swing.JFrame {
         bKembali.setBackground(new java.awt.Color(41, 76, 55));
         bKembali.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bKembali.setForeground(new java.awt.Color(255, 255, 255));
-        bKembali.setText("Kembali");
+        bKembali.setText("Back");
         bKembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bKembaliActionPerformed(evt);
@@ -422,13 +411,11 @@ public class permintaanBarang extends javax.swing.JFrame {
                         .addComponent(bSimpan)
                         .addGap(46, 46, 46)
                         .addComponent(bCetak)
-                        .addGap(46, 46, 46)
-                        .addComponent(bHapus)
-                        .addGap(18, 18, 18)
+                        .addGap(36, 36, 36)
                         .addComponent(bKeluar)
-                        .addGap(18, 18, 18)
+                        .addGap(40, 40, 40)
                         .addComponent(bKembali)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -503,9 +490,7 @@ public class permintaanBarang extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bCetak)
                     .addComponent(bSimpan)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(bHapus)
-                        .addComponent(bKeluar))
+                    .addComponent(bKeluar)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(bTambah)
                         .addComponent(bKembali)))
@@ -565,10 +550,6 @@ public class permintaanBarang extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Gagal menyimpan data transaksi: " + ex.getMessage());
         }
     }//GEN-LAST:event_bSimpanActionPerformed
-
-    private void bHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHapusActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bHapusActionPerformed
 
     private void bCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCetakActionPerformed
         // TODO add your handling code here:
@@ -657,10 +638,13 @@ public class permintaanBarang extends javax.swing.JFrame {
 
     private void bKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKembaliActionPerformed
         if ("admin".equalsIgnoreCase(hakAkses)) {
+            this.dispose();
             new tampilanMenu.menuAdmin().setVisible(true);
         } else if ("karyawan".equalsIgnoreCase(hakAkses)) {
+            this.dispose();
             new tampilanMenu.menuKaryawan().setVisible(true);
         } else if ("karyawan inventaris".equalsIgnoreCase(hakAkses)) {
+            this.dispose();
             new tampilanMenu.menuInventaris().setVisible(true);
         } else {
             JOptionPane.showMessageDialog(null, "Hak akses tidak dikenal!");
@@ -705,7 +689,6 @@ public class permintaanBarang extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCetak;
-    private javax.swing.JButton bHapus;
     private javax.swing.JButton bKeluar;
     private javax.swing.JButton bKembali;
     private javax.swing.JButton bSimpan;

@@ -43,36 +43,35 @@ public class menuAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         kGradientPanel1 = new keeptoo.KGradientPanel();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
+        bDataAkun = new javax.swing.JButton();
+        bDataDivisi = new javax.swing.JButton();
+        bDataKaryawan = new javax.swing.JButton();
+        bStokBarangInfo = new javax.swing.JButton();
+        bDataBarang = new javax.swing.JButton();
+        bDataPengembalianBarang = new javax.swing.JButton();
+        dataPengembalianInfo = new javax.swing.JButton();
+        bStokBarang = new javax.swing.JButton();
+        bDataJabatan = new javax.swing.JButton();
+        bDataTransaksi = new javax.swing.JButton();
+        bDataTransaksiInfo = new javax.swing.JButton();
         jButton28 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
+        dataAkun = new javax.swing.JMenuItem();
+        dataDivisi = new javax.swing.JMenuItem();
+        dataKaryawan = new javax.swing.JMenuItem();
+        stokBarangInfo = new javax.swing.JMenuItem();
+        dataBarang = new javax.swing.JMenuItem();
+        dataPengembalianBarang = new javax.swing.JMenuItem();
+        stokBarang = new javax.swing.JMenuItem();
+        dataJabatan = new javax.swing.JMenuItem();
+        dataTransaksi = new javax.swing.JMenuItem();
+        dataTransaksiInfo = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem13 = new javax.swing.JMenuItem();
-        jMenuItem14 = new javax.swing.JMenuItem();
+        peminjamanBarang = new javax.swing.JMenuItem();
+        barangMasuk = new javax.swing.JMenuItem();
+        barangKeluar = new javax.swing.JMenuItem();
+        pengembalianBarang = new javax.swing.JMenuItem();
         permintaanBarang = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -86,138 +85,157 @@ public class menuAdmin extends javax.swing.JFrame {
         kGradientPanel1.setMaximumSize(new java.awt.Dimension(680, 583));
         kGradientPanel1.setMinimumSize(new java.awt.Dimension(680, 583));
 
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/acc.png"))); // NOI18N
-        jButton14.setText("Account Data");
-        jButton14.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
-        jButton14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton14.setMaximumSize(new java.awt.Dimension(200, 100));
-        jButton14.setMinimumSize(new java.awt.Dimension(200, 100));
-        jButton14.setPreferredSize(new java.awt.Dimension(200, 100));
-        jButton14.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
+        bDataAkun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/acc.png"))); // NOI18N
+        bDataAkun.setText("Account Data");
+        bDataAkun.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
+        bDataAkun.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bDataAkun.setMaximumSize(new java.awt.Dimension(200, 100));
+        bDataAkun.setMinimumSize(new java.awt.Dimension(200, 100));
+        bDataAkun.setPreferredSize(new java.awt.Dimension(200, 100));
+        bDataAkun.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bDataAkun.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
+                bDataAkunActionPerformed(evt);
             }
         });
 
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/division.png"))); // NOI18N
-        jButton15.setText("Division Data");
-        jButton15.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
-        jButton15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton15.setMaximumSize(new java.awt.Dimension(200, 100));
-        jButton15.setMinimumSize(new java.awt.Dimension(200, 100));
-        jButton15.setPreferredSize(new java.awt.Dimension(200, 100));
-        jButton15.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/employee.png"))); // NOI18N
-        jButton16.setText("Employee Data");
-        jButton16.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
-        jButton16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton16.setMaximumSize(new java.awt.Dimension(200, 100));
-        jButton16.setMinimumSize(new java.awt.Dimension(200, 100));
-        jButton16.setPreferredSize(new java.awt.Dimension(200, 100));
-        jButton16.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/invendetails.png"))); // NOI18N
-        jButton17.setText("Inventory Details");
-        jButton17.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
-        jButton17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton17.setMaximumSize(new java.awt.Dimension(200, 100));
-        jButton17.setMinimumSize(new java.awt.Dimension(200, 100));
-        jButton17.setPreferredSize(new java.awt.Dimension(200, 100));
-        jButton17.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
+        bDataDivisi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/division.png"))); // NOI18N
+        bDataDivisi.setText("Division Data");
+        bDataDivisi.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
+        bDataDivisi.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bDataDivisi.setMaximumSize(new java.awt.Dimension(200, 100));
+        bDataDivisi.setMinimumSize(new java.awt.Dimension(200, 100));
+        bDataDivisi.setPreferredSize(new java.awt.Dimension(200, 100));
+        bDataDivisi.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bDataDivisi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
+                bDataDivisiActionPerformed(evt);
             }
         });
 
-        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/item.png"))); // NOI18N
-        jButton18.setText("Item Data");
-        jButton18.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
-        jButton18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton18.setMaximumSize(new java.awt.Dimension(200, 100));
-        jButton18.setMinimumSize(new java.awt.Dimension(200, 100));
-        jButton18.setPreferredSize(new java.awt.Dimension(200, 100));
-        jButton18.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/return.png"))); // NOI18N
-        jButton19.setText("Item Return Data");
-        jButton19.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
-        jButton19.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton19.setMaximumSize(new java.awt.Dimension(200, 100));
-        jButton19.setMinimumSize(new java.awt.Dimension(200, 100));
-        jButton19.setPreferredSize(new java.awt.Dimension(200, 100));
-        jButton19.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
+        bDataKaryawan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/employee.png"))); // NOI18N
+        bDataKaryawan.setText("Employee Data");
+        bDataKaryawan.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
+        bDataKaryawan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bDataKaryawan.setMaximumSize(new java.awt.Dimension(200, 100));
+        bDataKaryawan.setMinimumSize(new java.awt.Dimension(200, 100));
+        bDataKaryawan.setPreferredSize(new java.awt.Dimension(200, 100));
+        bDataKaryawan.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bDataKaryawan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
+                bDataKaryawanActionPerformed(evt);
             }
         });
 
-        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/returninfo.png"))); // NOI18N
-        jButton20.setText("Item Return Info");
-        jButton20.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
-        jButton20.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton20.setMaximumSize(new java.awt.Dimension(200, 100));
-        jButton20.setMinimumSize(new java.awt.Dimension(200, 100));
-        jButton20.setPreferredSize(new java.awt.Dimension(200, 100));
-        jButton20.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
+        bStokBarangInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/invendetails.png"))); // NOI18N
+        bStokBarangInfo.setText("Inventory Details");
+        bStokBarangInfo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
+        bStokBarangInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bStokBarangInfo.setMaximumSize(new java.awt.Dimension(200, 100));
+        bStokBarangInfo.setMinimumSize(new java.awt.Dimension(200, 100));
+        bStokBarangInfo.setPreferredSize(new java.awt.Dimension(200, 100));
+        bStokBarangInfo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bStokBarangInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
+                bStokBarangInfoActionPerformed(evt);
             }
         });
 
-        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/stockinven.png"))); // NOI18N
-        jButton21.setText("Stock Inventory");
-        jButton21.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
-        jButton21.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton21.setMaximumSize(new java.awt.Dimension(200, 100));
-        jButton21.setMinimumSize(new java.awt.Dimension(200, 100));
-        jButton21.setPreferredSize(new java.awt.Dimension(200, 100));
-        jButton21.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton21.addActionListener(new java.awt.event.ActionListener() {
+        bDataBarang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/item.png"))); // NOI18N
+        bDataBarang.setText("Item Data");
+        bDataBarang.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
+        bDataBarang.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bDataBarang.setMaximumSize(new java.awt.Dimension(200, 100));
+        bDataBarang.setMinimumSize(new java.awt.Dimension(200, 100));
+        bDataBarang.setPreferredSize(new java.awt.Dimension(200, 100));
+        bDataBarang.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bDataBarang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton21ActionPerformed(evt);
+                bDataBarangActionPerformed(evt);
             }
         });
 
-        jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/position.png"))); // NOI18N
-        jButton22.setText("Position Data");
-        jButton22.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
-        jButton22.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton22.setMaximumSize(new java.awt.Dimension(200, 100));
-        jButton22.setMinimumSize(new java.awt.Dimension(200, 100));
-        jButton22.setPreferredSize(new java.awt.Dimension(200, 100));
-        jButton22.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/transaction.png"))); // NOI18N
-        jButton23.setText("Transaction Data");
-        jButton23.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
-        jButton23.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton23.setMaximumSize(new java.awt.Dimension(200, 100));
-        jButton23.setMinimumSize(new java.awt.Dimension(200, 100));
-        jButton23.setPreferredSize(new java.awt.Dimension(200, 100));
-        jButton23.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        jButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/transactioninfo.png"))); // NOI18N
-        jButton26.setText("Transaction Info");
-        jButton26.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
-        jButton26.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton26.setMaximumSize(new java.awt.Dimension(200, 100));
-        jButton26.setMinimumSize(new java.awt.Dimension(200, 100));
-        jButton26.setPreferredSize(new java.awt.Dimension(200, 100));
-        jButton26.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        jButton27.setBackground(new java.awt.Color(41, 76, 55));
-        jButton27.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        jButton27.setForeground(new java.awt.Color(255, 255, 255));
-        jButton27.setText("BACK");
-        jButton27.setPreferredSize(new java.awt.Dimension(80, 30));
-        jButton27.addActionListener(new java.awt.event.ActionListener() {
+        bDataPengembalianBarang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/return.png"))); // NOI18N
+        bDataPengembalianBarang.setText("Item Return Data");
+        bDataPengembalianBarang.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
+        bDataPengembalianBarang.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bDataPengembalianBarang.setMaximumSize(new java.awt.Dimension(200, 100));
+        bDataPengembalianBarang.setMinimumSize(new java.awt.Dimension(200, 100));
+        bDataPengembalianBarang.setPreferredSize(new java.awt.Dimension(200, 100));
+        bDataPengembalianBarang.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bDataPengembalianBarang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton27ActionPerformed(evt);
+                bDataPengembalianBarangActionPerformed(evt);
+            }
+        });
+
+        dataPengembalianInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/returninfo.png"))); // NOI18N
+        dataPengembalianInfo.setText("Item Return Info");
+        dataPengembalianInfo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
+        dataPengembalianInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        dataPengembalianInfo.setMaximumSize(new java.awt.Dimension(200, 100));
+        dataPengembalianInfo.setMinimumSize(new java.awt.Dimension(200, 100));
+        dataPengembalianInfo.setPreferredSize(new java.awt.Dimension(200, 100));
+        dataPengembalianInfo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        dataPengembalianInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dataPengembalianInfoActionPerformed(evt);
+            }
+        });
+
+        bStokBarang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/stockinven.png"))); // NOI18N
+        bStokBarang.setText("Stock Inventory");
+        bStokBarang.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
+        bStokBarang.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bStokBarang.setMaximumSize(new java.awt.Dimension(200, 100));
+        bStokBarang.setMinimumSize(new java.awt.Dimension(200, 100));
+        bStokBarang.setPreferredSize(new java.awt.Dimension(200, 100));
+        bStokBarang.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bStokBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bStokBarangActionPerformed(evt);
+            }
+        });
+
+        bDataJabatan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/position.png"))); // NOI18N
+        bDataJabatan.setText("Position Data");
+        bDataJabatan.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
+        bDataJabatan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bDataJabatan.setMaximumSize(new java.awt.Dimension(200, 100));
+        bDataJabatan.setMinimumSize(new java.awt.Dimension(200, 100));
+        bDataJabatan.setPreferredSize(new java.awt.Dimension(200, 100));
+        bDataJabatan.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bDataJabatan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDataJabatanActionPerformed(evt);
+            }
+        });
+
+        bDataTransaksi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/transaction.png"))); // NOI18N
+        bDataTransaksi.setText("Transaction Data");
+        bDataTransaksi.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
+        bDataTransaksi.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bDataTransaksi.setMaximumSize(new java.awt.Dimension(200, 100));
+        bDataTransaksi.setMinimumSize(new java.awt.Dimension(200, 100));
+        bDataTransaksi.setPreferredSize(new java.awt.Dimension(200, 100));
+        bDataTransaksi.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bDataTransaksi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDataTransaksiActionPerformed(evt);
+            }
+        });
+
+        bDataTransaksiInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/transactioninfo.png"))); // NOI18N
+        bDataTransaksiInfo.setText("Transaction Info");
+        bDataTransaksiInfo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55), new java.awt.Color(41, 76, 55)));
+        bDataTransaksiInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bDataTransaksiInfo.setMaximumSize(new java.awt.Dimension(200, 100));
+        bDataTransaksiInfo.setMinimumSize(new java.awt.Dimension(200, 100));
+        bDataTransaksiInfo.setPreferredSize(new java.awt.Dimension(200, 100));
+        bDataTransaksiInfo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bDataTransaksiInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDataTransaksiInfoActionPerformed(evt);
             }
         });
 
@@ -242,32 +260,31 @@ public class menuAdmin extends javax.swing.JFrame {
                         .addGap(22, 22, 22)
                         .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bStokBarangInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bDataBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(bDataPengembalianBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bDataAkun, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bDataDivisi, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(bDataKaryawan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(dataPengembalianInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bStokBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(bDataJabatan, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
                         .addGap(120, 120, 120)
-                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(bDataTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(bDataTransaksiInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                        .addGap(247, 247, 247)
+                        .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(22, 22, 22))
         );
         kGradientPanel1Layout.setVerticalGroup(
@@ -275,78 +292,111 @@ public class menuAdmin extends javax.swing.JFrame {
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bDataAkun, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bDataDivisi, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bDataKaryawan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bStokBarangInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bDataBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bDataPengembalianBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dataPengembalianInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bStokBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bDataJabatan, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(43, Short.MAX_VALUE))
+                    .addComponent(bDataTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bDataTransaksiInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         jMenuBar1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jMenu1.setText("Master");
 
-        jMenuItem1.setText("Account Data");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        dataAkun.setText("Account Data");
+        dataAkun.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                dataAkunActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu1.add(dataAkun);
 
-        jMenuItem2.setText("Division Data");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        dataDivisi.setText("Division Data");
+        dataDivisi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                dataDivisiActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        jMenu1.add(dataDivisi);
 
-        jMenuItem3.setText("Employee Data");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        dataKaryawan.setText("Employee Data");
+        dataKaryawan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                dataKaryawanActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        jMenu1.add(dataKaryawan);
 
-        jMenuItem4.setText("Inventory Details");
-        jMenu1.add(jMenuItem4);
+        stokBarangInfo.setText("Inventory Details");
+        stokBarangInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stokBarangInfoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(stokBarangInfo);
 
-        jMenuItem5.setText("Item Data");
-        jMenu1.add(jMenuItem5);
+        dataBarang.setText("Item Data");
+        dataBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dataBarangActionPerformed(evt);
+            }
+        });
+        jMenu1.add(dataBarang);
 
-        jMenuItem6.setText("Item Return Data");
-        jMenu1.add(jMenuItem6);
+        dataPengembalianBarang.setText("Item Return Data");
+        dataPengembalianBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dataPengembalianBarangActionPerformed(evt);
+            }
+        });
+        jMenu1.add(dataPengembalianBarang);
 
-        jMenuItem7.setText("Stock Inventory");
-        jMenu1.add(jMenuItem7);
+        stokBarang.setText("Stock Inventory");
+        stokBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stokBarangActionPerformed(evt);
+            }
+        });
+        jMenu1.add(stokBarang);
 
-        jMenuItem8.setText("Position Data");
-        jMenu1.add(jMenuItem8);
+        dataJabatan.setText("Position Data");
+        dataJabatan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dataJabatanActionPerformed(evt);
+            }
+        });
+        jMenu1.add(dataJabatan);
 
-        jMenuItem9.setText("Transaction Data");
-        jMenu1.add(jMenuItem9);
+        dataTransaksi.setText("Transaction Data");
+        dataTransaksi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dataTransaksiActionPerformed(evt);
+            }
+        });
+        jMenu1.add(dataTransaksi);
 
-        jMenuItem10.setText("Transaction Info");
-        jMenu1.add(jMenuItem10);
+        dataTransaksiInfo.setText("Transaction Info");
+        dataTransaksiInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dataTransaksiInfoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(dataTransaksiInfo);
 
         jMenuBar1.add(jMenu1);
 
@@ -357,17 +407,37 @@ public class menuAdmin extends javax.swing.JFrame {
             }
         });
 
-        jMenuItem11.setText("Item Borrowing");
-        jMenu2.add(jMenuItem11);
+        peminjamanBarang.setText("Item Borrowing");
+        peminjamanBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                peminjamanBarangActionPerformed(evt);
+            }
+        });
+        jMenu2.add(peminjamanBarang);
 
-        jMenuItem12.setText("Item Incoming");
-        jMenu2.add(jMenuItem12);
+        barangMasuk.setText("Item Incoming");
+        barangMasuk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                barangMasukActionPerformed(evt);
+            }
+        });
+        jMenu2.add(barangMasuk);
 
-        jMenuItem13.setText("Item Outgoing");
-        jMenu2.add(jMenuItem13);
+        barangKeluar.setText("Item Outgoing");
+        barangKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                barangKeluarActionPerformed(evt);
+            }
+        });
+        jMenu2.add(barangKeluar);
 
-        jMenuItem14.setText("Item Return");
-        jMenu2.add(jMenuItem14);
+        pengembalianBarang.setText("Item Return");
+        pengembalianBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pengembalianBarangActionPerformed(evt);
+            }
+        });
+        jMenu2.add(pengembalianBarang);
 
         permintaanBarang.setText("Item Request");
         permintaanBarang.addActionListener(new java.awt.event.ActionListener() {
@@ -398,17 +468,20 @@ public class menuAdmin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    private void dataDivisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataDivisiActionPerformed
+        this.dispose();
+        new Master.dataDivisi().setVisible(true);
+    }//GEN-LAST:event_dataDivisiActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    private void dataKaryawanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataKaryawanActionPerformed
+        this.dispose();
+        new Master.dataKaryawan().setVisible(true);
+    }//GEN-LAST:event_dataKaryawanActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    private void dataAkunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataAkunActionPerformed
+        this.dispose();
+        new Master.dataAkun().setVisible(true);
+    }//GEN-LAST:event_dataAkunActionPerformed
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
         int konfirmasi = JOptionPane.showConfirmDialog (
@@ -424,42 +497,129 @@ public class menuAdmin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton28ActionPerformed
 
-    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton27ActionPerformed
+    private void dataPengembalianInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataPengembalianInfoActionPerformed
+        this.dispose();
+        new Master.dataPengembalianInfo().setVisible(true);
+    }//GEN-LAST:event_dataPengembalianInfoActionPerformed
 
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton20ActionPerformed
+    private void bStokBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStokBarangActionPerformed
+        this.dispose();
+        new Master.stokBarang().setVisible(true);
+    }//GEN-LAST:event_bStokBarangActionPerformed
 
-    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton21ActionPerformed
+    private void bDataPengembalianBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDataPengembalianBarangActionPerformed
+        this.dispose();
+        new Master.dataPengembalianBarang().setVisible(true);
+    }//GEN-LAST:event_bDataPengembalianBarangActionPerformed
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton19ActionPerformed
+    private void bStokBarangInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStokBarangInfoActionPerformed
+        this.dispose();
+        new Master.stokBarang().setVisible(true);
+    }//GEN-LAST:event_bStokBarangInfoActionPerformed
 
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton17ActionPerformed
-
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
+    private void bDataAkunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDataAkunActionPerformed
+        this.dispose();
+        new Master.dataAkun().setVisible(true);
+    }//GEN-LAST:event_bDataAkunActionPerformed
 
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
         
     }//GEN-LAST:event_jMenu2ActionPerformed
 
     private void permintaanBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_permintaanBarangActionPerformed
-        new transaksi.permintaanBarang().setVisible(true);
         this.dispose();
+        new transaksi.permintaanBarang().setVisible(true);
     }//GEN-LAST:event_permintaanBarangActionPerformed
+
+    private void stokBarangInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stokBarangInfoActionPerformed
+        this.dispose();
+        new Master.stokBarangInfo().setVisible(true);
+    }//GEN-LAST:event_stokBarangInfoActionPerformed
+
+    private void dataBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataBarangActionPerformed
+        this.dispose();
+        new Master.dataBarang().setVisible(true);
+    }//GEN-LAST:event_dataBarangActionPerformed
+
+    private void dataPengembalianBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataPengembalianBarangActionPerformed
+        this.dispose();
+        new Master.dataPengembalianBarang().setVisible(true);
+    }//GEN-LAST:event_dataPengembalianBarangActionPerformed
+
+    private void stokBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stokBarangActionPerformed
+        this.dispose();
+        new Master.stokBarang().setVisible(true);
+    }//GEN-LAST:event_stokBarangActionPerformed
+
+    private void dataJabatanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataJabatanActionPerformed
+        this.dispose();
+        new Master.dataJabatan().setVisible(true);
+    }//GEN-LAST:event_dataJabatanActionPerformed
+
+    private void dataTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataTransaksiActionPerformed
+        this.dispose();
+        new Master.dataTransaksi().setVisible(true);
+    }//GEN-LAST:event_dataTransaksiActionPerformed
+
+    private void dataTransaksiInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataTransaksiInfoActionPerformed
+        this.dispose();
+        new Master.dataTransaksiInfo().setVisible(true);
+    }//GEN-LAST:event_dataTransaksiInfoActionPerformed
+
+    private void peminjamanBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_peminjamanBarangActionPerformed
+        this.dispose();
+        new transaksi.peminjamanBarang().setVisible(true);
+    }//GEN-LAST:event_peminjamanBarangActionPerformed
+
+    private void barangMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barangMasukActionPerformed
+        this.dispose();
+        new transaksi.barangMasuk().setVisible(true);
+    }//GEN-LAST:event_barangMasukActionPerformed
+
+    private void barangKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barangKeluarActionPerformed
+        this.dispose();
+        new transaksi.barangKeluar().setVisible(true);
+    }//GEN-LAST:event_barangKeluarActionPerformed
+
+    private void pengembalianBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pengembalianBarangActionPerformed
+        this.dispose();
+        new transaksi.pengembalianBarang().setVisible(true);
+    }//GEN-LAST:event_pengembalianBarangActionPerformed
+
+    private void bDataDivisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDataDivisiActionPerformed
+        this.dispose();
+        new Master.dataDivisi().setVisible(true);
+    }//GEN-LAST:event_bDataDivisiActionPerformed
+
+    private void bDataKaryawanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDataKaryawanActionPerformed
+        this.dispose();
+        new Master.dataKaryawan().setVisible(true);
+    }//GEN-LAST:event_bDataKaryawanActionPerformed
+
+    private void bDataBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDataBarangActionPerformed
+        this.dispose();
+        new Master.dataBarang().setVisible(true);
+    }//GEN-LAST:event_bDataBarangActionPerformed
+
+    private void bDataJabatanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDataJabatanActionPerformed
+        this.dispose();
+        new Master.dataJabatan().setVisible(true);
+    }//GEN-LAST:event_bDataJabatanActionPerformed
+
+    private void bDataTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDataTransaksiActionPerformed
+        this.dispose();
+        new Master.dataTransaksi().setVisible(true);
+    }//GEN-LAST:event_bDataTransaksiActionPerformed
+
+    private void bDataTransaksiInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDataTransaksiInfoActionPerformed
+        this.dispose();
+        new Master.dataTransaksiInfo().setVisible(true);
+    }//GEN-LAST:event_bDataTransaksiInfoActionPerformed
 
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -496,37 +656,36 @@ public class menuAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
+    private javax.swing.JButton bDataAkun;
+    private javax.swing.JButton bDataBarang;
+    private javax.swing.JButton bDataDivisi;
+    private javax.swing.JButton bDataJabatan;
+    private javax.swing.JButton bDataKaryawan;
+    private javax.swing.JButton bDataPengembalianBarang;
+    private javax.swing.JButton bDataTransaksi;
+    private javax.swing.JButton bDataTransaksiInfo;
+    private javax.swing.JButton bStokBarang;
+    private javax.swing.JButton bStokBarangInfo;
+    private javax.swing.JMenuItem barangKeluar;
+    private javax.swing.JMenuItem barangMasuk;
+    private javax.swing.JMenuItem dataAkun;
+    private javax.swing.JMenuItem dataBarang;
+    private javax.swing.JMenuItem dataDivisi;
+    private javax.swing.JMenuItem dataJabatan;
+    private javax.swing.JMenuItem dataKaryawan;
+    private javax.swing.JMenuItem dataPengembalianBarang;
+    private javax.swing.JButton dataPengembalianInfo;
+    private javax.swing.JMenuItem dataTransaksi;
+    private javax.swing.JMenuItem dataTransaksiInfo;
     private javax.swing.JButton jButton28;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JMenuItem peminjamanBarang;
+    private javax.swing.JMenuItem pengembalianBarang;
     private javax.swing.JMenuItem permintaanBarang;
+    private javax.swing.JMenuItem stokBarang;
+    private javax.swing.JMenuItem stokBarangInfo;
     // End of variables declaration//GEN-END:variables
 }
