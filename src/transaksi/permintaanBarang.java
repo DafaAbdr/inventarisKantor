@@ -73,7 +73,7 @@ public class permintaanBarang extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Gagal generate ID Permintaan: " + e.getMessage());
     }
     return idBaru;
-}
+    }
 
     
     protected void dataTableBarang(){
@@ -633,7 +633,6 @@ public class permintaanBarang extends javax.swing.JFrame {
     } catch (Exception e) {
         JOptionPane.showMessageDialog(null, "Gagal Menyimpan & Update Stok: " + e.getMessage());
     }
-
     }//GEN-LAST:event_bTambahActionPerformed
 
     private void bKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKembaliActionPerformed
