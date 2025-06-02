@@ -4,6 +4,8 @@
  */
 package transaksi;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author ALKHOIR
@@ -15,6 +17,10 @@ public class pengembalianBarang extends javax.swing.JFrame {
      */
     public pengembalianBarang() {
         initComponents();
+        setTitle("Inventaris Perkantoran");
+        
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
+        setIconImage(icon.getImage());
     }
 
     /**
@@ -61,7 +67,6 @@ public class pengembalianBarang extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -366,7 +371,7 @@ public class pengembalianBarang extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 905, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

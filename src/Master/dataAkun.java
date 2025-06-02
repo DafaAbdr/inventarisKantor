@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import koneksi.koneksi;
@@ -29,6 +30,10 @@ public class dataAkun extends javax.swing.JFrame {
         initComponents();
         isiComboBoxIdKaryawan();
         dataTable();
+        setTitle("Inventaris Perkantoran");
+        
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
+        setIconImage(icon.getImage());
     }
     
     protected void kosong(){
@@ -135,7 +140,6 @@ public class dataAkun extends javax.swing.JFrame {
         bHapus2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));

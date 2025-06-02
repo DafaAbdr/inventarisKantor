@@ -4,6 +4,8 @@
  */
 package transaksi;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author dafaa
@@ -15,6 +17,10 @@ public class peminjamanBarang extends javax.swing.JFrame {
      */
     public peminjamanBarang() {
         initComponents();
+        setTitle("Inventaris Perkantoran");
+        
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
+        setIconImage(icon.getImage());
     }
 
     /**
@@ -56,7 +62,6 @@ public class peminjamanBarang extends javax.swing.JFrame {
         bExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));

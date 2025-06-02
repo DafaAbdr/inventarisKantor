@@ -4,6 +4,8 @@
  */
 package transaksi;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author ALKHOIR
@@ -15,6 +17,10 @@ public class barangKeluar extends javax.swing.JFrame {
      */
     public barangKeluar() {
         initComponents();
+        setTitle("Inventaris Perkantoran");
+        
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
+        setIconImage(icon.getImage());
     }
 
     /**
@@ -56,6 +62,7 @@ public class barangKeluar extends javax.swing.JFrame {
         idBarang = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(905, 580));
@@ -331,6 +338,7 @@ public class barangKeluar extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void bTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTambahActionPerformed

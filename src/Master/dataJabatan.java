@@ -7,6 +7,7 @@ package Master;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import koneksi.koneksi;
@@ -25,6 +26,10 @@ public class dataJabatan extends javax.swing.JFrame {
     public dataJabatan() {
         initComponents();
         dataTable();
+        setTitle("Inventaris Perkantoran");
+        
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
+        setIconImage(icon.getImage());
     }
     
     protected void kosong(){
@@ -80,7 +85,6 @@ public class dataJabatan extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -198,7 +202,7 @@ public class dataJabatan extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addContainerGap(31, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(25, 25, 25))
         );

@@ -42,6 +42,10 @@ public class dataKaryawan extends javax.swing.JFrame {
         pathFoto = new JTextField();
         pathFoto.setVisible(false);
         add(pathFoto);
+        setTitle("Inventaris Perkantoran");
+        
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
+        setIconImage(icon.getImage());
     }
     
     protected void kosong(){
@@ -172,7 +176,6 @@ public class dataKaryawan extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
         setResizable(false);
         setSize(new java.awt.Dimension(910, 570));
         addWindowListener(new java.awt.event.WindowAdapter() {

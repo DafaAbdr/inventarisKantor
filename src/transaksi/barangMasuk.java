@@ -4,6 +4,8 @@
  */
 package transaksi;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author ALKHOIR
@@ -14,6 +16,10 @@ public class barangMasuk extends javax.swing.JFrame {
      */
     public barangMasuk() {
         initComponents();
+        setTitle("Inventaris Perkantoran");
+        
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
+        setIconImage(icon.getImage());
     }
 
     /**

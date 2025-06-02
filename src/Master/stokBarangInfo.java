@@ -42,6 +42,10 @@ public class stokBarangInfo extends javax.swing.JFrame {
         pathFoto = new JTextField();
         pathFoto.setVisible(false);
         add(pathFoto);
+        setTitle("Inventaris Perkantoran");
+        
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
+        setIconImage(icon.getImage());
     }
     
     protected void isiComboBoxIdBarang() {
@@ -175,7 +179,6 @@ public class stokBarangInfo extends javax.swing.JFrame {
         cari = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
