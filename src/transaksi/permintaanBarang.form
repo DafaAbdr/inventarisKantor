@@ -73,28 +73,30 @@
                           <Component id="bCetak" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                           <Component id="bHapus" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="bKeluar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="bKembali" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="42" max="32767" attributes="0"/>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel9" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
                       <Component id="jLabel8" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
                       <Component id="jLabel10" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="idTransaksi" alignment="0" min="-2" pref="234" max="-2" attributes="0"/>
+                      <Component id="namaBarang" max="32767" attributes="0"/>
+                      <Component id="idBarang" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="bTambah" max="32767" attributes="0"/>
                               <Component id="jumlah" alignment="0" max="32767" attributes="0"/>
                               <Component id="tanggal" alignment="0" pref="234" max="32767" attributes="0"/>
                               <Component id="jLabel12" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
                               <Component id="jLabel11" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
-                              <Component id="bTambah" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="idTransaksi" alignment="0" min="-2" pref="234" max="-2" attributes="0"/>
-                      <Component id="namaBarang" max="32767" attributes="0"/>
-                      <Component id="idBarang" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -169,15 +171,16 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="bTambah" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="bCetak" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="bSimpan" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      <Component id="bCetak" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="bSimpan" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="bHapus" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bKeluar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="bHapus" min="-2" max="-2" attributes="0"/>
-                      <Component id="bKeluar" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="bTambah" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bKembali" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace pref="32" max="32767" attributes="0"/>
               </Group>
@@ -233,27 +236,14 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="idTransaksi">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jumlah">
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="tanggal">
-        </Component>
-        <Component class="javax.swing.JButton" name="bTambah">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="37" green="4c" red="29" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Montserrat" size="12" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Add"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bTambahActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bCetak">
           <Properties>
@@ -340,6 +330,9 @@
                   </Table>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableBarangMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -452,6 +445,40 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="bTambah">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="37" green="4c" red="29" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Montserrat" size="12" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Add"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bTambahActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="bKembali">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="37" green="4c" red="29" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Montserrat" size="12" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Kembali"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bKembaliActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

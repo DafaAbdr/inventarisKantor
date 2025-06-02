@@ -88,7 +88,7 @@
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="namaBarang" alignment="0" pref="234" max="32767" attributes="0"/>
                                           <Component id="idBarang" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="idPeminjaman" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="idTransaksi" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -119,7 +119,7 @@
                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jumlahBarang" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="idPeminjaman" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="idTransaksi" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -243,7 +243,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="ID Peminjaman"/>
+            <Property name="text" type="java.lang.String" value="ID Transaksi"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
@@ -306,9 +306,9 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bKeluarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="idPeminjaman">
+        <Component class="javax.swing.JTextField" name="idTransaksi">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idPeminjamanActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idTransaksiActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="idBarang">
@@ -328,7 +328,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="tablePeminjamanInfo">
+            <Component class="javax.swing.JTable" name="tableTransaksi">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="5" rowCount="4">
@@ -345,7 +345,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tablePeminjamanInfoMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableTransaksiMouseClicked"/>
               </Events>
             </Component>
           </SubComponents>

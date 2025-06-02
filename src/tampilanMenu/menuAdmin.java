@@ -16,12 +16,21 @@ public class menuAdmin extends javax.swing.JFrame {
     /**
      * Creates new form menuFinal
      */
+    
+    private String hakAkses;
+    private String idKaryawan;
+    private String namaKaryawan;
+    
     public menuAdmin() {
         initComponents();
         setTitle("Inventaris Perkantoran");
         
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
         setIconImage(icon.getImage());
+        
+        hakAkses = loginSesi.getHakAkses();
+        idKaryawan = loginSesi.getIdKaryawan();
+        namaKaryawan = loginSesi.getNamaKaryawan();
     }
 
     /**
@@ -64,7 +73,7 @@ public class menuAdmin extends javax.swing.JFrame {
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem14 = new javax.swing.JMenuItem();
-        jMenuItem15 = new javax.swing.JMenuItem();
+        permintaanBarang = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(680, 550));
@@ -342,6 +351,11 @@ public class menuAdmin extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Transaksi");
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
 
         jMenuItem11.setText("Item Borrowing");
         jMenu2.add(jMenuItem11);
@@ -355,8 +369,13 @@ public class menuAdmin extends javax.swing.JFrame {
         jMenuItem14.setText("Item Return");
         jMenu2.add(jMenuItem14);
 
-        jMenuItem15.setText("Item Request");
-        jMenu2.add(jMenuItem15);
+        permintaanBarang.setText("Item Request");
+        permintaanBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                permintaanBarangActionPerformed(evt);
+            }
+        });
+        jMenu2.add(permintaanBarang);
 
         jMenuBar1.add(jMenu2);
 
@@ -429,6 +448,15 @@ public class menuAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton14ActionPerformed
 
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+        
+    }//GEN-LAST:event_jMenu2ActionPerformed
+
+    private void permintaanBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_permintaanBarangActionPerformed
+        new transaksi.permintaanBarang().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_permintaanBarangActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -490,7 +518,6 @@ public class menuAdmin extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -500,5 +527,6 @@ public class menuAdmin extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JMenuItem permintaanBarang;
     // End of variables declaration//GEN-END:variables
 }

@@ -32,6 +32,7 @@ public class permintaanBarang extends javax.swing.JFrame {
     final private Connection conn = new koneksi().connect();
     private DefaultTableModel tabmode;
     final private JTextField pathFoto;
+    private String hakAkses;
     
     /**
      * Creates new form peminjamanBarang
@@ -47,34 +48,32 @@ public class permintaanBarang extends javax.swing.JFrame {
         add(pathFoto);
         setTitle("Inventaris Perkantoran");
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
+        String idBaru = generateIdPermintaan();
+        idTransaksi.setText(idBaru);
         setIconImage(icon.getImage());
         String loginIdKaryawan = loginSesi.getIdKaryawan();
         idKaryawan.setText(loginIdKaryawan);
         String loginNamaKaryawan = loginSesi.getNamaKaryawan();
         namaKaryawan.setText(loginNamaKaryawan);
+        hakAkses = loginSesi.getHakAkses();
     }
 
     private String generateIdPermintaan() {
-        String idBaru = "PR001";
-        try {
-            String sql = "SELECT MAX(RIGHT(id_transaksi, 3)) AS nomor FROM dataTransaksi";
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
+    String idBaru = "PR001";
+    try {
+        String sql = "SELECT MAX(RIGHT(id_transaksi, 3)) AS nomor FROM dataTransaksi";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
 
-            if (rs.next()) {
-                
-                int nomor = rs.getInt("nomor") + 1;
-                idBaru = String.format("PR%03d", nomor);
-                String a = rs.getString("id_transaksi");
-                
-                String[] data = {a};
-                tabmode.addRow(data);
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Gagal generate ID Permintaan: " + e.getMessage());
+        if (rs.next()) {
+            int nomor = rs.getInt("nomor") + 1;
+            idBaru = String.format("PR%03d", nomor);
         }
-        return idBaru;
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Gagal generate ID Permintaan: " + e.getMessage());
     }
+    return idBaru;
+}
 
     
     protected void dataTableBarang(){
@@ -85,7 +84,7 @@ public class permintaanBarang extends javax.swing.JFrame {
         String sql = "SELECT databarang.nama_barang, stokBarang.stok_barang " +
                      "FROM databarang " +
                      "INNER JOIN stokBarang ON databarang.id_barang = stokBarang.id_barang " +
-                     "WHERE databarang.id_barang LIKE 'BB%'";
+                     "WHERE databarang.id_barang LIKE 'BP%'";
         
         try{
             java.sql.Statement stat = conn.createStatement();
@@ -103,7 +102,7 @@ public class permintaanBarang extends javax.swing.JFrame {
 
     protected void isiComboBoxIdBarang() {
         try {
-            String sql = "SELECT id_barang FROM databarang";
+            String sql = "SELECT id_barang FROM databarang WHERE id_barang LIKE 'BP%'";
             
             PreparedStatement st = conn.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
@@ -172,6 +171,18 @@ public class permintaanBarang extends javax.swing.JFrame {
         jumlah.setText("");
     }
     
+    protected void kosong2(){
+        namaBarang.setText("");
+        idBarang.setSelectedIndex(0);
+        jumlah.setText("");
+        tanggal.setDate(null);
+        idTransaksi.setText(generateIdPermintaan()); // Generate ID baru
+
+        // Kosongkan tabel transaksi
+        DefaultTableModel model = (DefaultTableModel) tableTransaksi.getModel();
+        model.setRowCount(0);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -195,7 +206,6 @@ public class permintaanBarang extends javax.swing.JFrame {
         idTransaksi = new javax.swing.JTextField();
         jumlah = new javax.swing.JTextField();
         tanggal = new com.toedter.calendar.JDateChooser();
-        bTambah = new javax.swing.JButton();
         bCetak = new javax.swing.JButton();
         bHapus = new javax.swing.JButton();
         bSimpan = new javax.swing.JButton();
@@ -210,6 +220,8 @@ public class permintaanBarang extends javax.swing.JFrame {
         bKeluar = new javax.swing.JButton();
         namaBarang = new javax.swing.JTextField();
         idBarang = new javax.swing.JComboBox<>();
+        bTambah = new javax.swing.JButton();
+        bKembali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -237,15 +249,8 @@ public class permintaanBarang extends javax.swing.JFrame {
 
         jLabel12.setText("Tanggal");
 
-        bTambah.setBackground(new java.awt.Color(41, 76, 55));
-        bTambah.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        bTambah.setForeground(new java.awt.Color(255, 255, 255));
-        bTambah.setText("Add");
-        bTambah.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bTambahActionPerformed(evt);
-            }
-        });
+        idTransaksi.setEditable(false);
+        idTransaksi.setFocusable(false);
 
         bCetak.setBackground(new java.awt.Color(41, 76, 55));
         bCetak.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
@@ -297,6 +302,11 @@ public class permintaanBarang extends javax.swing.JFrame {
                 "Nama Barang", "Stok Barang"
             }
         ));
+        tableBarang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableBarangMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tableBarang);
 
         tableTransaksi.setModel(new javax.swing.table.DefaultTableModel(
@@ -369,6 +379,26 @@ public class permintaanBarang extends javax.swing.JFrame {
 
         idBarang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        bTambah.setBackground(new java.awt.Color(41, 76, 55));
+        bTambah.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        bTambah.setForeground(new java.awt.Color(255, 255, 255));
+        bTambah.setText("Add");
+        bTambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bTambahActionPerformed(evt);
+            }
+        });
+
+        bKembali.setBackground(new java.awt.Color(41, 76, 55));
+        bKembali.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        bKembali.setForeground(new java.awt.Color(255, 255, 255));
+        bKembali.setText("Kembali");
+        bKembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bKembaliActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -394,24 +424,26 @@ public class permintaanBarang extends javax.swing.JFrame {
                         .addComponent(bCetak)
                         .addGap(46, 46, 46)
                         .addComponent(bHapus)
-                        .addGap(46, 46, 46)
-                        .addComponent(bKeluar)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(bKeluar)
+                        .addGap(18, 18, 18)
+                        .addComponent(bKembali)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(idTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(namaBarang)
+                    .addComponent(idBarang, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(bTambah, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jumlah)
                             .addComponent(tanggal, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bTambah, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(idTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(namaBarang)
-                    .addComponent(idBarang, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -469,13 +501,14 @@ public class permintaanBarang extends javax.swing.JFrame {
                                         .addComponent(tanggal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bCetak)
+                    .addComponent(bSimpan)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(bHapus)
+                        .addComponent(bKeluar))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(bTambah)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bCetak)
-                            .addComponent(bSimpan)))
-                    .addComponent(bHapus)
-                    .addComponent(bKeluar))
+                        .addComponent(bKembali)))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
@@ -511,23 +544,25 @@ public class permintaanBarang extends javax.swing.JFrame {
     private void bSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSimpanActionPerformed
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String tanggal2 = sdf.format(tanggal.getDate());
-        
-        Object[] baris = {"id_transaksi", "id_karyawan", "nama_karyawan", "tanggal"};
-        
+
         String sql = "INSERT INTO dataTransaksi (id_transaksi, id_karyawan, nama_karyawan, tanggal) VALUES (?, ?, ?, ?)";
-        
-        try{
+
+        try {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, idTransaksi.getText());
             ps.setString(2, idKaryawan.getText());
             ps.setString(3, namaKaryawan.getText());
             ps.setString(4, tanggal2);
-            
+
+            ps.executeUpdate();  // Jangan lupa eksekusi insert ke DB
+
             JOptionPane.showMessageDialog(null, "Transaksi Permintaan Barang Berhasil di Simpan");
 
-            kosong();
+            kosong2(); // Bersihkan form dan tabel setelah simpan
+
         } catch (SQLException ex) {
             Logger.getLogger(permintaanBarang.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Gagal menyimpan data transaksi: " + ex.getMessage());
         }
     }//GEN-LAST:event_bSimpanActionPerformed
 
@@ -538,41 +573,99 @@ public class permintaanBarang extends javax.swing.JFrame {
     private void bCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCetakActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bCetakActionPerformed
+                                 
+    private void tableBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableBarangMouseClicked
+        int baris = tableBarang.getSelectedRow();
+    if (baris != -1) {
+        String nama = tabmode.getValueAt(baris, 0).toString();
+        namaBarang.setText(nama);
+        try {
+            String sql = "SELECT id_barang FROM databarang WHERE nama_barang = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, nama);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                String id = rs.getString("id_barang");
+                idBarang.setSelectedItem(id);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal ambil ID barang: " + e.getMessage());
+        }
+    }
+    }//GEN-LAST:event_tableBarangMouseClicked
 
     private void bTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTambahActionPerformed
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String tanggal2 = sdf.format(tanggal.getDate());
-        String idPermintaan = generateIdPermintaan();
-        tabmode = (DefaultTableModel) tableTransaksi.getModel();
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    String tanggal2 = sdf.format(tanggal.getDate());
+    String idTransaksi2 = idTransaksi.getText();
+    String idBarang2 = idBarang.getSelectedItem().toString();
+    String jumlah2 = jumlah.getText();
 
-        String sql = "INSERT INTO databarang (id_permintaan, id_barang, nama_barang, jumlah_barang, tanggal) VALUES (?, ?, ?, ?, ?)";
+    tabmode = (DefaultTableModel) tableTransaksi.getModel();
 
-        try {
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, idPermintaan);
-            ps.setString(2, idBarang.getSelectedItem().toString());
+    String sqlCekStok = "SELECT stok_barang FROM stokbarang WHERE id_barang = ?";
+    String sqlInsert = "INSERT INTO dataTransaksiInfo (id_transaksi, id_barang, nama_barang, jumlah_barang, tanggal) VALUES (?, ?, ?, ?, ?)";
+    String sqlUpdateStok = "UPDATE stokbarang SET stok_barang = stok_barang - ? WHERE id_barang = ?";
+
+    try {
+        PreparedStatement psCek = conn.prepareStatement(sqlCekStok);
+        psCek.setString(1, idBarang2);
+        ResultSet rs = psCek.executeQuery();
+
+        if (rs.next()) {
+            int stokTersedia = rs.getInt("stok_barang");
+            int jumlahDiminta = Integer.parseInt(jumlah2);
+
+            if (jumlahDiminta > stokTersedia) {
+                JOptionPane.showMessageDialog(null, "Stok tidak mencukupi! Stok tersedia: " + stokTersedia);
+                return;
+            }
+
+            PreparedStatement ps = conn.prepareStatement(sqlInsert);
+            ps.setString(1, idTransaksi2);
+            ps.setString(2, idBarang2);
             ps.setString(3, namaBarang.getText());
-            ps.setString(4, jumlah.getText());
+            ps.setString(4, jumlah2);
             ps.setString(5, tanggal2);
-
             ps.executeUpdate();
 
+            PreparedStatement psUpdate = conn.prepareStatement(sqlUpdateStok);
+            psUpdate.setInt(1, jumlahDiminta);
+            psUpdate.setString(2, idBarang2);
+            psUpdate.executeUpdate();
+
             String[] data = {
-                idPermintaan,
-                idBarang.getSelectedItem().toString(),
+                idTransaksi2,
+                idBarang2,
                 namaBarang.getText(),
-                jumlah.getText(),
+                jumlah2,
                 tanggal2
             };
             tabmode.insertRow(0, data);
 
             kosong();
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Gagal Menyimpan Data Barang: " + e.getMessage());
+            dataTableBarang();
+        } else {
+            JOptionPane.showMessageDialog(null, "Data stok barang tidak ditemukan.");
         }
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Gagal Menyimpan & Update Stok: " + e.getMessage());
+    }
 
     }//GEN-LAST:event_bTambahActionPerformed
+
+    private void bKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKembaliActionPerformed
+        if ("admin".equalsIgnoreCase(hakAkses)) {
+            new tampilanMenu.menuAdmin().setVisible(true);
+        } else if ("karyawan".equalsIgnoreCase(hakAkses)) {
+            new tampilanMenu.menuKaryawan().setVisible(true);
+        } else if ("karyawan inventaris".equalsIgnoreCase(hakAkses)) {
+            new tampilanMenu.menuInventaris().setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "Hak akses tidak dikenal!");
+        }
+    }//GEN-LAST:event_bKembaliActionPerformed
 
     /**
      * @param args the command line arguments
@@ -614,6 +707,7 @@ public class permintaanBarang extends javax.swing.JFrame {
     private javax.swing.JButton bCetak;
     private javax.swing.JButton bHapus;
     private javax.swing.JButton bKeluar;
+    private javax.swing.JButton bKembali;
     private javax.swing.JButton bSimpan;
     private javax.swing.JButton bTambah;
     private javax.swing.JLabel foto;
