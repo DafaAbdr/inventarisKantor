@@ -253,7 +253,7 @@ public class dataAkun extends javax.swing.JFrame {
 
         jLabel4.setText("Hak Akses");
 
-        hakAkses.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Karyawan" }));
+        hakAkses.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Karyawan", "karyawanInventaris" }));
 
         idKaryawan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 

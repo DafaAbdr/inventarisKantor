@@ -645,7 +645,7 @@ public class dataBarang extends javax.swing.JFrame {
                 newFileName = oldFileName;
             }
 
-            String sql = "UPDATE dataBarangPermintaan SET nama_barang=?, harga_barang=?, kondisi=?, spesifikasi=?, gambar=? WHERE id_barang=?";
+            String sql = "UPDATE dataBarang SET nama_barang=?, harga_barang=?, kondisi=?, spesifikasi=?, gambar=? WHERE id_barang=?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, namaBarang.getText());
             ps.setString(2, hargaBarang.getText());
@@ -676,7 +676,7 @@ public class dataBarang extends javax.swing.JFrame {
                 fileName = rs.getString("gambar");
             }
 
-            String sqlDelete = "DELETE FROM dataBarangPermintaan WHERE id_barang=?";
+            String sqlDelete = "DELETE FROM dataBarang WHERE id_barang=?";
             PreparedStatement pst = conn.prepareStatement(sqlDelete);
             pst.setString(1, id);
             pst.executeUpdate();

@@ -763,17 +763,42 @@ public class dataKaryawan extends javax.swing.JFrame {
 
     private void bHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHapusActionPerformed
         try {
-            String sql = "DELETE FROM dataKaryawan WHERE id_Karyawan=?";
-            PreparedStatement pst = conn.prepareStatement(sql);
-            pst.setString(1, idKaryawan.getText());
+    // 1. Ambil nama file gambar dari database berdasarkan idKaryawan yang ingin dihapus
+    String sqlSelect = "SELECT gambar FROM dataKaryawan WHERE id_Karyawan=?";
+    PreparedStatement pstSelect = conn.prepareStatement(sqlSelect);
+    pstSelect.setString(1, idKaryawan.getText());
+    ResultSet rs = pstSelect.executeQuery();
 
-            pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Data Karyawan Berhasil Dihapus.");
-            kosong();
-            dataTable();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Gagal Menghapus Data Karyawan!\n" + e.getMessage());
+    if (rs.next()) {
+        String namaFileGambar = rs.getString("gambar");
+
+        // 2. Hapus file gambar dari folder imagesKaryawan
+        if (namaFileGambar != null && !namaFileGambar.isEmpty()) {
+            String pathFoto = System.getProperty("user.dir") + File.separator + "src" + File.separator + "imagesKaryawan" + File.separator + namaFileGambar;
+            File fileFoto = new File(pathFoto);
+            if (fileFoto.exists()) {
+                if (fileFoto.delete()) {
+                    System.out.println("File gambar berhasil dihapus: " + namaFileGambar);
+                } else {
+                    System.out.println("Gagal menghapus file gambar: " + namaFileGambar);
+                }
+            }
         }
+    }
+
+    // 3. Hapus data karyawan dari database
+    String sqlDelete = "DELETE FROM dataKaryawan WHERE id_Karyawan=?";
+    PreparedStatement pstDelete = conn.prepareStatement(sqlDelete);
+    pstDelete.setString(1, idKaryawan.getText());
+    pstDelete.executeUpdate();
+
+    JOptionPane.showMessageDialog(null, "Data Karyawan beserta foto berhasil dihapus.");
+    kosong();
+    dataTable();
+
+} catch (Exception e) {
+    JOptionPane.showMessageDialog(null, "Gagal Menghapus Data Karyawan!\n" + e.getMessage());
+}
     }//GEN-LAST:event_bHapusActionPerformed
 
     private void bCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCariActionPerformed
