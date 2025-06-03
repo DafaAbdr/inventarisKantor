@@ -563,7 +563,16 @@ public class peminjamanBarang extends javax.swing.JFrame {
     }//GEN-LAST:event_bTambahActionPerformed
 
     private void bCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCetakActionPerformed
-        // TODO add your handling code here:
+        try {
+            String reportPath = "";
+            HashMap<String, Object> parameters = new HashMap<>();
+            JasperPrint print = JasperFillManager.fillReport(reportPath,parameters,conn);
+            JasperViewer viewer = new JasperViewer(print,false);
+            viewer.setVisible(true);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+      
     }//GEN-LAST:event_bCetakActionPerformed
 
     private void bKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKembaliActionPerformed

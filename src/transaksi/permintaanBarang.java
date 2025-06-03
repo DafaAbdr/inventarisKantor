@@ -543,7 +543,7 @@ public class permintaanBarang extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(null, "Transaksi Permintaan Barang Berhasil di Simpan");
 
-            kosong2(); // Bersihkan form dan tabel setelah simpan
+        
 
         } catch (SQLException ex) {
             Logger.getLogger(permintaanBarang.class.getName()).log(Level.SEVERE, null, ex);
@@ -552,7 +552,15 @@ public class permintaanBarang extends javax.swing.JFrame {
     }//GEN-LAST:event_bSimpanActionPerformed
 
     private void bCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCetakActionPerformed
-        // TODO add your handling code here:
+        try {
+            String reportPath = "";
+            HashMap<String, Object> parameters = new HashMap<>();
+            JasperPrint print = JasperFillManager.fillReport(reportPath,parameters,conn);
+            JasperViewer viewer = new JasperViewer(print,false);
+            viewer.setVisible(true);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_bCetakActionPerformed
                                  
     private void tableBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableBarangMouseClicked
