@@ -4,6 +4,8 @@
  */
 package tampilanMenu;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ALKHOIR
@@ -27,14 +29,15 @@ public class menuInventaris extends javax.swing.JFrame {
     private void initComponents() {
 
         kGradientPanel1 = new keeptoo.KGradientPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        bPeminjamanBarang = new javax.swing.JButton();
+        bBarangMasuk = new javax.swing.JButton();
+        bBarangKeluar = new javax.swing.JButton();
+        bPengembalianBarang = new javax.swing.JButton();
+        bPermintaanBarang = new javax.swing.JButton();
+        bKeluar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        bLaporan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,44 +47,64 @@ public class menuInventaris extends javax.swing.JFrame {
         kGradientPanel1.setMaximumSize(new java.awt.Dimension(680, 440));
         kGradientPanel1.setMinimumSize(new java.awt.Dimension(680, 440));
 
-        jButton1.setText("Item Borrowing");
-        jButton1.setMaximumSize(new java.awt.Dimension(200, 100));
-        jButton1.setMinimumSize(new java.awt.Dimension(200, 100));
-        jButton1.setPreferredSize(new java.awt.Dimension(200, 100));
-
-        jButton2.setText("Item Incoming");
-        jButton2.setMaximumSize(new java.awt.Dimension(200, 100));
-        jButton2.setMinimumSize(new java.awt.Dimension(200, 100));
-        jButton2.setPreferredSize(new java.awt.Dimension(200, 100));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        bPeminjamanBarang.setText("Item Borrowing");
+        bPeminjamanBarang.setMaximumSize(new java.awt.Dimension(200, 100));
+        bPeminjamanBarang.setMinimumSize(new java.awt.Dimension(200, 100));
+        bPeminjamanBarang.setPreferredSize(new java.awt.Dimension(200, 100));
+        bPeminjamanBarang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                bPeminjamanBarangActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Item Outgoing");
-        jButton3.setMaximumSize(new java.awt.Dimension(200, 100));
-        jButton3.setMinimumSize(new java.awt.Dimension(200, 100));
-        jButton3.setPreferredSize(new java.awt.Dimension(200, 100));
-
-        jButton4.setText("Item Return");
-        jButton4.setMaximumSize(new java.awt.Dimension(200, 100));
-        jButton4.setMinimumSize(new java.awt.Dimension(200, 100));
-        jButton4.setPreferredSize(new java.awt.Dimension(200, 100));
-
-        jButton5.setText("Item Request");
-        jButton5.setMaximumSize(new java.awt.Dimension(200, 100));
-        jButton5.setMinimumSize(new java.awt.Dimension(200, 100));
-        jButton5.setPreferredSize(new java.awt.Dimension(200, 100));
-
-        jButton6.setBackground(new java.awt.Color(41, 76, 55));
-        jButton6.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("EXIT");
-        jButton6.setPreferredSize(new java.awt.Dimension(80, 30));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        bBarangMasuk.setText("Item Incoming");
+        bBarangMasuk.setMaximumSize(new java.awt.Dimension(200, 100));
+        bBarangMasuk.setMinimumSize(new java.awt.Dimension(200, 100));
+        bBarangMasuk.setPreferredSize(new java.awt.Dimension(200, 100));
+        bBarangMasuk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                bBarangMasukActionPerformed(evt);
+            }
+        });
+
+        bBarangKeluar.setText("Item Outgoing");
+        bBarangKeluar.setMaximumSize(new java.awt.Dimension(200, 100));
+        bBarangKeluar.setMinimumSize(new java.awt.Dimension(200, 100));
+        bBarangKeluar.setPreferredSize(new java.awt.Dimension(200, 100));
+        bBarangKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bBarangKeluarActionPerformed(evt);
+            }
+        });
+
+        bPengembalianBarang.setText("Item Return");
+        bPengembalianBarang.setMaximumSize(new java.awt.Dimension(200, 100));
+        bPengembalianBarang.setMinimumSize(new java.awt.Dimension(200, 100));
+        bPengembalianBarang.setPreferredSize(new java.awt.Dimension(200, 100));
+        bPengembalianBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bPengembalianBarangActionPerformed(evt);
+            }
+        });
+
+        bPermintaanBarang.setText("Item Request");
+        bPermintaanBarang.setMaximumSize(new java.awt.Dimension(200, 100));
+        bPermintaanBarang.setMinimumSize(new java.awt.Dimension(200, 100));
+        bPermintaanBarang.setPreferredSize(new java.awt.Dimension(200, 100));
+        bPermintaanBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bPermintaanBarangActionPerformed(evt);
+            }
+        });
+
+        bKeluar.setBackground(new java.awt.Color(41, 76, 55));
+        bKeluar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        bKeluar.setForeground(new java.awt.Color(255, 255, 255));
+        bKeluar.setText("EXIT");
+        bKeluar.setPreferredSize(new java.awt.Dimension(80, 30));
+        bKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bKeluarActionPerformed(evt);
             }
         });
 
@@ -96,7 +119,7 @@ public class menuInventaris extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
+            .addGap(0, 750, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -113,30 +136,36 @@ public class menuInventaris extends javax.swing.JFrame {
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
+        bLaporan.setText("Report");
+        bLaporan.setMaximumSize(new java.awt.Dimension(200, 100));
+        bLaporan.setMinimumSize(new java.awt.Dimension(200, 100));
+        bLaporan.setPreferredSize(new java.awt.Dimension(200, 100));
+
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGap(334, 334, 334)
+                .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap(60, Short.MAX_VALUE)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bPengembalianBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bPermintaanBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(bLaporan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addGap(104, 104, 104)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bPeminjamanBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(bBarangMasuk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(bBarangKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(54, 54, 54))
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(334, 334, 334)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,15 +174,16 @@ public class menuInventaris extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
+                    .addComponent(bBarangMasuk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bPeminjamanBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bBarangKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bPengembalianBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bPermintaanBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bLaporan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
@@ -171,13 +201,44 @@ public class menuInventaris extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void bBarangMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBarangMasukActionPerformed
+        this.dispose();
+        new transaksi.barangMasuk().setVisible(true);
+    }//GEN-LAST:event_bBarangMasukActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void bKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKeluarActionPerformed
+        int konfirmasi = JOptionPane.showConfirmDialog (
+            this,
+            "Apakah Anda yakin ingin keluar?",
+            "Konfirmasi Keluar",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE
+        );
+
+        if (konfirmasi == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_bKeluarActionPerformed
+
+    private void bPeminjamanBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPeminjamanBarangActionPerformed
+        this.dispose();
+        new transaksi.peminjamanBarang().setVisible(true);
+    }//GEN-LAST:event_bPeminjamanBarangActionPerformed
+
+    private void bBarangKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBarangKeluarActionPerformed
+        this.dispose();
+        new transaksi.barangKeluar().setVisible(true);
+    }//GEN-LAST:event_bBarangKeluarActionPerformed
+
+    private void bPengembalianBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPengembalianBarangActionPerformed
+        this.dispose();
+        new transaksi.pengembalianBarang().setVisible(true);
+    }//GEN-LAST:event_bPengembalianBarangActionPerformed
+
+    private void bPermintaanBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPermintaanBarangActionPerformed
+        this.dispose();
+        new transaksi.permintaanBarang().setVisible(true);
+    }//GEN-LAST:event_bPermintaanBarangActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,12 +276,13 @@ public class menuInventaris extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton bBarangKeluar;
+    private javax.swing.JButton bBarangMasuk;
+    private javax.swing.JButton bKeluar;
+    private javax.swing.JButton bLaporan;
+    private javax.swing.JButton bPeminjamanBarang;
+    private javax.swing.JButton bPengembalianBarang;
+    private javax.swing.JButton bPermintaanBarang;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private keeptoo.KGradientPanel kGradientPanel1;
