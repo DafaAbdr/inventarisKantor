@@ -4,6 +4,7 @@
  */
 package tampilanMenu;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,12 +12,24 @@ import javax.swing.JOptionPane;
  * @author ALKHOIR
  */
 public class menuKaryawan extends javax.swing.JFrame {
-
+    private String hakAkses;
+    private String idKaryawan;
+    private String namaKaryawan;
+    
     /**
      * Creates new form halamanUtama
      */
+    
     public menuKaryawan() {
         initComponents();
+        
+        setTitle("Inventaris Perkantoran");
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
+        setIconImage(icon.getImage());
+        
+        hakAkses = loginSesi.getHakAkses();
+        idKaryawan = loginSesi.getIdKaryawan();
+        namaKaryawan = loginSesi.getNamaKaryawan();
     }
 
     /**
@@ -166,7 +179,7 @@ public class menuKaryawan extends javax.swing.JFrame {
 
     private void bPengembalianBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPengembalianBarangActionPerformed
         this.dispose();
-        new transaksi.pengembalianBarang().setVisible(true);
+        new transaksi.pengembalianBarang3().setVisible(true);
     }//GEN-LAST:event_bPengembalianBarangActionPerformed
 
     private void bKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKeluarActionPerformed

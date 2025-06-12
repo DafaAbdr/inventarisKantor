@@ -23,8 +23,8 @@ public class menuAdmin extends javax.swing.JFrame {
     
     public menuAdmin() {
         initComponents();
-        setTitle("Inventaris Perkantoran");
         
+        setTitle("Inventaris Perkantoran");
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
         setIconImage(icon.getImage());
         
@@ -583,7 +583,7 @@ public class menuAdmin extends javax.swing.JFrame {
 
     private void pengembalianBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pengembalianBarangActionPerformed
         this.dispose();
-        new transaksi.pengembalianBarang().setVisible(true);
+        new transaksi.pengembalianBarang3().setVisible(true);
     }//GEN-LAST:event_pengembalianBarangActionPerformed
 
     private void bDataDivisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDataDivisiActionPerformed

@@ -18,6 +18,7 @@ import koneksi.koneksi;
  *
  * @author dafaa
  */
+
 public class dataTransaksiInfo extends javax.swing.JFrame {
     final private Connection conn = new koneksi().connect();
     private DefaultTableModel tabmode;
@@ -29,8 +30,8 @@ public class dataTransaksiInfo extends javax.swing.JFrame {
     public dataTransaksiInfo() {
         initComponents();
         dataTable();
-        setTitle("Inventaris Perkantoran");
         
+        setTitle("Inventaris Perkantoran");
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
         setIconImage(icon.getImage());
     }
@@ -537,6 +538,7 @@ public class dataTransaksiInfo extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

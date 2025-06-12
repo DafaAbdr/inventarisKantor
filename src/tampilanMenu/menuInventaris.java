@@ -4,6 +4,7 @@
  */
 package tampilanMenu;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,12 +12,22 @@ import javax.swing.JOptionPane;
  * @author ALKHOIR
  */
 public class menuInventaris extends javax.swing.JFrame {
-
+    private String hakAkses;
+    private String idKaryawan;
+    private String namaKaryawan;
     /**
      * Creates new form menuInventaris
      */
     public menuInventaris() {
         initComponents();
+        
+        setTitle("Inventaris Perkantoran");
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
+        setIconImage(icon.getImage());
+        
+        hakAkses = loginSesi.getHakAkses();
+        idKaryawan = loginSesi.getIdKaryawan();
+        namaKaryawan = loginSesi.getNamaKaryawan();
     }
 
     /**
@@ -146,10 +157,6 @@ public class menuInventaris extends javax.swing.JFrame {
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(334, 334, 334)
-                .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap(60, Short.MAX_VALUE)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,6 +173,10 @@ public class menuInventaris extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(bBarangKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(54, 54, 54))
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGap(333, 333, 333)
+                .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,9 +193,9 @@ public class menuInventaris extends javax.swing.JFrame {
                     .addComponent(bPengembalianBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bPermintaanBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bLaporan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                .addGap(34, 34, 34)
                 .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -232,7 +243,7 @@ public class menuInventaris extends javax.swing.JFrame {
 
     private void bPengembalianBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPengembalianBarangActionPerformed
         this.dispose();
-        new transaksi.pengembalianBarang().setVisible(true);
+        new transaksi.pengembalianBarang3().setVisible(true);
     }//GEN-LAST:event_bPengembalianBarangActionPerformed
 
     private void bPermintaanBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPermintaanBarangActionPerformed

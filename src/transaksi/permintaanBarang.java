@@ -23,7 +23,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import net.sf.jasperreports.view.JasperViewer;
-import net.sf.jasperreports.engine.*;  // untuk JasperFillManager, JasperPrint, dll
+import net.sf.jasperreports.engine.*;
 import java.util.HashMap;
 
 
@@ -47,14 +47,18 @@ public class permintaanBarang extends javax.swing.JFrame {
         dataTableBarang();
         isiComboBoxIdBarang();
         generateIdPermintaan();
+        
         pathFoto = new JTextField();
         pathFoto.setVisible(false);
         add(pathFoto);
+        
         setTitle("Inventaris Perkantoran");
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
+        setIconImage(icon.getImage());
+        
         String idBaru = generateIdPermintaan();
         idTransaksi.setText(idBaru);
-        setIconImage(icon.getImage());
+        
         String loginIdKaryawan = loginSesi.getIdKaryawan();
         idKaryawan.setText(loginIdKaryawan);
         String loginNamaKaryawan = loginSesi.getNamaKaryawan();
@@ -63,20 +67,20 @@ public class permintaanBarang extends javax.swing.JFrame {
     }
 
     private String generateIdPermintaan() {
-    String idBaru = "PR001";
-    try {
-        String sql = "SELECT MAX(RIGHT(id_transaksi, 3)) AS nomor FROM dataTransaksi";
-        PreparedStatement ps = conn.prepareStatement(sql);
-        ResultSet rs = ps.executeQuery();
+        String idBaru = "PR001";
+        try {
+            String sql = "SELECT MAX(RIGHT(id_transaksi, 3)) AS nomor FROM dataTransaksi WHERE id_transaksi LIKE 'PR%'";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
 
-        if (rs.next()) {
-            int nomor = rs.getInt("nomor") + 1;
-            idBaru = String.format("PR%03d", nomor);
+            if (rs.next()) {
+                int nomor = rs.getInt("nomor") + 1;
+                idBaru = String.format("PR%03d", nomor);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal generate ID Permintaan: " + e.getMessage());
         }
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(null, "Gagal generate ID Permintaan: " + e.getMessage());
-    }
-    return idBaru;
+        return idBaru;
     }
 
     
@@ -180,9 +184,8 @@ public class permintaanBarang extends javax.swing.JFrame {
         idBarang.setSelectedIndex(0);
         jumlah.setText("");
         tanggal.setDate(null);
-        idTransaksi.setText(generateIdPermintaan()); // Generate ID baru
+        idTransaksi.setText(generateIdPermintaan());
 
-        // Kosongkan tabel transaksi
         DefaultTableModel model = (DefaultTableModel) tableTransaksi.getModel();
         model.setRowCount(0);
     }
@@ -543,7 +546,7 @@ public class permintaanBarang extends javax.swing.JFrame {
             ps.setString(3, namaKaryawan.getText());
             ps.setString(4, tanggal2);
 
-            ps.executeUpdate();  // Jangan lupa eksekusi insert ke DB
+            ps.executeUpdate();
 
             JOptionPane.showMessageDialog(null, "Transaksi Permintaan Barang Berhasil di Simpan");
 
@@ -570,7 +573,7 @@ public class permintaanBarang extends javax.swing.JFrame {
                                  
     private void tableBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableBarangMouseClicked
         int baris = tableBarang.getSelectedRow();
-    if (baris != -1) {
+        if (baris != -1) {
         String nama = tabmode.getValueAt(baris, 0).toString();
         namaBarang.setText(nama);
         try {
@@ -666,6 +669,7 @@ public class permintaanBarang extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -26,6 +26,7 @@ import koneksi.koneksi;
  *
  * @author dafaa
  */
+
 public class stokBarang extends javax.swing.JFrame {
     final private Connection conn = new koneksi().connect();
     private DefaultTableModel tabmode;
@@ -39,63 +40,68 @@ public class stokBarang extends javax.swing.JFrame {
         initComponents();
         dataTable();
         isiComboBoxIdBarang();
+        
         pathFoto = new JTextField();
         pathFoto.setVisible(false);
         add(pathFoto);
-        setTitle("Inventaris Perkantoran");
         
+        setTitle("Inventaris Perkantoran");
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
         setIconImage(icon.getImage());
     }
     
     protected void isiComboBoxIdBarang() {
-        try {
-            String sql = "SELECT id_barang FROM dataBarang";
-            PreparedStatement st = conn.prepareStatement(sql);
-            ResultSet rs = st.executeQuery();
+    try {
+        String sql = "SELECT id_barang FROM dataBarang";
+        PreparedStatement st = conn.prepareStatement(sql);
+        ResultSet rs = st.executeQuery();
 
-            DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
+        DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
+        while (rs.next()) {
+            model.addElement(rs.getString("id_barang"));
+        }
 
-            while (rs.next()) {
-                model.addElement(rs.getString("id_barang"));
-            }
+        idBarang.setModel(model);
 
-            idBarang.setModel(model);
-
-            idBarang.addActionListener(new ActionListener() {
+        idBarang.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
                     String selectedId = idBarang.getSelectedItem().toString();
 
-                    String query = "SELECT nama_barang, gambar FROM dataBarang WHERE id_barang = ? ";
+                    String query = "SELECT db.nama_barang, db.gambar, sb.satuan " +
+                                   "FROM dataBarang db " +
+                                   "JOIN stokbarang sb ON db.id_barang = sb.id_barang " +
+                                   "WHERE db.id_barang = ?";
                     PreparedStatement ps = conn.prepareStatement(query);
                     ps.setString(1, selectedId);
                     ResultSet rs = ps.executeQuery();
 
                     if (rs.next()) {
                         namaBarang.setText(rs.getString("nama_barang"));
-                        String namaGambar = rs.getString("gambar");
+                        satuan.setText(rs.getString("satuan"));
 
+                        String namaGambar = rs.getString("gambar");
                         if (namaGambar != null && !namaGambar.isEmpty()) {
                             String pathGambar = System.getProperty("user.dir") + File.separator +
                                                 "src" + File.separator + "imagesBarang" + File.separator + namaGambar;
                             File file = new File(pathGambar);
-                                if (file.exists()) {
-                                    ImageIcon icon = new ImageIcon(pathGambar);
-                                    Image img = icon.getImage().getScaledInstance(
-                                            foto.getWidth(),
-                                            foto.getHeight(),
-                                            Image.SCALE_SMOOTH);
-                                    foto.setIcon(new ImageIcon(img));
-                                } else {
-                                    foto.setIcon(null);
-                                    JOptionPane.showMessageDialog(null, "File gambar tidak ditemukan!");
-                                }
+                            if (file.exists()) {
+                                ImageIcon icon = new ImageIcon(pathGambar);
+                                Image img = icon.getImage().getScaledInstance(
+                                        foto.getWidth(),
+                                        foto.getHeight(),
+                                        Image.SCALE_SMOOTH);
+                                foto.setIcon(new ImageIcon(img));
+                            } else {
+                                foto.setIcon(null);
+                                JOptionPane.showMessageDialog(null, "File gambar tidak ditemukan!");
+                            }
                         } else {
                             foto.setIcon(null);
                         }
                     } else {
                         namaBarang.setText("Tidak ditemukan");
+                        satuan.setText(""); // reset satuan
                         foto.setIcon(null);
                     }
 
@@ -105,10 +111,11 @@ public class stokBarang extends javax.swing.JFrame {
             }
         });
 
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Gagal mengisi ComboBox ID: " + e.getMessage());
-        }
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Gagal mengisi ComboBox ID: " + e.getMessage());
     }
+}
+
     
     protected void kosong(){
         idBarang.setSelectedIndex(0);
@@ -118,7 +125,7 @@ public class stokBarang extends javax.swing.JFrame {
     }
     
     protected void dataTable(){
-        Object[] baris = {"id_barang", "nama_barang", "stok_barang"};
+        Object[] baris = {"id_barang", "nama_barang", "stok_barang", "satuan"};
         tabmode = new DefaultTableModel(null, baris);
         tableStokBarang.setModel(tabmode);
         String sql = "SELECT * FROM stokBarang";
@@ -129,13 +136,15 @@ public class stokBarang extends javax.swing.JFrame {
                 String a = hasil.getString("id_barang");
                 String b = hasil.getString("nama_barang");
                 String c = hasil.getString("stok_barang");
+                String d = hasil.getString("satuan");
                 
-                String[] data = {a, b, c};
+                String[] data = {a, b, c, d};
                 tabmode.addRow(data);
             }
         }catch (Exception e){
         }
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -165,6 +174,8 @@ public class stokBarang extends javax.swing.JFrame {
         bKembali = new javax.swing.JButton();
         bKeluar = new javax.swing.JButton();
         cari = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        satuan = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -306,6 +317,14 @@ public class stokBarang extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setText("Satuan");
+
+        satuan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                satuanActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -333,10 +352,14 @@ public class stokBarang extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(namaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(42, 42, 42)
-                                .addComponent(jLabel9)
-                                .addGap(83, 83, 83)
-                                .addComponent(jumlah, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel10))
+                                .addGap(70, 70, 70)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jumlah, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(satuan))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane2)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -368,9 +391,13 @@ public class stokBarang extends javax.swing.JFrame {
                                 .addComponent(idBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jumlah, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(namaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel5)
+                                .addComponent(namaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel10)
+                                .addComponent(satuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(46, 46, 46)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -501,11 +528,12 @@ public class stokBarang extends javax.swing.JFrame {
 
     private void bEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditActionPerformed
         try {
-            String sql = "UPDATE stokBarang SET `stok_barang`=? WHERE `id_barang`=?";
+            String sql = "UPDATE stokBarang SET `stok_barang`=?, `satuan`=? WHERE `id_barang`=?";
             
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, jumlah.getText());
-            ps.setString(2, idBarang.getSelectedItem().toString());
+            ps.setString(2, satuan.getText());
+            ps.setString(3, idBarang.getSelectedItem().toString());
 
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Data Stok Berhasil Diedit.");
@@ -516,17 +544,18 @@ public class stokBarang extends javax.swing.JFrame {
     }//GEN-LAST:event_bEditActionPerformed
 
     private void bTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTambahActionPerformed
-        Object[] baris = {"id_barang", "nama_barang", "stok_barang"};
+        Object[] baris = {"id_barang", "nama_barang", "stok_barang", "satuan"};
         tabmode = new DefaultTableModel(null, baris);
         tableStokBarang.setModel(tabmode);
 
-        String sql = "INSERT INTO stokBarang (id_barang, nama_barang, stok_barang) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO stokBarang (id_barang, nama_barang, stok_barang, satuan) VALUES (?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, idBarang.getSelectedItem().toString());
             ps.setString(2, namaBarang.getText());
             ps.setString(3, jumlah.getText());
+            ps.setString(4, satuan.getText());
             
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Data Stok Barang Berhasil Disimpan");
@@ -572,9 +601,14 @@ public class stokBarang extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bKeluarActionPerformed
 
+    private void satuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_satuanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_satuanActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -745,6 +779,7 @@ public class stokBarang extends javax.swing.JFrame {
     private javax.swing.JLabel foto;
     private javax.swing.JComboBox<String> idBarang;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
@@ -753,6 +788,7 @@ public class stokBarang extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jumlah;
     private javax.swing.JTextField namaBarang;
+    private javax.swing.JTextField satuan;
     private javax.swing.JTable tableStokBarang;
     // End of variables declaration//GEN-END:variables
 }

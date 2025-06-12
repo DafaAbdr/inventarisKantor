@@ -26,6 +26,7 @@ import koneksi.koneksi;
  *
  * @author dafaa
  */
+
 public class stokBarangInfo extends javax.swing.JFrame {
     final private Connection conn = new koneksi().connect();
     private DefaultTableModel tabmode;
@@ -39,11 +40,12 @@ public class stokBarangInfo extends javax.swing.JFrame {
         initComponents();
         dataTable();
         isiComboBoxIdBarang();
+        
         pathFoto = new JTextField();
         pathFoto.setVisible(false);
         add(pathFoto);
-        setTitle("Inventaris Perkantoran");
         
+        setTitle("Inventaris Perkantoran");
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
         setIconImage(icon.getImage());
     }
@@ -116,12 +118,11 @@ public class stokBarangInfo extends javax.swing.JFrame {
         namaBarang.setText("");
         tanggal.setDate(null);
         jumlah.setText("");
-        satuan.setText("");
         foto.setIcon(null);
     }
     
     protected void dataTable(){
-        Object[] baris = {"id_stok", "id_barang", "nama_barang", "tanggal", "stok_barang", "satuan"};
+        Object[] baris = {"id_stok", "id_barang", "nama_barang", "tanggal", "stok_barang"};
         tabmode = new DefaultTableModel(null, baris);
         tableStokBarang.setModel(tabmode);
         String sql = "SELECT * FROM stokBarangInfo";
@@ -134,14 +135,14 @@ public class stokBarangInfo extends javax.swing.JFrame {
                 String c = hasil.getString("nama_barang");
                 String d = hasil.getString("tanggal");
                 String e = hasil.getString("stok_barang");
-                String f = hasil.getString("satuan");
                 
-                String[] data = {a, b, c, d, e, f};
+                String[] data = {a, b, c, d, e};
                 tabmode.addRow(data);
             }
         }catch (Exception e){
         }
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -160,10 +161,8 @@ public class stokBarangInfo extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         idStok = new javax.swing.JTextField();
         foto = new javax.swing.JLabel();
-        satuan = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableStokBarang = new javax.swing.JTable();
         namaBarang = new javax.swing.JTextField();
@@ -212,8 +211,6 @@ public class stokBarangInfo extends javax.swing.JFrame {
 
         jLabel9.setText("Jumlah");
 
-        jLabel10.setText("Satuan");
-
         idStok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idStokActionPerformed(evt);
@@ -222,12 +219,6 @@ public class stokBarangInfo extends javax.swing.JFrame {
 
         foto.setBackground(new java.awt.Color(255, 0, 248));
         foto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        satuan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                satuanActionPerformed(evt);
-            }
-        });
 
         tableStokBarang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -370,7 +361,6 @@ public class stokBarangInfo extends javax.swing.JFrame {
                                         .addComponent(namaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(42, 42, 42)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10)
                                     .addComponent(jLabel9)
                                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(42, 42, 42)
@@ -379,9 +369,7 @@ public class stokBarangInfo extends javax.swing.JFrame {
                                         .addComponent(tanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(19, 19, 19))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(satuan, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
-                                            .addComponent(jumlah))
+                                        .addComponent(jumlah, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane2)))
@@ -423,17 +411,10 @@ public class stokBarangInfo extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jumlah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel10)
-                                    .addComponent(satuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel5)
-                                    .addComponent(namaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(namaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(46, 46, 46)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -485,10 +466,6 @@ public class stokBarangInfo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_idStokActionPerformed
 
-    private void satuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_satuanActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_satuanActionPerformed
-
     private void tableStokBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableStokBarangMouseClicked
         int baris = tableStokBarang.getSelectedRow();
 
@@ -507,7 +484,6 @@ public class stokBarangInfo extends javax.swing.JFrame {
             }
 
             jumlah.setText(tabmode.getValueAt(baris, 4).toString());
-            satuan.setText(tabmode.getValueAt(baris, 5).toString());
 
             String id = idBarang.getSelectedItem().toString();
             String destDir = System.getProperty("user.dir") + File.separator + "src" + File.separator + "imagesBarang" + File.separator;
@@ -550,7 +526,7 @@ public class stokBarangInfo extends javax.swing.JFrame {
     }//GEN-LAST:event_tableStokBarangMouseClicked
 
     private void bCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCariActionPerformed
-        Object[] baris = {"id_stok", "id_barang", "nama_barang", "tanggal", "jumlah", "satuan"};
+        Object[] baris = {"id_stok", "id_barang", "nama_barang", "tanggal", "jumlah"};
         tabmode = new DefaultTableModel(null, baris);
         tableStokBarang.setModel(tabmode);
 
@@ -561,12 +537,11 @@ public class stokBarangInfo extends javax.swing.JFrame {
                      "id_barang LIKE ? OR " +
                      "nama_barang LIKE ? OR " +
                      "tanggal LIKE ? OR " +
-                     "jumlah LIKE ? OR " +
-                     "satuan LIKE ? ";
+                     "jumlah LIKE ?";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
-            for (int i = 1; i <= 6; i++) {
+            for (int i = 1; i <= 5; i++) {
                 ps.setString(i, "%" + keyword + "%");
             }
 
@@ -578,9 +553,8 @@ public class stokBarangInfo extends javax.swing.JFrame {
                 String c = hasil.getString("nama_barang");
                 String d = hasil.getString("tanggal");
                 String e = hasil.getString("jumlah");
-                String f = hasil.getString("satuan");
                 
-                String[] data = {a, b, c, d, e, f};
+                String[] data = {a, b, c, d, e};
                 tabmode.addRow(data);
             }
         } catch (Exception e) {
@@ -590,7 +564,7 @@ public class stokBarangInfo extends javax.swing.JFrame {
 
     private void bEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditActionPerformed
         try {
-            String sql = "UPDATE stokBarangInfo SET `id_barang`=?, `nama_barang`=?, `tanggal`=?, `jumlah`=?, `satuan`=? WHERE `id_stok`=?";
+            String sql = "UPDATE stokBarangInfo SET `id_barang`=?, `nama_barang`=?, `tanggal`=?, `jumlah`=? WHERE `id_stok`=?";
             
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, idBarang.getSelectedItem().toString());
@@ -599,7 +573,7 @@ public class stokBarangInfo extends javax.swing.JFrame {
             String tanggal1 = sdf.format(tanggal.getDate());
             ps.setString(3, tanggal1);
             ps.setString(4, jumlah.getText());
-            ps.setString(5, satuan.getText());
+
             ps.setString(6, idStok.getText());
 
             ps.executeUpdate();
@@ -626,8 +600,7 @@ public class stokBarangInfo extends javax.swing.JFrame {
             ps.setString(2, idBarang.getSelectedItem().toString());
             ps.setString(3, namaBarang.getText());
             ps.setString(4, tanggal2); 
-            ps.setString(5, jumlah.getText());
-            ps.setString(6, satuan.getText());
+            ps.setString(5, jumlah.getText());;
             
 
             ps.executeUpdate();
@@ -784,7 +757,6 @@ public class stokBarangInfo extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> idBarang;
     private javax.swing.JTextField idStok;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
@@ -795,7 +767,6 @@ public class stokBarangInfo extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jumlah;
     private javax.swing.JTextField namaBarang;
-    private javax.swing.JTextField satuan;
     private javax.swing.JTable tableStokBarang;
     private com.toedter.calendar.JDateChooser tanggal;
     // End of variables declaration//GEN-END:variables

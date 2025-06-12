@@ -18,6 +18,7 @@ import koneksi.koneksi;
  *
  * @author dafaa
  */
+
 public class dataTransaksi extends javax.swing.JFrame {
     final private Connection conn = new koneksi().connect();
     private DefaultTableModel tabmode;
@@ -29,21 +30,21 @@ public class dataTransaksi extends javax.swing.JFrame {
     public dataTransaksi() {
         initComponents();
         dataTable();
-        setTitle("Inventaris Perkantoran");
         
+        setTitle("Inventaris Perkantoran");
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
         setIconImage(icon.getImage());
     }
     
     protected void kosong(){
-        idPeminjaman.setText("");
+        idTransaksi.setText("");
         idKaryawan.setText("");
         namaKaryawan.setText("");
         tanggal.setDate(null);
     }
     
     protected void dataTable(){
-        Object[] baris = {"id_peminjaman", "id_karyawan", "nama_karyawan", "tanggal"};
+        Object[] baris = {"id_transaksi", "id_karyawan", "nama_karyawan", "tanggal"};
         tabmode = new DefaultTableModel(null, baris);
         tablePeminjaman.setModel(tabmode);
         
@@ -53,7 +54,7 @@ public class dataTransaksi extends javax.swing.JFrame {
             java.sql.Statement stat = conn.createStatement();
             ResultSet hasil = stat.executeQuery(sql);
             while(hasil.next()){
-                String a = hasil.getString("id_peminjaman");
+                String a = hasil.getString("id_transaksi");
                 String b = hasil.getString("id_karyawan");
                 String c = hasil.getString("nama_karyawan");
                 String d = hasil.getString("tanggal");
@@ -86,7 +87,7 @@ public class dataTransaksi extends javax.swing.JFrame {
         bHapus = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         bKeluar = new javax.swing.JButton();
-        idPeminjaman = new javax.swing.JTextField();
+        idTransaksi = new javax.swing.JTextField();
         idKaryawan = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablePeminjaman = new javax.swing.JTable();
@@ -146,7 +147,7 @@ public class dataTransaksi extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("ID Peminjaman");
+        jLabel2.setText("ID Transaksi");
 
         jLabel3.setText("ID Karyawan");
 
@@ -176,9 +177,9 @@ public class dataTransaksi extends javax.swing.JFrame {
             }
         });
 
-        idPeminjaman.addActionListener(new java.awt.event.ActionListener() {
+        idTransaksi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idPeminjamanActionPerformed(evt);
+                idTransaksiActionPerformed(evt);
             }
         });
 
@@ -295,7 +296,7 @@ public class dataTransaksi extends javax.swing.JFrame {
                                         .addComponent(jLabel3))
                                     .addGap(42, 42, 42)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(idPeminjaman, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                                        .addComponent(idTransaksi, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
                                         .addComponent(idKaryawan))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,7 +328,7 @@ public class dataTransaksi extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(idPeminjaman, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(idTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(idKaryawan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -373,9 +374,9 @@ public class dataTransaksi extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_idKaryawanActionPerformed
 
-    private void idPeminjamanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idPeminjamanActionPerformed
+    private void idTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idTransaksiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_idPeminjamanActionPerformed
+    }//GEN-LAST:event_idTransaksiActionPerformed
 
     private void bKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKeluarActionPerformed
         int konfirmasi = JOptionPane.showConfirmDialog (
@@ -395,26 +396,26 @@ public class dataTransaksi extends javax.swing.JFrame {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String tanggal2 = sdf.format(tanggal.getDate());
         
-        Object[] baris = {"id_peminjaman", "id_karyawan", "nama_karyawan", "tanggal"};
+        Object[] baris = {"id_transaksi", "id_karyawan", "nama_karyawan", "tanggal"};
         tabmode = new DefaultTableModel(null, baris);
         tablePeminjaman.setModel(tabmode);
 
-        String sql = "INSERT INTO dataTransaksi (id_peminjaman, id_karyawan, nama_karyawan, tanggal) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO dataTransaksi (id_transaksi, id_karyawan, nama_karyawan, tanggal) VALUES (?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, idPeminjaman.getText());
+            ps.setString(1, idTransaksi.getText());
             ps.setString(2, idKaryawan.getText());
             ps.setString(3, namaKaryawan.getText());
             ps.setString(4, tanggal2);            
 
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Data Peminjaman Barang Berhasil Disimpan");
+            JOptionPane.showMessageDialog(null, "Data Transaksi  Barang Berhasil Disimpan");
 
             kosong();
             dataTable();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Gagal Menyimpan Data Peminjaman Barang: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Gagal Menyimpan Data Transaksi  Barang: " + e.getMessage());
         }
     }//GEN-LAST:event_bTambahActionPerformed
 
@@ -431,16 +432,16 @@ public class dataTransaksi extends javax.swing.JFrame {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String tanggal2 = sdf.format(tanggal.getDate());
             
-            String sql = "UPDATE dataTransaksi SET `id_karyawan`=?, `nama_karyawan`=?, `tanggal`=?  WHERE `id_peminjaman`=?";
+            String sql = "UPDATE dataTransaksi SET `id_karyawan`=?, `nama_karyawan`=?, `tanggal`=?  WHERE `id_transaksi`=?";
             
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, idKaryawan.getText());
             ps.setString(2, namaKaryawan.getText());
             ps.setString(3, tanggal2);
-            ps.setString(4, idPeminjaman.getText());
+            ps.setString(4, idTransaksi.getText());
 
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Data Peminjaman Barang Berhasil Diedit.");
+            JOptionPane.showMessageDialog(null, "Data Transaksi  Barang Berhasil Diedit.");
             kosong();
             dataTable();
         } catch (Exception e) {
@@ -455,27 +456,27 @@ public class dataTransaksi extends javax.swing.JFrame {
 
     private void bHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHapusActionPerformed
         try {
-            String sql = "DELETE FROM dataTransaksi WHERE `id_peminjaman`=?";
+            String sql = "DELETE FROM dataTransaksi WHERE `id_transaksi`=?";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, idPeminjaman.getText());
+            ps.setString(1, idTransaksi.getText());
 
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Data Peminjaman Barang Berhasil Dihapus.");
+            JOptionPane.showMessageDialog(null, "Data Transaksi  Barang Berhasil Dihapus.");
             kosong();
             dataTable();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Gagal Menghapus Data Peminjaman Barang!\n" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Gagal Menghapus Data Transaksi Barang!\n" + e.getMessage());
         }
     }//GEN-LAST:event_bHapusActionPerformed
 
     private void bCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCariActionPerformed
-        Object[] baris = {"id_peminjaman", "id_karyawan", "nama_karyawan", "tanggal"};
+        Object[] baris = {"id_transaksi", "id_karyawan", "nama_karyawan", "tanggal"};
         tabmode = new DefaultTableModel(null, baris);
         tablePeminjaman.setModel(tabmode);
 
         String keyword = cari.getText();
         String sql = "SELECT * FROM dataTransaksi WHERE " +
-                     "`id_peminjaman` LIKE ? OR " +
+                     "`id_transaksi` LIKE ? OR " +
                      "`id_karyawan` LIKE ? OR " +
                      "`nama_karyawan` LIKE ? OR " +
                      "`tanggal` LIKE ?";
@@ -488,7 +489,7 @@ public class dataTransaksi extends javax.swing.JFrame {
 
             ResultSet hasil = pst.executeQuery();
             while (hasil.next()) {
-                String a = hasil.getString("id_peminjaman");
+                String a = hasil.getString("id_transaksi");
                 String b = hasil.getString("id_karyawan");
                 String c = hasil.getString("nama_karyawan");
                 String d = hasil.getString("tanggal");
@@ -504,7 +505,7 @@ public class dataTransaksi extends javax.swing.JFrame {
     private void tablePeminjamanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePeminjamanMouseClicked
         int baris = tablePeminjaman.getSelectedRow();
         if (baris != -1) {
-            idPeminjaman.setText(tabmode.getValueAt(baris, 0).toString());
+            idTransaksi.setText(tabmode.getValueAt(baris, 0).toString());
             idKaryawan.setText(tabmode.getValueAt(baris, 1).toString());
             namaKaryawan.setText(tabmode.getValueAt(baris, 2).toString());
             try {
@@ -1073,7 +1074,7 @@ public class dataTransaksi extends javax.swing.JFrame {
     private javax.swing.JButton bTambah;
     private javax.swing.JTextField cari;
     private javax.swing.JTextField idKaryawan;
-    private javax.swing.JTextField idPeminjaman;
+    private javax.swing.JTextField idTransaksi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -85,7 +85,7 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="idPeminjaman" pref="234" max="32767" attributes="0"/>
+                                          <Component id="idTransaksi" pref="234" max="32767" attributes="0"/>
                                           <Component id="idKaryawan" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
@@ -132,7 +132,7 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="idPeminjaman" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="idTransaksi" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -241,7 +241,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="ID Peminjaman"/>
+            <Property name="text" type="java.lang.String" value="ID Transaksi"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
@@ -299,9 +299,9 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bKeluarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="idPeminjaman">
+        <Component class="javax.swing.JTextField" name="idTransaksi">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idPeminjamanActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idTransaksiActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="idKaryawan">
