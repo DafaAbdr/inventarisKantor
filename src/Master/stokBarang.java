@@ -210,17 +210,17 @@ public class stokBarang extends javax.swing.JFrame {
 
         tableStokBarang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID Barang ", "Nama Barang", "Jumlah"
+                "ID Barang ", "Nama Barang", "Jumlah", "Satuan"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

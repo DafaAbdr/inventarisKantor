@@ -22,9 +22,6 @@ import koneksi.koneksi;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.view.JasperViewer;
 import java.util.HashMap;
 
 /**
@@ -562,16 +559,6 @@ public class peminjamanBarang extends javax.swing.JFrame {
     }//GEN-LAST:event_bTambahActionPerformed
 
     private void bCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCetakActionPerformed
-        try {
-            String reportPath = "C:\\Users\\muham\\OneDrive\\Documents\\NetBeansProjects\\Kantor\\inventarisKantor\\src\\Report\\laporanPermintaan.jasper";
-            HashMap<String, Object> parameters = new HashMap<>();
-            JasperPrint print = JasperFillManager.fillReport(reportPath,parameters,conn);
-            JasperViewer viewer = new JasperViewer(print,false);
-            viewer.setVisible(true);
-        } catch (Exception e){
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Gagal menampilkan laporan:\n" + e.getMessage());
-        }
       
     }//GEN-LAST:event_bCetakActionPerformed
 
