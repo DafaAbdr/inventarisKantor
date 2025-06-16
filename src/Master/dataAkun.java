@@ -17,7 +17,7 @@ import koneksi.koneksi;
 
 /**
  *
- * @author ALKHOIR
+ * @author ALKHOIRISA
  */
 
 public class dataAkun extends javax.swing.JFrame {
