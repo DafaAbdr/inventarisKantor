@@ -72,6 +72,18 @@ public class pengembalianBarang3 extends javax.swing.JFrame {
         namaBarang.setText("");
         jumlah.setText("");
     }
+    
+    private void kosong2(){
+        namaBarang.setText("");
+        idBarang.setSelectedIndex(0);
+        jumlah.setText("");
+        tanggal.setDate(null);
+        idPeminjaman.setText("");
+        idPengembalian.setText(generateIdPengembalian());
+
+        DefaultTableModel model = (DefaultTableModel) tablePengembalian.getModel();
+        model.setRowCount(0);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -459,7 +471,7 @@ public class pengembalianBarang3 extends javax.swing.JFrame {
             ps.executeUpdate();
 
             JOptionPane.showMessageDialog(null, "Data pengembalian berhasil disimpan");
-            kosong();
+            kosong2();
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Gagal menyimpan data pengembalian: " + ex.getMessage());

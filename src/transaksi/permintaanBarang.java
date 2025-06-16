@@ -544,12 +544,11 @@ public class permintaanBarang extends javax.swing.JFrame {
             ps.setString(3, namaKaryawan.getText());
             ps.setString(4, tanggal2);
 
-            ps.executeUpdate();
+            ps.executeUpdate(); 
 
-            JOptionPane.showMessageDialog(null, "Transaksi Permintaan Barang Berhasil di Simpan");
+            JOptionPane.showMessageDialog(null, "Transaksi Peminjaman Barang Berhasil di Simpan");
 
-        
-
+            kosong2();
         } catch (SQLException ex) {
             Logger.getLogger(permintaanBarang.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "Gagal menyimpan data transaksi: " + ex.getMessage());
