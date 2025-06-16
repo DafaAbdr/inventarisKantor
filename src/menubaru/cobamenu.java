@@ -17,6 +17,7 @@ public class cobamenu extends javax.swing.JFrame {
      */
     public cobamenu() {
         initComponents();
+        setTitle("Inventaris Perkantoran");
     }
 
     /**
@@ -1536,7 +1537,7 @@ public class cobamenu extends javax.swing.JFrame {
         pn_lidiv.setBackground(new Color(0, 102, 102));
 
         pn_utama.removeAll();
-        pn_utama.add(new data_divisi());
+        pn_utama.add(new menubaru.data_divisi());
         pn_utama.repaint();
         pn_utama.revalidate();
     }//GEN-LAST:event_btn_divMouseClicked
@@ -1560,7 +1561,7 @@ public class cobamenu extends javax.swing.JFrame {
         pn_liemployee.setBackground(new Color(0, 102, 102));
 
         pn_utama.removeAll();
-        pn_utama.add(new data_karyawan());
+        pn_utama.add(new menubaru.data_karyawan());
         pn_utama.repaint();
         pn_utama.revalidate();
     }//GEN-LAST:event_btn_employeeMouseClicked
@@ -1584,7 +1585,7 @@ public class cobamenu extends javax.swing.JFrame {
         pn_liinvent.setBackground(new Color(0, 102, 102));
 
         pn_utama.removeAll();
-        pn_utama.add(new stok_barangInfo());
+        pn_utama.add(new menubaru.stok_barangInfo());
         pn_utama.repaint();
         pn_utama.revalidate();
     }//GEN-LAST:event_btn_inventMouseClicked
@@ -1608,7 +1609,7 @@ public class cobamenu extends javax.swing.JFrame {
         pn_liitemD.setBackground(new Color(0, 102, 102));
 
         pn_utama.removeAll();
-        pn_utama.add(new data_barang());
+        pn_utama.add(new menubaru.data_barang());
         pn_utama.repaint();
         pn_utama.revalidate();
     }//GEN-LAST:event_btn_itemDMouseClicked
@@ -1632,7 +1633,7 @@ public class cobamenu extends javax.swing.JFrame {
         pn_liitemR.setBackground(new Color(0, 102, 102));
 
         pn_utama.removeAll();
-        pn_utama.add(new data_pengembalianBarang());
+        pn_utama.add(new menubaru.data_pengembalianBarang());
         pn_utama.repaint();
         pn_utama.revalidate();
     }//GEN-LAST:event_btn_itemRMouseClicked
@@ -1656,7 +1657,7 @@ public class cobamenu extends javax.swing.JFrame {
         pn_liitemI.setBackground(new Color(0, 102, 102));
 
         pn_utama.removeAll();
-        pn_utama.add(new data_pengembalianInfo());
+        pn_utama.add(new menubaru.data_pengembalianInfo());
         pn_utama.repaint();
         pn_utama.revalidate();
     }//GEN-LAST:event_btn_itemIMouseClicked
@@ -1680,7 +1681,7 @@ public class cobamenu extends javax.swing.JFrame {
         pn_listock.setBackground(new Color(0, 102, 102));
 
         pn_utama.removeAll();
-        pn_utama.add(new stok_barang());
+        pn_utama.add(new menubaru.stok_barang());
         pn_utama.repaint();
         pn_utama.revalidate();
     }//GEN-LAST:event_btn_stockMouseClicked
@@ -1704,7 +1705,7 @@ public class cobamenu extends javax.swing.JFrame {
         pn_liposition.setBackground(new Color(0, 102, 102));
 
         pn_utama.removeAll();
-        pn_utama.add(new data_jabatan());
+        pn_utama.add(new menubaru.data_jabatan());
         pn_utama.repaint();
         pn_utama.revalidate();
     }//GEN-LAST:event_btn_positionMouseClicked
@@ -1728,7 +1729,7 @@ public class cobamenu extends javax.swing.JFrame {
         pn_litrans.setBackground(new Color(0, 102, 102));
 
         pn_utama.removeAll();
-        pn_utama.add(new data_transaksi());
+        pn_utama.add(new menubaru.data_transaksi());
         pn_utama.repaint();
         pn_utama.revalidate();
     }//GEN-LAST:event_btn_transMouseClicked
@@ -1752,7 +1753,7 @@ public class cobamenu extends javax.swing.JFrame {
         pn_litransI.setBackground(new Color(0, 102, 102));
 
         pn_utama.removeAll();
-        pn_utama.add(new data_transaksiInfo());
+        pn_utama.add(new menubaru.data_transaksiInfo());
         pn_utama.repaint();
         pn_utama.revalidate();
     }//GEN-LAST:event_btn_transIMouseClicked
@@ -1776,7 +1777,7 @@ public class cobamenu extends javax.swing.JFrame {
         pn_liitemB.setBackground(new Color(0, 102, 102));
 
         pn_utama.removeAll();
-        pn_utama.add(new peminjaman_Barang());
+        pn_utama.add(new menubaru.peminjaman_Barang());
         pn_utama.repaint();
         pn_utama.revalidate();
     }//GEN-LAST:event_btn_itemBMouseClicked
@@ -1800,7 +1801,7 @@ public class cobamenu extends javax.swing.JFrame {
         pn_liitemIn.setBackground(new Color(0, 102, 102));
 
         pn_utama.removeAll();
-        pn_utama.add(new barang_masuk());
+        pn_utama.add(new menubaru.barang_masuk());
         pn_utama.repaint();
         pn_utama.revalidate();
     }//GEN-LAST:event_btn_itemInMouseClicked
@@ -1824,7 +1825,7 @@ public class cobamenu extends javax.swing.JFrame {
         pn_liitemO.setBackground(new Color(0, 102, 102));
 
         pn_utama.removeAll();
-        pn_utama.add(new barang_keluar());
+        pn_utama.add(new menubaru.barang_keluar());
         pn_utama.repaint();
         pn_utama.revalidate();
     }//GEN-LAST:event_btn_itemOMouseClicked
@@ -1848,7 +1849,7 @@ public class cobamenu extends javax.swing.JFrame {
         pn_liitemRe.setBackground(new Color(0, 102, 102));
 
         pn_utama.removeAll();
-        pn_utama.add(new pengembalian_Barang());
+        pn_utama.add(new menubaru.pengembalian_Barang());
         pn_utama.repaint();
         pn_utama.revalidate();
     }//GEN-LAST:event_btn_itemReMouseClicked
@@ -1872,7 +1873,7 @@ public class cobamenu extends javax.swing.JFrame {
         pn_liitemReq.setBackground(new Color(0, 102, 102));
 
         pn_utama.removeAll();
-        pn_utama.add(new permintaan_Barang());
+        pn_utama.add(new menubaru.permintaan_Barang());
         pn_utama.repaint();
         pn_utama.revalidate();
     }//GEN-LAST:event_btn_itemReqMouseClicked
@@ -1896,7 +1897,7 @@ public class cobamenu extends javax.swing.JFrame {
         pn_lireport.setBackground(new Color(0, 102, 102));
 
         pn_utama.removeAll();
-        pn_utama.add(new menu_report());
+        pn_utama.add(new menubaru.menu_report());
         pn_utama.repaint();
         pn_utama.revalidate();
     }//GEN-LAST:event_btn_reportMouseClicked

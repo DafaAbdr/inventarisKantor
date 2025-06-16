@@ -16,6 +16,7 @@ import java.util.Date;
 import javax.imageio.ImageIO;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -40,9 +41,9 @@ public class stok_barang extends javax.swing.JPanel {
         pathFoto.setVisible(false);
         add(pathFoto);
         
-        setTitle("Inventaris Perkantoran");
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
-        setIconImage(icon.getImage());
+        JLabel label = new JLabel(icon);
+        this.add(label);
     }
     
     protected void isiComboBoxIdBarang() {
@@ -581,13 +582,6 @@ public class stok_barang extends javax.swing.JPanel {
     private javax.swing.JTable tableStokBarang;
     // End of variables declaration//GEN-END:variables
 
-    private void setTitle(String inventaris_Perkantoran) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void setIconImage(Image image) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     private void dispose() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

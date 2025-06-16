@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import koneksi.koneksi;
@@ -27,9 +28,9 @@ public class data_pengembalianInfo extends javax.swing.JPanel {
         initComponents();
         dataTable();
         
-        setTitle("Inventaris Perkantoran");
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
-        setIconImage(icon.getImage());
+        JLabel label = new JLabel(icon);
+        this.add(label);
     }
     
     protected void kosong(){

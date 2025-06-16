@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import koneksi.koneksi;
@@ -25,9 +26,9 @@ public class data_divisi extends javax.swing.JPanel {
         initComponents();
         dataTable();
         
-        setTitle("Inventaris Perkantoran");
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
-        setIconImage(icon.getImage());
+        JLabel label = new JLabel(icon);
+        this.add(label);
     }
     
     protected void kosong(){
@@ -414,13 +415,6 @@ public class data_divisi extends javax.swing.JPanel {
     private javax.swing.JTable tableDivisi;
     // End of variables declaration//GEN-END:variables
 
-    private void setTitle(String inventaris_Perkantoran) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void setIconImage(Image image) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     private void dispose() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

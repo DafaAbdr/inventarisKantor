@@ -22,6 +22,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import java.util.HashMap;
+import javax.swing.JLabel;
 /**
  *
  * @author ALKHOIR
@@ -44,9 +45,9 @@ public class peminjaman_Barang extends javax.swing.JPanel {
         pathFoto.setVisible(false);
         add(pathFoto);
         
-        setTitle("Inventaris Perkantoran");
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
-        setIconImage(icon.getImage());
+        JLabel label = new JLabel(icon);
+        this.add(label);
         
         String idBaru = generateIdPermintaan();
         idTransaksi.setText(idBaru);
@@ -618,13 +619,6 @@ public class peminjaman_Barang extends javax.swing.JPanel {
     private com.toedter.calendar.JDateChooser tanggal;
     // End of variables declaration//GEN-END:variables
 
-    private void setTitle(String inventaris_Perkantoran) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void setIconImage(Image image) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     private void dispose() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
