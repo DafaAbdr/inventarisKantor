@@ -225,7 +225,10 @@ public class loginPage extends javax.swing.JFrame {
                 } else if ("karyawanInventaris".equalsIgnoreCase(hakAkses)) {
                     new tampilanMenu.menuInventaris().setVisible(true);
                     this.dispose();
-                } 
+                } else if("bos".equalsIgnoreCase(hakAkses)) {
+                    new tampilanMenu.menuBos().setVisible(true);
+                    this.dispose();
+                }
                 else {
                     JOptionPane.showMessageDialog(this, "Hak akses tidak dikenal");
                 }

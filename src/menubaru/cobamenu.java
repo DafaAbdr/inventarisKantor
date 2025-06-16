@@ -1500,6 +1500,7 @@ public class cobamenu extends javax.swing.JFrame {
         getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMouseEntered
@@ -1511,7 +1512,7 @@ public class cobamenu extends javax.swing.JFrame {
         pn_liacc.setBackground(new Color(0, 102, 102));
 
         pn_utama.removeAll();
-        pn_utama.add(new data_akun());
+        pn_utama.add(new menubaru.data_akun());
         pn_utama.repaint();
         pn_utama.revalidate();
     }//GEN-LAST:event_btn_accMouseClicked
@@ -1978,7 +1979,6 @@ public class cobamenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
@@ -2005,7 +2005,6 @@ public class cobamenu extends javax.swing.JFrame {
     private javax.swing.JPanel pn_itemR;
     private javax.swing.JPanel pn_itemRe;
     private javax.swing.JPanel pn_itemReq;
-    private javax.swing.JPanel pn_itemReq1;
     private javax.swing.JPanel pn_liacc;
     private javax.swing.JPanel pn_lidiv;
     private javax.swing.JPanel pn_liemployee;
