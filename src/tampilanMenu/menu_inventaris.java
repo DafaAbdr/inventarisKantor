@@ -43,7 +43,7 @@ public class menu_inventaris extends javax.swing.JFrame {
 
         try {
             BufferedImage bi = ImageIO.read(new File(fullPath));
-            Image img = bi.getScaledInstance(190, 191, Image.SCALE_SMOOTH); 
+            Image img = bi.getScaledInstance(165, 191, Image.SCALE_SMOOTH); 
             ImageIcon icons = new ImageIcon(img);
             foto.setIcon(icons);
         } catch (IOException e) {
@@ -123,6 +123,7 @@ public class menu_inventaris extends javax.swing.JFrame {
 
         foto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        namaKaryawan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         namaKaryawan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         namaKaryawan.setText("NAMA KARYAWAN");
 
@@ -576,9 +577,11 @@ public class menu_inventaris extends javax.swing.JFrame {
                             .addComponent(jLabel22))
                         .addGroup(jPanel5Layout.createSequentialGroup()
                             .addGap(28, 28, 28)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(namaKaryawan, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-                                .addComponent(foto, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))))
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(namaKaryawan, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                    .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(11, 11, 11)))))
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(pn_itemO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(pn_itemIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -592,9 +595,9 @@ public class menu_inventaris extends javax.swing.JFrame {
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(28, 28, 28)
                 .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
                 .addComponent(namaKaryawan)
                 .addGap(70, 70, 70)
                 .addComponent(jLabel13)

@@ -42,7 +42,7 @@ public class menu_admin extends javax.swing.JFrame {
 
         try {
             BufferedImage bi = ImageIO.read(new File(fullPath));
-            Image img = bi.getScaledInstance(40, 50, Image.SCALE_SMOOTH); 
+            Image img = bi.getScaledInstance(40, 45, Image.SCALE_SMOOTH); 
             ImageIcon icons = new ImageIcon(img);
             foto.setIcon(icons);
         } catch (IOException e) {
@@ -1487,9 +1487,9 @@ public class menu_admin extends javax.swing.JFrame {
         });
 
         foto.setText("jLabel23");
-        foto.setMaximumSize(new java.awt.Dimension(40, 50));
-        foto.setMinimumSize(new java.awt.Dimension(40, 50));
-        foto.setPreferredSize(new java.awt.Dimension(40, 50));
+        foto.setMaximumSize(new java.awt.Dimension(40, 45));
+        foto.setMinimumSize(new java.awt.Dimension(40, 45));
+        foto.setPreferredSize(new java.awt.Dimension(40, 45));
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
@@ -1499,7 +1499,7 @@ public class menu_admin extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 564, Short.MAX_VALUE)
-                .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(namaKaryawan)
                 .addGap(32, 32, 32)
@@ -1509,12 +1509,13 @@ public class menu_admin extends javax.swing.JFrame {
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(namaKaryawan)
                 .addComponent(jLabel22))
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.add(kGradientPanel1, java.awt.BorderLayout.PAGE_START);
