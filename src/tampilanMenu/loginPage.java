@@ -217,16 +217,16 @@ public class loginPage extends javax.swing.JFrame {
                 loginSesi.setUser(username, hakAkses, idKaryawan, namaKaryawan);
 
                 if ("admin".equalsIgnoreCase(hakAkses)) {
-                    new tampilanMenu.menuAdmin().setVisible(true);
+                    new tampilanMenu.menu_admin().setVisible(true);
                     this.dispose();
                 } else if ("karyawan".equalsIgnoreCase(hakAkses)) {
-                    new tampilanMenu.menuKaryawan().setVisible(true);
+                    new tampilanMenu.menu_karyawan().setVisible(true);
                     this.dispose();
                 } else if ("karyawanInventaris".equalsIgnoreCase(hakAkses)) {
-                    new tampilanMenu.menuInventaris().setVisible(true);
+                    new tampilanMenu.menu_inventaris().setVisible(true);
                     this.dispose();
                 } else if("bos".equalsIgnoreCase(hakAkses)) {
-                    new tampilanMenu.menuBos().setVisible(true);
+                    new tampilanMenu.menu_bos().setVisible(true);
                     this.dispose();
                 }
                 else {
