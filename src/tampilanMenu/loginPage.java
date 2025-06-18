@@ -7,6 +7,7 @@ package tampilanMenu;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import koneksi.koneksi;
@@ -26,6 +27,10 @@ public class loginPage extends javax.swing.JFrame {
     
     public loginPage() {
         initComponents();
+        
+        setTitle("Inventaris Perkantoran");
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
+        setIconImage(icon.getImage());
     }
 
     /**

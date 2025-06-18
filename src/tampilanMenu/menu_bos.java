@@ -40,6 +40,7 @@ public class menu_bos extends javax.swing.JFrame {
         String destDir = System.getProperty("user.dir") + File.separator + "src" + File.separator + "imagesKaryawan" + File.separator;
         String fullPath = destDir + fileName;
             
+        
         pathFoto.setText(fullPath);
 
         try {
