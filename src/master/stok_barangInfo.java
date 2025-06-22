@@ -394,7 +394,7 @@ public class stok_barangInfo extends javax.swing.JPanel {
     }//GEN-LAST:event_idStokActionPerformed
 
     private void bCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCariActionPerformed
-        Object[] baris = {"id_stok", "id_barang", "nama_barang", "tanggal", "jumlah"};
+        Object[] baris = {"id_stok", "id_barang", "nama_barang", "tanggal", "stok_barang"};
         tabmode = new DefaultTableModel(null, baris);
         tableStokBarang.setModel(tabmode);
 
@@ -405,7 +405,7 @@ public class stok_barangInfo extends javax.swing.JPanel {
                      "id_barang LIKE ? OR " +
                      "nama_barang LIKE ? OR " +
                      "tanggal LIKE ? OR " +
-                     "jumlah LIKE ?";
+                     "stok_barang LIKE ?";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -420,7 +420,7 @@ public class stok_barangInfo extends javax.swing.JPanel {
                 String b = hasil.getString("id_barang");
                 String c = hasil.getString("nama_barang");
                 String d = hasil.getString("tanggal");
-                String e = hasil.getString("jumlah");
+                String e = hasil.getString("stok_barang");
                 
                 String[] data = {a, b, c, d, e};
                 tabmode.addRow(data);

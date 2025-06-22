@@ -167,13 +167,13 @@ public class report_divisi extends javax.swing.JPanel {
             java.sql.Date tanggalAkhir = new java.sql.Date(tanggalAkhirUtil.getTime());
 
             String namaDivisi = inputDivisi.getSelectedItem().toString();
-
+            
             String reportPath = System.getProperty("user.dir") + File.separator + "src" + File.separator + "report" + File.separator + "LaporanDivisi.jasper";
 
             HashMap<String, Object> parameters = new HashMap<>();
-            parameters.put("namaDivisi", namaDivisi);
-            parameters.put("tanggalAwal", tanggalAwal);
-            parameters.put("tanggalAkhir", tanggalAkhir);
+                parameters.put("namaDivisi", namaDivisi);
+                parameters.put("tanggalAwal", tanggalAwal);
+                parameters.put("tanggalAkhir", tanggalAkhir);
 
             JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
             JasperViewer viewer = new JasperViewer(print, false);

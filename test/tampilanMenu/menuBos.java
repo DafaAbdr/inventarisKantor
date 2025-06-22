@@ -178,13 +178,11 @@ public class menuBos extends javax.swing.JFrame {
     }//GEN-LAST:event_bKeluarActionPerformed
 
     private void bDataKaryawanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDataKaryawanActionPerformed
-        this.dispose();
-        new tampilanMenu.dataKaryawan().setVisible(true);
+        
     }//GEN-LAST:event_bDataKaryawanActionPerformed
 
     private void bReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bReportActionPerformed
-        this.dispose();
-        new master.menuReport().setVisible(true);
+        
     }//GEN-LAST:event_bReportActionPerformed
 
     /**
