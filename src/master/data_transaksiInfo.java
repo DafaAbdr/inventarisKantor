@@ -113,6 +113,7 @@ public class data_transaksiInfo extends javax.swing.JPanel {
         bCari.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bCari.setForeground(new java.awt.Color(255, 255, 255));
         bCari.setText("Search");
+        bCari.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bCari.setPreferredSize(new java.awt.Dimension(72, 22));
         bCari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,6 +125,7 @@ public class data_transaksiInfo extends javax.swing.JPanel {
         bTambah.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bTambah.setForeground(new java.awt.Color(255, 255, 255));
         bTambah.setText("Add");
+        bTambah.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bTambah.setPreferredSize(new java.awt.Dimension(74, 23));
         bTambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,6 +137,7 @@ public class data_transaksiInfo extends javax.swing.JPanel {
         bEdit.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bEdit.setForeground(new java.awt.Color(255, 255, 255));
         bEdit.setText("Edit");
+        bEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bEdit.setPreferredSize(new java.awt.Dimension(74, 23));
         bEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,6 +157,7 @@ public class data_transaksiInfo extends javax.swing.JPanel {
         bHapus.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bHapus.setForeground(new java.awt.Color(255, 255, 255));
         bHapus.setText("Delete");
+        bHapus.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bHapus.setPreferredSize(new java.awt.Dimension(74, 23));
         bHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,6 +171,7 @@ public class data_transaksiInfo extends javax.swing.JPanel {
         bKeluar.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bKeluar.setForeground(new java.awt.Color(255, 255, 255));
         bKeluar.setText("Exit");
+        bKeluar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bKeluar.setPreferredSize(new java.awt.Dimension(74, 23));
         bKeluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,6 +230,7 @@ public class data_transaksiInfo extends javax.swing.JPanel {
         bKembali.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bKembali.setForeground(new java.awt.Color(255, 255, 255));
         bKembali.setText("Back");
+        bKembali.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bKembali.setPreferredSize(new java.awt.Dimension(74, 23));
         bKembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -258,11 +264,6 @@ public class data_transaksiInfo extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(bCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel3)
@@ -280,10 +281,15 @@ public class data_transaksiInfo extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jumlahBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(tanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel11))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(bCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel11))))
                         .addGap(25, 25, 25))))
         );
         layout.setVerticalGroup(

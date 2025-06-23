@@ -172,6 +172,7 @@ public class stok_barangInfo extends javax.swing.JPanel {
         jumlah = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         idStok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

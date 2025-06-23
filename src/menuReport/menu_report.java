@@ -168,7 +168,7 @@ public class menu_report extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_rdivisi)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
             .addGroup(pn_rdivisiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pn_rdivisiLayout.createSequentialGroup()
                     .addContainerGap()
@@ -224,16 +224,16 @@ public class menu_report extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addComponent(pn_utama1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addGap(25, 25, 25)
+                .addComponent(pn_utama1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(25, 25, 25))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(pn_utama1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addComponent(pn_utama1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(25, 25, 25))
         );
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -248,7 +248,7 @@ public class menu_report extends javax.swing.JPanel {
         pn_rtanggal.setBackground(new Color(0, 102, 102));
 
         pn_utama1.removeAll();
-        pn_utama1.add(new report_tanggal());
+        pn_utama1.add(new tanggal());
         pn_utama1.repaint();
         pn_utama1.revalidate();
     }//GEN-LAST:event_btn_rtanggalMouseClicked
@@ -272,7 +272,7 @@ public class menu_report extends javax.swing.JPanel {
         pn_rdivisi.setBackground(new Color(0, 102, 102));
 
         pn_utama1.removeAll();
-        pn_utama1.add(new report_divisi());
+        pn_utama1.add(new divisi());
         pn_utama1.repaint();
         pn_utama1.revalidate();
     }//GEN-LAST:event_btn_rdivisiMouseClicked

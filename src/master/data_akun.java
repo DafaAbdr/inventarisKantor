@@ -136,12 +136,12 @@ public class data_akun extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jButton1.setBackground(new java.awt.Color(41, 76, 55));
         jButton1.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Search");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -164,7 +164,6 @@ public class data_akun extends javax.swing.JPanel {
         bHapus1.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bHapus1.setForeground(new java.awt.Color(255, 255, 255));
         bHapus1.setText("Back");
-        bHapus1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bHapus1.setPreferredSize(new java.awt.Dimension(74, 23));
         bHapus1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,7 +210,6 @@ public class data_akun extends javax.swing.JPanel {
         bHapus.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bHapus.setForeground(new java.awt.Color(255, 255, 255));
         bHapus.setText("Delete");
-        bHapus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bHapus.setPreferredSize(new java.awt.Dimension(74, 23));
         bHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -223,7 +221,6 @@ public class data_akun extends javax.swing.JPanel {
         bTambah.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bTambah.setForeground(new java.awt.Color(255, 255, 255));
         bTambah.setText("Add");
-        bTambah.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bTambah.setPreferredSize(new java.awt.Dimension(74, 23));
         bTambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -235,7 +232,6 @@ public class data_akun extends javax.swing.JPanel {
         bEdit.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bEdit.setForeground(new java.awt.Color(255, 255, 255));
         bEdit.setText("Edit");
-        bEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bEdit.setPreferredSize(new java.awt.Dimension(74, 23));
         bEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -253,7 +249,6 @@ public class data_akun extends javax.swing.JPanel {
         bHapus2.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bHapus2.setForeground(new java.awt.Color(255, 255, 255));
         bHapus2.setText("Exit");
-        bHapus2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bHapus2.setPreferredSize(new java.awt.Dimension(74, 23));
         bHapus2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

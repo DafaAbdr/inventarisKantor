@@ -89,6 +89,7 @@ public class loginPage extends javax.swing.JFrame {
         bMasuk1.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         bMasuk1.setForeground(new java.awt.Color(255, 255, 255));
         bMasuk1.setText("LOGIN");
+        bMasuk1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bMasuk1.setPreferredSize(new java.awt.Dimension(80, 30));
         bMasuk1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,6 +105,7 @@ public class loginPage extends javax.swing.JFrame {
         bKeluar1.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         bKeluar1.setForeground(new java.awt.Color(255, 255, 255));
         bKeluar1.setText("EXIT");
+        bKeluar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bKeluar1.setPreferredSize(new java.awt.Dimension(80, 30));
         bKeluar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
