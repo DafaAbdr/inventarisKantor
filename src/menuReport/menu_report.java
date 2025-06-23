@@ -44,6 +44,8 @@ public class menu_report extends javax.swing.JPanel {
 
         kGradientPanel1.setkEndColor(new java.awt.Color(41, 76, 55));
         kGradientPanel1.setkStartColor(new java.awt.Color(0, 153, 153));
+        kGradientPanel1.setMaximumSize(new java.awt.Dimension(310, 600));
+        kGradientPanel1.setMinimumSize(new java.awt.Dimension(310, 600));
         kGradientPanel1.setPreferredSize(new java.awt.Dimension(310, 600));
 
         pn_rtanggal.setBackground(new java.awt.Color(255, 255, 255));
@@ -93,9 +95,9 @@ public class menu_report extends javax.swing.JPanel {
             .addGroup(pn_rtanggalLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_rtanggal, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(12, 12, 12))
             .addGroup(pn_rtanggalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pn_rtanggalLayout.createSequentialGroup()
                     .addContainerGap()
@@ -164,9 +166,9 @@ public class menu_report extends javax.swing.JPanel {
             .addGroup(pn_rdivisiLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_rdivisi)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(pn_rdivisiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pn_rdivisiLayout.createSequentialGroup()
                     .addContainerGap()
@@ -206,12 +208,15 @@ public class menu_report extends javax.swing.JPanel {
                 .addComponent(pn_rtanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(pn_rdivisi, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         add(kGradientPanel1, java.awt.BorderLayout.LINE_START);
 
         pn_utama1.setBackground(new java.awt.Color(255, 255, 255));
+        pn_utama1.setMaximumSize(new java.awt.Dimension(550, 550));
+        pn_utama1.setMinimumSize(new java.awt.Dimension(550, 550));
+        pn_utama1.setPreferredSize(new java.awt.Dimension(550, 550));
         pn_utama1.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -219,16 +224,16 @@ public class menu_report extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(pn_utama1, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
-                .addGap(25, 25, 25))
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addComponent(pn_utama1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(pn_utama1, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
-                .addGap(25, 25, 25))
+                .addComponent(pn_utama1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
