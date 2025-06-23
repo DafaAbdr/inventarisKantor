@@ -113,7 +113,7 @@ public class data_transaksiInfo extends javax.swing.JPanel {
         bCari.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bCari.setForeground(new java.awt.Color(255, 255, 255));
         bCari.setText("Search");
-        bCari.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bCari.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bCari.setPreferredSize(new java.awt.Dimension(72, 22));
         bCari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,7 +125,7 @@ public class data_transaksiInfo extends javax.swing.JPanel {
         bTambah.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bTambah.setForeground(new java.awt.Color(255, 255, 255));
         bTambah.setText("Add");
-        bTambah.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bTambah.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bTambah.setPreferredSize(new java.awt.Dimension(74, 23));
         bTambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,7 +137,7 @@ public class data_transaksiInfo extends javax.swing.JPanel {
         bEdit.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bEdit.setForeground(new java.awt.Color(255, 255, 255));
         bEdit.setText("Edit");
-        bEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bEdit.setPreferredSize(new java.awt.Dimension(74, 23));
         bEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,7 +157,7 @@ public class data_transaksiInfo extends javax.swing.JPanel {
         bHapus.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bHapus.setForeground(new java.awt.Color(255, 255, 255));
         bHapus.setText("Delete");
-        bHapus.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bHapus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bHapus.setPreferredSize(new java.awt.Dimension(74, 23));
         bHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,7 +171,7 @@ public class data_transaksiInfo extends javax.swing.JPanel {
         bKeluar.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bKeluar.setForeground(new java.awt.Color(255, 255, 255));
         bKeluar.setText("Exit");
-        bKeluar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bKeluar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bKeluar.setPreferredSize(new java.awt.Dimension(74, 23));
         bKeluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -230,7 +230,7 @@ public class data_transaksiInfo extends javax.swing.JPanel {
         bKembali.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bKembali.setForeground(new java.awt.Color(255, 255, 255));
         bKembali.setText("Back");
-        bKembali.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bKembali.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bKembali.setPreferredSize(new java.awt.Dimension(74, 23));
         bKembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

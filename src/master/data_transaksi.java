@@ -92,6 +92,7 @@ public class data_transaksi extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setMaximumSize(new java.awt.Dimension(910, 600));
         setMinimumSize(new java.awt.Dimension(910, 600));
         setPreferredSize(new java.awt.Dimension(910, 600));

@@ -109,6 +109,7 @@ public class data_karyawan1 extends javax.swing.JPanel {
         tanggalLahir = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         noTelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

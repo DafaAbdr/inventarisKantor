@@ -194,6 +194,7 @@ public class barang_keluar extends javax.swing.JPanel {
         namaKaryawan = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 153, 153));
@@ -261,6 +262,7 @@ public class barang_keluar extends javax.swing.JPanel {
         jLabel5.setText("Tanggal Masuk");
 
         namaBarang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        namaBarang.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         foto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 

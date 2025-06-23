@@ -118,6 +118,7 @@ public class pengembalian_Barang extends javax.swing.JPanel {
         bCetak.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bCetak.setForeground(new java.awt.Color(255, 255, 255));
         bCetak.setText("Print");
+        bCetak.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bCetak.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bCetakActionPerformed(evt);
@@ -128,6 +129,7 @@ public class pengembalian_Barang extends javax.swing.JPanel {
         bKeluar.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bKeluar.setForeground(new java.awt.Color(255, 255, 255));
         bKeluar.setText("Exit");
+        bKeluar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bKeluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bKeluarActionPerformed(evt);
@@ -138,6 +140,7 @@ public class pengembalian_Barang extends javax.swing.JPanel {
         bKembali.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bKembali.setForeground(new java.awt.Color(255, 255, 255));
         bKembali.setText("Back");
+        bKembali.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bKembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bKembaliActionPerformed(evt);
@@ -148,6 +151,7 @@ public class pengembalian_Barang extends javax.swing.JPanel {
         bSimpan.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bSimpan.setForeground(new java.awt.Color(255, 255, 255));
         bSimpan.setText("Save");
+        bSimpan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bSimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bSimpanActionPerformed(evt);
@@ -158,13 +162,18 @@ public class pengembalian_Barang extends javax.swing.JPanel {
         bKembalikan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         bKembalikan.setForeground(new java.awt.Color(255, 255, 255));
         bKembalikan.setText("Kembalikan");
+        bKembalikan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bKembalikan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bKembalikanActionPerformed(evt);
             }
         });
 
+        bCari.setBackground(new java.awt.Color(41, 76, 55));
+        bCari.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        bCari.setForeground(new java.awt.Color(255, 255, 255));
         bCari.setText("Find");
+        bCari.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bCari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bCariActionPerformed(evt);
@@ -206,6 +215,7 @@ public class pengembalian_Barang extends javax.swing.JPanel {
         idKaryawan.setFocusable(false);
 
         idBarang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        idBarang.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel8.setText("Jumlah");
 

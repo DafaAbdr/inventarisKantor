@@ -111,6 +111,7 @@ public class divisi extends javax.swing.JPanel {
         jLabel3.setText("Divisi");
 
         inputDivisi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        inputDivisi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         inputDivisi.setPreferredSize(new java.awt.Dimension(72, 30));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

@@ -113,6 +113,7 @@ public class data_barang extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         bKembali.setBackground(new java.awt.Color(41, 76, 55));
         bKembali.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
