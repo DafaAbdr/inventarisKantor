@@ -544,7 +544,7 @@ public class barang_masuk extends javax.swing.JPanel {
             psUpdate.setString(2, idBarang);
             psUpdate.executeUpdate();
 
-            String[] data = {idBarangMasuk, namaBarang1, jumlahBarang};
+            String[] data = {idBarangMasuk, namaBarang1, jumlahBarang, tanggalBarangMasuk};
             tabmode.insertRow(0, data);
 
             kosong();

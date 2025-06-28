@@ -49,6 +49,7 @@ public class menu_report extends javax.swing.JPanel {
         kGradientPanel1.setPreferredSize(new java.awt.Dimension(310, 600));
 
         pn_rtanggal.setBackground(new java.awt.Color(255, 255, 255));
+        pn_rtanggal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pn_rtanggal.setPreferredSize(new java.awt.Dimension(210, 37));
 
         pn_lirtanggal.setBackground(new java.awt.Color(255, 255, 255));
@@ -120,6 +121,7 @@ public class menu_report extends javax.swing.JPanel {
         );
 
         pn_rdivisi.setBackground(new java.awt.Color(255, 255, 255));
+        pn_rdivisi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pn_rdivisi.setPreferredSize(new java.awt.Dimension(210, 37));
 
         pn_lirdivisi.setBackground(new java.awt.Color(255, 255, 255));
@@ -168,7 +170,7 @@ public class menu_report extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_rdivisi)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(pn_rdivisiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pn_rdivisiLayout.createSequentialGroup()
                     .addContainerGap()

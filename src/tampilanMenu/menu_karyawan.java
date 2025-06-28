@@ -91,7 +91,9 @@ public class menu_karyawan extends javax.swing.JFrame {
         pn_utama = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setMinimumSize(new java.awt.Dimension(1170, 710));
+        setResizable(false);
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 

@@ -105,6 +105,7 @@ public class menu_inventaris extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1170, 710));
+        setResizable(false);
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
@@ -161,6 +162,7 @@ public class menu_inventaris extends javax.swing.JFrame {
         btn_itemB.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_itemB.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_itemB.setText("Item Borrowing");
+        btn_itemB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_itemB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_itemBMouseClicked(evt);
@@ -232,6 +234,7 @@ public class menu_inventaris extends javax.swing.JFrame {
         btn_itemIn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_itemIn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_itemIn.setText("Item Incoming");
+        btn_itemIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_itemIn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_itemInMouseClicked(evt);
@@ -303,6 +306,7 @@ public class menu_inventaris extends javax.swing.JFrame {
         btn_itemO.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_itemO.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_itemO.setText("Item Outgoing");
+        btn_itemO.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_itemO.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_itemOMouseClicked(evt);
@@ -374,6 +378,7 @@ public class menu_inventaris extends javax.swing.JFrame {
         btn_itemRe.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_itemRe.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_itemRe.setText("Item Return");
+        btn_itemRe.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_itemRe.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_itemReMouseClicked(evt);
@@ -445,6 +450,7 @@ public class menu_inventaris extends javax.swing.JFrame {
         btn_itemReq.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_itemReq.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_itemReq.setText("Item Request");
+        btn_itemReq.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_itemReq.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_itemReqMouseClicked(evt);
@@ -523,6 +529,7 @@ public class menu_inventaris extends javax.swing.JFrame {
         btn_report.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_report.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btn_report.setText("Reports");
+        btn_report.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_report.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_reportMouseClicked(evt);

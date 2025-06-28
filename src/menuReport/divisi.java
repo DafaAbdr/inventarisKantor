@@ -56,7 +56,7 @@ public class divisi extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        inputTanggalAwal = new com.toedter.calendar.JCalendar();
+        inputTanggalAkhir = new com.toedter.calendar.JCalendar();
         jLabel1 = new javax.swing.JLabel();
         bCetak = new javax.swing.JButton();
         bKembali = new javax.swing.JButton();
@@ -65,6 +65,8 @@ public class divisi extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         inputDivisi = new javax.swing.JComboBox<>();
         inputTanggalAwal1 = new com.toedter.calendar.JCalendar();
+        jLabel4 = new javax.swing.JLabel();
+        jenisLaporan = new javax.swing.JComboBox<>();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -114,46 +116,65 @@ public class divisi extends javax.swing.JPanel {
         inputDivisi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         inputDivisi.setPreferredSize(new java.awt.Dimension(72, 30));
 
+        jLabel4.setText("Jenis Laporan");
+
+        jenisLaporan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Barang Keluar", "Barang Masuk", "Peminjaman Barang", "Pengembalian Barang", "Permintaan Barang" }));
+        jenisLaporan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jenisLaporan.setPreferredSize(new java.awt.Dimension(72, 30));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(440, 440, 440)
-                .addComponent(jLabel5))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(inputDivisi, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(inputTanggalAwal1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(320, 320, 320)
-                .addComponent(bCetak, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(inputTanggalAwal, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(440, 440, 440)
+                        .addComponent(jLabel5))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(inputTanggalAwal1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(320, 320, 320)
+                        .addComponent(bCetak, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(inputTanggalAkhir, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(jenisLaporan, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(47, 47, 47)
+                                .addComponent(inputDivisi, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(46, 46, 46))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel5)
-                .addGap(40, 40, 40)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(inputDivisi, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jenisLaporan, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(17, 17, 17)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputDivisi, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addGap(7, 7, 7)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
@@ -164,7 +185,7 @@ public class divisi extends javax.swing.JPanel {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(bCetak, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(inputTanggalAwal, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputTanggalAkhir, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(bKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -177,7 +198,7 @@ public class divisi extends javax.swing.JPanel {
 
     private void bCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCetakActionPerformed
         try {
-            java.util.Date tanggalAwalUtil = inputTanggalAwal.getDate();
+            java.util.Date tanggalAwalUtil = inputTanggalAkhir.getDate();
             java.util.Date tanggalAkhirUtil = inputTanggalAkhir.getDate();
 
             java.sql.Date tanggalAwal = new java.sql.Date(tanggalAwalUtil.getTime());
@@ -185,9 +206,33 @@ public class divisi extends javax.swing.JPanel {
 
             String namaDivisi = inputDivisi.getSelectedItem().toString();
             
-            String reportPath = System.getProperty("user.dir") + File.separator + "src" + File.separator + "report" + File.separator + "LaporanDivisi.jasper";
+            String inputJenisLaporan = jenisLaporan.getSelectedItem().toString();
+            
+            String fileName = "";
 
-            HashMap<String, Object> parameters = new HashMap<>();
+            switch (inputJenisLaporan) {
+                case "Barang Masuk":
+                    fileName = "LaporanBarangMasukDivisi.jasper";
+                    break;
+                case "Barang Keluar":
+                    fileName = "LaporanBarangKeluarDivisi.jasper";
+                    break;
+                case "Peminjaman Barang":
+                    fileName = "LaporanPeminjamanDivisi.jasper";
+                    break;
+                case "Permintaan Barang":
+                    fileName = "LaporanPermintaanDivisi.jasper";
+                    break;
+                case "Pengembalian Barang":
+                    fileName = "LaporanPengembalianDivisi.jasper";
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(this, "Jenis laporan tidak dikenali.");
+                    return;
+            }
+
+            String reportPath = System.getProperty("user.dir") + File.separator + "src" + File.separator + "report" + File.separator + fileName;
+                HashMap<String, Object> parameters = new HashMap<>();
                 parameters.put("namaDivisi", namaDivisi);
                 parameters.put("tanggalAwal", tanggalAwal);
                 parameters.put("tanggalAkhir", tanggalAkhir);
@@ -195,6 +240,7 @@ public class divisi extends javax.swing.JPanel {
             JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
             JasperViewer viewer = new JasperViewer(print, false);
             viewer.setVisible(true);
+            
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Gagal menampilkan laporan:\n" + e.getMessage());
@@ -207,12 +253,14 @@ public class divisi extends javax.swing.JPanel {
     private javax.swing.JButton bKeluar;
     private javax.swing.JButton bKembali;
     private javax.swing.JComboBox<String> inputDivisi;
-    private com.toedter.calendar.JCalendar inputTanggalAwal;
+    private com.toedter.calendar.JCalendar inputTanggalAkhir;
     private com.toedter.calendar.JCalendar inputTanggalAwal1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JComboBox<String> jenisLaporan;
     // End of variables declaration//GEN-END:variables
 }

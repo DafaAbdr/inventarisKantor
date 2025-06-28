@@ -142,6 +142,7 @@ public class data_karyawan extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         noTelp = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         alamat = new javax.swing.JTextArea();
@@ -323,6 +324,7 @@ public class data_karyawan extends javax.swing.JPanel {
             }
         });
 
+        buttonGroup1.add(jkl);
         jkl.setText("Laki-Laki");
         jkl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -330,6 +332,7 @@ public class data_karyawan extends javax.swing.JPanel {
             }
         });
 
+        buttonGroup1.add(jkp);
         jkp.setText("Perempuan");
         jkp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -828,6 +831,7 @@ public class data_karyawan extends javax.swing.JPanel {
     private javax.swing.JButton bKembali;
     private javax.swing.JButton bTambah;
     private javax.swing.JButton bUnggah;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField cari;
     private javax.swing.JComboBox<String> divisi;
     private javax.swing.JLabel foto;
