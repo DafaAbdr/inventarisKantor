@@ -233,9 +233,9 @@ public class divisi extends javax.swing.JPanel {
 
             String reportPath = System.getProperty("user.dir") + File.separator + "src" + File.separator + "report" + File.separator + fileName;
                 HashMap<String, Object> parameters = new HashMap<>();
-                parameters.put("namaDivisi", namaDivisi);
                 parameters.put("tanggalAwal", tanggalAwal);
                 parameters.put("tanggalAkhir", tanggalAkhir);
+                parameters.put("namaDivisi", namaDivisi);
 
             JasperPrint print = JasperFillManager.fillReport(reportPath, parameters, conn);
             JasperViewer viewer = new JasperViewer(print, false);

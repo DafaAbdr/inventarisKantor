@@ -609,7 +609,7 @@ public class permintaan_Barang extends javax.swing.JPanel {
 
             ps.executeUpdate();
 
-            JOptionPane.showMessageDialog(null, "Transaksi Peminjaman Barang Berhasil di Simpan");
+            JOptionPane.showMessageDialog(null, "Transaksi Permintaan Barang Berhasil di Simpan");
 
             kosong2();
         } catch (SQLException ex) {
