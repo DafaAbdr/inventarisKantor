@@ -51,9 +51,9 @@ public class pengembalian_Barang extends javax.swing.JPanel {
     }
     
     private String generateIdPengembalian() {
-        String idBaru = "PB001";
+            String idBaru = "PB001";
         try {
-            String sql = "SELECT MAX(RIGHT(id_pengembalian, 3)) AS nomor FROM datapengembalianBarang";
+            String sql = "SELECT MAX(RIGHT(id_transaksi, 3)) AS nomor FROM dataTransaksi WHERE id_transaksi LIKE 'PB%'";
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
@@ -216,6 +216,11 @@ public class pengembalian_Barang extends javax.swing.JPanel {
 
         idBarang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         idBarang.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        idBarang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                idBarangMouseClicked(evt);
+            }
+        });
 
         jLabel8.setText("Jumlah");
 
@@ -395,7 +400,7 @@ public class pengembalian_Barang extends javax.swing.JPanel {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String tanggalKembalian = sdf.format(tanggal.getDate());
 
-        String sql = "INSERT INTO datapengembalianBarang (id_pengembalian, id_karyawan, nama_karyawan, tanggal) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO datatransaksi (id_transaksi, id_karyawan, nama_karyawan, tanggal) VALUES (?, ?, ?, ?)";
         
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -424,7 +429,7 @@ public class pengembalian_Barang extends javax.swing.JPanel {
         tabmode = (DefaultTableModel) tablePengembalian.getModel();
 
         try {
-            String sqlInsert = "INSERT INTO datapengembalianInfo (id_pengembalian, id_barang, nama_barang, jumlah_barang, tanggal) VALUES (?, ?, ?, ?, ?)";
+            String sqlInsert = "INSERT INTO datatransaksiinfo (id_transaksi, id_barang, nama_barang, jumlah_barang, tanggal) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement ps = conn.prepareStatement(sqlInsert);
             ps.setString(1, idPengembalian);
             ps.setString(2, idBarang1);
@@ -484,6 +489,10 @@ public class pengembalian_Barang extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Data tidak ditemukan: " + ex.getMessage());
         }
     }//GEN-LAST:event_bCariActionPerformed
+
+    private void idBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_idBarangMouseClicked
+        //OPTION
+    }//GEN-LAST:event_idBarangMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
