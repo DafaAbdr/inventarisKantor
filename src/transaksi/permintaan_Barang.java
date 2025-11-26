@@ -206,7 +206,6 @@ public class permintaan_Barang extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableBarang = new javax.swing.JTable();
-        bKembali = new javax.swing.JButton();
         namaKaryawan = new javax.swing.JTextField();
         foto = new javax.swing.JLabel();
         bTambah = new javax.swing.JButton();
@@ -298,16 +297,6 @@ public class permintaan_Barang extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(tableBarang);
-
-        bKembali.setBackground(new java.awt.Color(41, 76, 55));
-        bKembali.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        bKembali.setForeground(new java.awt.Color(255, 255, 255));
-        bKembali.setText("Back");
-        bKembali.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bKembaliActionPerformed(evt);
-            }
-        });
 
         namaKaryawan.setEditable(false);
         namaKaryawan.setFocusable(false);
@@ -410,9 +399,7 @@ public class permintaan_Barang extends javax.swing.JPanel {
                             .addGap(30, 30, 30)
                             .addComponent(bCetak)
                             .addGap(30, 30, 30)
-                            .addComponent(bKeluar)
-                            .addGap(30, 30, 30)
-                            .addComponent(bKembali)))
+                            .addComponent(bKeluar)))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 296, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -476,8 +463,7 @@ public class permintaan_Barang extends javax.swing.JPanel {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(bCetak)
                         .addComponent(bSimpan)
-                        .addComponent(bKeluar)
-                        .addComponent(bKembali))
+                        .addComponent(bKeluar))
                     .addGap(81, 81, 81)))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -516,24 +502,6 @@ public class permintaan_Barang extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_tableBarangMouseClicked
-
-    private void bKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKembaliActionPerformed
-        if ("admin".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_admin().setVisible(true);
-        } else if ("karyawan".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_karyawan().setVisible(true);
-        } else if ("karyawan inventaris".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_inventaris().setVisible(true);
-        } else if ("bos".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_bos().setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(null, "Hak akses tidak dikenal!");
-        }
-    }//GEN-LAST:event_bKembaliActionPerformed
 
     private void bTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTambahActionPerformed
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -638,7 +606,6 @@ public class permintaan_Barang extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCetak;
     private javax.swing.JButton bKeluar;
-    private javax.swing.JButton bKembali;
     private javax.swing.JButton bSimpan;
     private javax.swing.JButton bTambah;
     private javax.swing.JLabel foto;

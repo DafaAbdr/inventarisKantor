@@ -89,7 +89,6 @@ public class pengembalian_Barang extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         bCetak = new javax.swing.JButton();
         bKeluar = new javax.swing.JButton();
-        bKembali = new javax.swing.JButton();
         bSimpan = new javax.swing.JButton();
         bKembalikan = new javax.swing.JButton();
         bCari = new javax.swing.JButton();
@@ -137,17 +136,6 @@ public class pengembalian_Barang extends javax.swing.JPanel {
         bKeluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bKeluarActionPerformed(evt);
-            }
-        });
-
-        bKembali.setBackground(new java.awt.Color(41, 76, 55));
-        bKembali.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        bKembali.setForeground(new java.awt.Color(255, 255, 255));
-        bKembali.setText("Back");
-        bKembali.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        bKembali.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bKembaliActionPerformed(evt);
             }
         });
 
@@ -240,15 +228,13 @@ public class pengembalian_Barang extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(287, 287, 287)
+                .addGap(320, 320, 320)
                 .addComponent(bSimpan)
                 .addGap(18, 18, 18)
                 .addComponent(bCetak)
                 .addGap(18, 18, 18)
-                .addComponent(bKembali)
-                .addGap(18, 18, 18)
                 .addComponent(bKeluar)
-                .addGap(0, 281, Short.MAX_VALUE))
+                .addGap(0, 338, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel10)
@@ -309,7 +295,6 @@ public class pengembalian_Barang extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bCetak)
                     .addComponent(bSimpan)
-                    .addComponent(bKembali)
                     .addComponent(bKeluar))
                 .addGap(28, 28, 28))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -380,24 +365,6 @@ public class pengembalian_Barang extends javax.swing.JPanel {
             System.exit(0);
         }
     }//GEN-LAST:event_bKeluarActionPerformed
-
-    private void bKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKembaliActionPerformed
-        if ("admin".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_admin().setVisible(true);
-        } else if ("karyawan".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_karyawan().setVisible(true);
-        } else if ("karyawan inventaris".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_inventaris().setVisible(true);
-        } else if ("bos".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_bos().setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(null, "Hak akses tidak dikenal!");
-        }
-    }//GEN-LAST:event_bKembaliActionPerformed
 
     private void bSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSimpanActionPerformed
         String idPengembalian = generateIdPengembalian();
@@ -584,7 +551,6 @@ public class pengembalian_Barang extends javax.swing.JPanel {
     private javax.swing.JButton bCari;
     private javax.swing.JButton bCetak;
     private javax.swing.JButton bKeluar;
-    private javax.swing.JButton bKembali;
     private javax.swing.JButton bKembalikan;
     private javax.swing.JButton bSimpan;
     private javax.swing.JComboBox<String> idBarang;

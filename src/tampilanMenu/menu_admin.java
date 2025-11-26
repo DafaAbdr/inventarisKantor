@@ -80,10 +80,6 @@ public class menu_admin extends javax.swing.JFrame {
         pn_liemployee = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         btn_employee = new javax.swing.JLabel();
-        pn_invent = new javax.swing.JPanel();
-        pn_liinvent = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        btn_invent = new javax.swing.JLabel();
         pn_itemD = new javax.swing.JPanel();
         pn_liitemD = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -92,10 +88,6 @@ public class menu_admin extends javax.swing.JFrame {
         pn_liitemR = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         btn_itemR = new javax.swing.JLabel();
-        pn_itemI = new javax.swing.JPanel();
-        pn_liitemI = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        btn_itemI = new javax.swing.JLabel();
         pn_stock = new javax.swing.JPanel();
         pn_listock = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -155,6 +147,9 @@ public class menu_admin extends javax.swing.JFrame {
         jPanel1.setLayout(new java.awt.BorderLayout());
 
         jPanel2.setPreferredSize(new java.awt.Dimension(250, 700));
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setPreferredSize(new java.awt.Dimension(250, 700));
@@ -378,77 +373,6 @@ public class menu_admin extends javax.swing.JFrame {
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        pn_invent.setBackground(new java.awt.Color(255, 255, 255));
-
-        pn_liinvent.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout pn_liinventLayout = new javax.swing.GroupLayout(pn_liinvent);
-        pn_liinvent.setLayout(pn_liinventLayout);
-        pn_liinventLayout.setHorizontalGroup(
-            pn_liinventLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
-        );
-        pn_liinventLayout.setVerticalGroup(
-            pn_liinventLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 25, Short.MAX_VALUE)
-        );
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconBaru/invendetails.png"))); // NOI18N
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel5MouseEntered(evt);
-            }
-        });
-
-        btn_invent.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_invent.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_invent.setText("Inventory Details");
-        btn_invent.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_invent.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_inventMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_inventMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_inventMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pn_inventLayout = new javax.swing.GroupLayout(pn_invent);
-        pn_invent.setLayout(pn_inventLayout);
-        pn_inventLayout.setHorizontalGroup(
-            pn_inventLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn_inventLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_invent, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(pn_inventLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pn_inventLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(pn_liinvent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(206, Short.MAX_VALUE)))
-        );
-        pn_inventLayout.setVerticalGroup(
-            pn_inventLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn_inventLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pn_inventLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_invent, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(pn_inventLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pn_inventLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(pn_liinvent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-
         pn_itemD.setBackground(new java.awt.Color(255, 255, 255));
 
         pn_liitemD.setBackground(new java.awt.Color(255, 255, 255));
@@ -589,78 +513,6 @@ public class menu_admin extends javax.swing.JFrame {
                 .addGroup(pn_itemRLayout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(pn_liitemR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-
-        pn_itemI.setBackground(new java.awt.Color(255, 255, 255));
-        pn_itemI.setPreferredSize(new java.awt.Dimension(222, 37));
-
-        pn_liitemI.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout pn_liitemILayout = new javax.swing.GroupLayout(pn_liitemI);
-        pn_liitemI.setLayout(pn_liitemILayout);
-        pn_liitemILayout.setHorizontalGroup(
-            pn_liitemILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
-        );
-        pn_liitemILayout.setVerticalGroup(
-            pn_liitemILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 25, Short.MAX_VALUE)
-        );
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconBaru/returninfo.png"))); // NOI18N
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel8MouseEntered(evt);
-            }
-        });
-
-        btn_itemI.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_itemI.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_itemI.setText("Item Return Info");
-        btn_itemI.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_itemI.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_itemIMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_itemIMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_itemIMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pn_itemILayout = new javax.swing.GroupLayout(pn_itemI);
-        pn_itemI.setLayout(pn_itemILayout);
-        pn_itemILayout.setHorizontalGroup(
-            pn_itemILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn_itemILayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_itemI, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(pn_itemILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pn_itemILayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(pn_liitemI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(206, Short.MAX_VALUE)))
-        );
-        pn_itemILayout.setVerticalGroup(
-            pn_itemILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn_itemILayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pn_itemILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_itemI, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(pn_itemILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pn_itemILayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(pn_liitemI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
@@ -1400,11 +1252,9 @@ public class menu_admin extends javax.swing.JFrame {
                     .addComponent(pn_trans, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pn_position, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pn_stock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pn_itemI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pn_itemR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3)
                     .addComponent(pn_itemD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pn_invent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pn_employee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pn_div, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pn_acc, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1430,13 +1280,9 @@ public class menu_admin extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(pn_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(pn_invent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
                 .addComponent(pn_itemD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(pn_itemR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(pn_itemI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(pn_stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
@@ -1490,7 +1336,7 @@ public class menu_admin extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconBaru/logo.png"))); // NOI18N
-        jLabel1.setText("Inventhera");
+        jLabel1.setText(" PT. ALTIMEDA CIPTA VISITAMA");
 
         namaKaryawan.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         namaKaryawan.setForeground(new java.awt.Color(255, 255, 255));
@@ -1516,25 +1362,25 @@ public class menu_admin extends javax.swing.JFrame {
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 564, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 425, Short.MAX_VALUE)
                 .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(namaKaryawan)
-                .addGap(32, 32, 32)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel22)
-                .addGap(15, 15, 15))
+                .addGap(29, 29, 29))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(namaKaryawan)
-                .addComponent(jLabel22))
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(namaKaryawan)
+                    .addComponent(jLabel22))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel3.add(kGradientPanel1, java.awt.BorderLayout.PAGE_START);
@@ -1664,30 +1510,6 @@ public class menu_admin extends javax.swing.JFrame {
         pn_liemployee.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_btn_employeeMouseExited
 
-    private void jLabel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel5MouseEntered
-
-    private void btn_inventMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inventMouseClicked
-        pn_invent.setBackground(new Color(240, 240, 240));
-        pn_liinvent.setBackground(new Color(0, 102, 102));
-
-        pn_utama.removeAll();
-        pn_utama.add(new master.stok_barangInfo());
-        pn_utama.repaint();
-        pn_utama.revalidate();
-    }//GEN-LAST:event_btn_inventMouseClicked
-
-    private void btn_inventMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inventMouseEntered
-        pn_invent.setBackground(new Color(250, 250, 250));
-        pn_liinvent.setBackground(new Color(0, 102, 102));
-    }//GEN-LAST:event_btn_inventMouseEntered
-
-    private void btn_inventMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inventMouseExited
-        pn_invent.setBackground(new Color(255, 255, 255));
-        pn_liinvent.setBackground(new Color(255, 255, 255));
-    }//GEN-LAST:event_btn_inventMouseExited
-
     private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel6MouseEntered
@@ -1721,7 +1543,7 @@ public class menu_admin extends javax.swing.JFrame {
         pn_liitemR.setBackground(new Color(0, 102, 102));
 
         pn_utama.removeAll();
-        pn_utama.add(new master.data_pengembalianBarang());
+        pn_utama.add(new master.data_pengembalian());
         pn_utama.repaint();
         pn_utama.revalidate();
     }//GEN-LAST:event_btn_itemRMouseClicked
@@ -1735,30 +1557,6 @@ public class menu_admin extends javax.swing.JFrame {
         pn_itemR.setBackground(new Color(255, 255, 255));
         pn_liitemR.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_btn_itemRMouseExited
-
-    private void jLabel8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel8MouseEntered
-
-    private void btn_itemIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_itemIMouseClicked
-        pn_itemI.setBackground(new Color(240, 240, 240));
-        pn_liitemI.setBackground(new Color(0, 102, 102));
-
-        pn_utama.removeAll();
-        pn_utama.add(new master.data_pengembalianInfo());
-        pn_utama.repaint();
-        pn_utama.revalidate();
-    }//GEN-LAST:event_btn_itemIMouseClicked
-
-    private void btn_itemIMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_itemIMouseEntered
-        pn_itemI.setBackground(new Color(250, 250, 250));
-        pn_liitemI.setBackground(new Color(0, 102, 102));
-    }//GEN-LAST:event_btn_itemIMouseEntered
-
-    private void btn_itemIMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_itemIMouseExited
-        pn_itemI.setBackground(new Color(255, 255, 255));
-        pn_liitemI.setBackground(new Color(255, 255, 255));
-    }//GEN-LAST:event_btn_itemIMouseExited
 
     private void jLabel9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseEntered
         // TODO add your handling code here:
@@ -2059,10 +1857,8 @@ public class menu_admin extends javax.swing.JFrame {
     private javax.swing.JLabel btn_acc;
     private javax.swing.JLabel btn_div;
     private javax.swing.JLabel btn_employee;
-    private javax.swing.JLabel btn_invent;
     private javax.swing.JLabel btn_itemB;
     private javax.swing.JLabel btn_itemD;
-    private javax.swing.JLabel btn_itemI;
     private javax.swing.JLabel btn_itemIn;
     private javax.swing.JLabel btn_itemO;
     private javax.swing.JLabel btn_itemR;
@@ -2091,10 +1887,8 @@ public class menu_admin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -2108,10 +1902,8 @@ public class menu_admin extends javax.swing.JFrame {
     private javax.swing.JPanel pn_acc;
     private javax.swing.JPanel pn_div;
     private javax.swing.JPanel pn_employee;
-    private javax.swing.JPanel pn_invent;
     private javax.swing.JPanel pn_itemB;
     private javax.swing.JPanel pn_itemD;
-    private javax.swing.JPanel pn_itemI;
     private javax.swing.JPanel pn_itemIn;
     private javax.swing.JPanel pn_itemO;
     private javax.swing.JPanel pn_itemR;
@@ -2120,10 +1912,8 @@ public class menu_admin extends javax.swing.JFrame {
     private javax.swing.JPanel pn_liacc;
     private javax.swing.JPanel pn_lidiv;
     private javax.swing.JPanel pn_liemployee;
-    private javax.swing.JPanel pn_liinvent;
     private javax.swing.JPanel pn_liitemB;
     private javax.swing.JPanel pn_liitemD;
-    private javax.swing.JPanel pn_liitemI;
     private javax.swing.JPanel pn_liitemIn;
     private javax.swing.JPanel pn_liitemO;
     private javax.swing.JPanel pn_liitemR;

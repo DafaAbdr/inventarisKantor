@@ -201,7 +201,6 @@ public class peminjaman_Barang extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         bSimpan = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        bKembali = new javax.swing.JButton();
         idBarang = new javax.swing.JComboBox<>();
         namaKaryawan = new javax.swing.JTextField();
         bCetak = new javax.swing.JButton();
@@ -271,16 +270,6 @@ public class peminjaman_Barang extends javax.swing.JPanel {
         });
 
         jLabel8.setText("ID Peminjaman");
-
-        bKembali.setBackground(new java.awt.Color(41, 76, 55));
-        bKembali.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        bKembali.setForeground(new java.awt.Color(255, 255, 255));
-        bKembali.setText("Back");
-        bKembali.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bKembaliActionPerformed(evt);
-            }
-        });
 
         idBarang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -375,8 +364,6 @@ public class peminjaman_Barang extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(bCetak)
                                 .addGap(18, 18, 18)
-                                .addComponent(bKembali)
-                                .addGap(18, 18, 18)
                                 .addComponent(bKeluar)
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(18, 18, 18)
@@ -458,7 +445,6 @@ public class peminjaman_Barang extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bSimpan)
                     .addComponent(bCetak)
-                    .addComponent(bKembali)
                     .addComponent(bKeluar))
                 .addGap(32, 32, 32))
         );
@@ -508,24 +494,6 @@ public class peminjaman_Barang extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Gagal menyimpan data transaksi: " + ex.getMessage());
         }
     }//GEN-LAST:event_bSimpanActionPerformed
-
-    private void bKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKembaliActionPerformed
-        if ("admin".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_admin().setVisible(true);
-        } else if ("karyawan".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_karyawan().setVisible(true);
-        } else if ("karyawan inventaris".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_inventaris().setVisible(true);
-        } else if ("bos".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_bos().setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(null, "Hak akses tidak dikenal!");
-        }
-    }//GEN-LAST:event_bKembaliActionPerformed
 
     private void bCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCetakActionPerformed
         try {
@@ -614,7 +582,6 @@ public class peminjaman_Barang extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCetak;
     private javax.swing.JButton bKeluar;
-    private javax.swing.JButton bKembali;
     private javax.swing.JButton bSimpan;
     private javax.swing.JButton bTambah;
     private javax.swing.JLabel foto;

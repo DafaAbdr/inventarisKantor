@@ -172,7 +172,6 @@ public class barang_masuk extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel6 = new javax.swing.JLabel();
-        bKembali = new javax.swing.JButton();
         bKeluar = new javax.swing.JButton();
         bCetak = new javax.swing.JButton();
         idKaryawan = new javax.swing.JTextField();
@@ -200,16 +199,6 @@ public class barang_masuk extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 153, 153));
         jLabel6.setText("Transaction > Item Incoming");
-
-        bKembali.setBackground(new java.awt.Color(41, 76, 55));
-        bKembali.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        bKembali.setForeground(new java.awt.Color(255, 255, 255));
-        bKembali.setText("Back");
-        bKembali.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bKembaliActionPerformed(evt);
-            }
-        });
 
         bKeluar.setBackground(new java.awt.Color(41, 76, 55));
         bKeluar.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
@@ -368,15 +357,13 @@ public class barang_masuk extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(633, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(bSimpan)
-                                .addGap(46, 46, 46)
+                                .addGap(18, 18, 18)
                                 .addComponent(bCetak)
-                                .addGap(46, 46, 46)
-                                .addComponent(bKembali)
-                                .addGap(46, 46, 46)
+                                .addGap(18, 18, 18)
                                 .addComponent(bKeluar))
                             .addComponent(jLabel6)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -409,11 +396,10 @@ public class barang_masuk extends javax.swing.JPanel {
                     .addComponent(jLabel4)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 453, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bKeluar)
                     .addComponent(bCetak)
-                    .addComponent(bSimpan)
-                    .addComponent(bKembali)
-                    .addComponent(bKeluar))
+                    .addComponent(bSimpan))
                 .addGap(30, 30, 30))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -427,24 +413,6 @@ public class barang_masuk extends javax.swing.JPanel {
                     .addContainerGap(113, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void bKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKembaliActionPerformed
-        if ("admin".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_admin().setVisible(true);
-        } else if ("karyawan".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_karyawan().setVisible(true);
-        } else if ("karyawan inventaris".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_inventaris().setVisible(true);
-        } else if ("bos".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_bos().setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(null, "Hak akses tidak dikenal!");
-        }
-    }//GEN-LAST:event_bKembaliActionPerformed
 
     private void bKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKeluarActionPerformed
         int konfirmasi = JOptionPane.showConfirmDialog (
@@ -561,7 +529,6 @@ public class barang_masuk extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCetak;
     private javax.swing.JButton bKeluar;
-    private javax.swing.JButton bKembali;
     private javax.swing.JButton bSimpan;
     private javax.swing.JButton bTambah;
     private javax.swing.JLabel foto;

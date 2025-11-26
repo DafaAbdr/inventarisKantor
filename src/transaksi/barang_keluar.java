@@ -177,7 +177,6 @@ public class barang_keluar extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         bCetak = new javax.swing.JButton();
         bKeluar = new javax.swing.JButton();
-        bKembali = new javax.swing.JButton();
         bSimpan = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -221,16 +220,6 @@ public class barang_keluar extends javax.swing.JPanel {
         bKeluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bKeluarActionPerformed(evt);
-            }
-        });
-
-        bKembali.setBackground(new java.awt.Color(41, 76, 55));
-        bKembali.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        bKembali.setForeground(new java.awt.Color(255, 255, 255));
-        bKembali.setText("Back");
-        bKembali.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bKembaliActionPerformed(evt);
             }
         });
 
@@ -370,17 +359,15 @@ public class barang_keluar extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(458, Short.MAX_VALUE)
-                .addComponent(bSimpan)
-                .addGap(46, 46, 46)
-                .addComponent(bCetak)
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addContainerGap(639, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(bKembali)
-                        .addGap(46, 46, 46)
-                        .addComponent(bKeluar))
-                    .addComponent(jLabel6))
+                        .addComponent(bSimpan)
+                        .addGap(18, 18, 18)
+                        .addComponent(bCetak)
+                        .addGap(18, 18, 18)
+                        .addComponent(bKeluar)))
                 .addGap(25, 25, 25))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -406,7 +393,6 @@ public class barang_keluar extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bCetak)
                     .addComponent(bSimpan)
-                    .addComponent(bKembali)
                     .addComponent(bKeluar))
                 .addGap(30, 30, 30))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -452,24 +438,6 @@ public class barang_keluar extends javax.swing.JPanel {
             System.exit(0);
         }
     }//GEN-LAST:event_bKeluarActionPerformed
-
-    private void bKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKembaliActionPerformed
-        if ("admin".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_admin().setVisible(true);
-        } else if ("karyawan".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_karyawan().setVisible(true);
-        } else if ("karyawan inventaris".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_inventaris().setVisible(true);
-        } else if ("bos".equalsIgnoreCase(hakAkses)) {
-            this.dispose();
-            new tampilanMenu.menu_bos().setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(null, "Hak akses tidak dikenal!");
-        }
-    }//GEN-LAST:event_bKembaliActionPerformed
 
     private void bSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSimpanActionPerformed
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -555,7 +523,6 @@ public class barang_keluar extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCetak;
     private javax.swing.JButton bKeluar;
-    private javax.swing.JButton bKembali;
     private javax.swing.JButton bSimpan;
     private javax.swing.JButton bTambah;
     private javax.swing.JLabel foto;
