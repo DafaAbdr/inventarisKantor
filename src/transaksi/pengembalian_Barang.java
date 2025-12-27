@@ -74,7 +74,6 @@ public class pengembalian_Barang extends javax.swing.JPanel {
         idBarang.setSelectedIndex(0);
         namaBarang.setText("");
         jumlah.setText("");
-        tanggal.setDate(null);
         idPeminjaman.setText("");
     }
 

@@ -173,7 +173,6 @@ public class permintaan_Barang extends javax.swing.JPanel {
         namaBarang.setText("");
         idBarang.setSelectedIndex(0);
         jumlah.setText("");
-        tanggal.setDate(null);
     }
     
     protected void kosong2(){
