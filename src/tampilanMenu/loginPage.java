@@ -29,7 +29,7 @@ public class loginPage extends javax.swing.JFrame {
         initComponents();
         
         setTitle("Inventaris Perkantoran");
-        ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
+        ImageIcon icon = new ImageIcon(getClass().getResource("/iconBaru/logo.png"));
         setIconImage(icon.getImage());
     }
 
@@ -88,7 +88,7 @@ public class loginPage extends javax.swing.JFrame {
         bMasuk1.setBackground(new java.awt.Color(41, 76, 55));
         bMasuk1.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         bMasuk1.setForeground(new java.awt.Color(255, 255, 255));
-        bMasuk1.setText("LOGIN");
+        bMasuk1.setText("MASUK");
         bMasuk1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bMasuk1.setPreferredSize(new java.awt.Dimension(80, 30));
         bMasuk1.addActionListener(new java.awt.event.ActionListener() {
@@ -104,7 +104,7 @@ public class loginPage extends javax.swing.JFrame {
         bKeluar1.setBackground(new java.awt.Color(41, 76, 55));
         bKeluar1.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         bKeluar1.setForeground(new java.awt.Color(255, 255, 255));
-        bKeluar1.setText("EXIT");
+        bKeluar1.setText("KELUAR");
         bKeluar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bKeluar1.setPreferredSize(new java.awt.Dimension(80, 30));
         bKeluar1.addActionListener(new java.awt.event.ActionListener() {
@@ -130,9 +130,9 @@ public class loginPage extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(90, Short.MAX_VALUE)
-                .addComponent(bMasuk1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95)
-                .addComponent(bKeluar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bMasuk1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
+                .addComponent(bKeluar1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(85, 85, 85))
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );

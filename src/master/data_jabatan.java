@@ -34,6 +34,7 @@ public class data_jabatan extends javax.swing.JPanel {
     protected void kosong(){
         idJabatan.setText("");
         namaJabatan.setText("");
+        cari.setText("");
     }
     
     protected void dataTable(){
@@ -73,7 +74,7 @@ public class data_jabatan extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tableJabatan = new javax.swing.JTable();
         bHapus = new javax.swing.JButton();
-        bKeluar = new javax.swing.JButton();
+        bBersihkan = new javax.swing.JButton();
         bTambah = new javax.swing.JButton();
         bEdit = new javax.swing.JButton();
         namaJabatan = new javax.swing.JTextField();
@@ -82,9 +83,14 @@ public class data_jabatan extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        setMaximumSize(new java.awt.Dimension(1040, 600));
+        setMinimumSize(new java.awt.Dimension(1040, 600));
 
         jLabel2.setText("ID Jabatan");
 
+        idJabatan.setMaximumSize(new java.awt.Dimension(250, 25));
+        idJabatan.setMinimumSize(new java.awt.Dimension(250, 25));
+        idJabatan.setPreferredSize(new java.awt.Dimension(250, 25));
         idJabatan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idJabatanActionPerformed(evt);
@@ -94,12 +100,15 @@ public class data_jabatan extends javax.swing.JPanel {
         bCari.setBackground(new java.awt.Color(41, 76, 55));
         bCari.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bCari.setForeground(new java.awt.Color(255, 255, 255));
-        bCari.setText("Search");
+        bCari.setText("Cari");
+        bCari.setPreferredSize(new java.awt.Dimension(80, 35));
         bCari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bCariActionPerformed(evt);
             }
         });
+
+        cari.setPreferredSize(new java.awt.Dimension(250, 25));
 
         tableJabatan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -122,30 +131,36 @@ public class data_jabatan extends javax.swing.JPanel {
         bHapus.setBackground(new java.awt.Color(41, 76, 55));
         bHapus.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bHapus.setForeground(new java.awt.Color(255, 255, 255));
-        bHapus.setText("Delete");
-        bHapus.setPreferredSize(new java.awt.Dimension(74, 23));
+        bHapus.setText("Hapus");
+        bHapus.setMaximumSize(new java.awt.Dimension(200, 40));
+        bHapus.setMinimumSize(new java.awt.Dimension(200, 40));
+        bHapus.setPreferredSize(new java.awt.Dimension(200, 40));
         bHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bHapusActionPerformed(evt);
             }
         });
 
-        bKeluar.setBackground(new java.awt.Color(41, 76, 55));
-        bKeluar.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        bKeluar.setForeground(new java.awt.Color(255, 255, 255));
-        bKeluar.setText("Exit");
-        bKeluar.setPreferredSize(new java.awt.Dimension(74, 23));
-        bKeluar.addActionListener(new java.awt.event.ActionListener() {
+        bBersihkan.setBackground(new java.awt.Color(41, 76, 55));
+        bBersihkan.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        bBersihkan.setForeground(new java.awt.Color(255, 255, 255));
+        bBersihkan.setText("Bersihkan");
+        bBersihkan.setMaximumSize(new java.awt.Dimension(200, 40));
+        bBersihkan.setMinimumSize(new java.awt.Dimension(200, 40));
+        bBersihkan.setPreferredSize(new java.awt.Dimension(200, 40));
+        bBersihkan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bKeluarActionPerformed(evt);
+                bBersihkanActionPerformed(evt);
             }
         });
 
         bTambah.setBackground(new java.awt.Color(41, 76, 55));
         bTambah.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bTambah.setForeground(new java.awt.Color(255, 255, 255));
-        bTambah.setText("Add");
-        bTambah.setPreferredSize(new java.awt.Dimension(74, 23));
+        bTambah.setText("Tambah");
+        bTambah.setMaximumSize(new java.awt.Dimension(200, 40));
+        bTambah.setMinimumSize(new java.awt.Dimension(200, 40));
+        bTambah.setPreferredSize(new java.awt.Dimension(200, 40));
         bTambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bTambahActionPerformed(evt);
@@ -155,14 +170,19 @@ public class data_jabatan extends javax.swing.JPanel {
         bEdit.setBackground(new java.awt.Color(41, 76, 55));
         bEdit.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         bEdit.setForeground(new java.awt.Color(255, 255, 255));
-        bEdit.setText("Edit");
-        bEdit.setPreferredSize(new java.awt.Dimension(74, 23));
+        bEdit.setText("Ubah");
+        bEdit.setMaximumSize(new java.awt.Dimension(200, 40));
+        bEdit.setMinimumSize(new java.awt.Dimension(200, 40));
+        bEdit.setPreferredSize(new java.awt.Dimension(200, 40));
         bEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bEditActionPerformed(evt);
             }
         });
 
+        namaJabatan.setMaximumSize(new java.awt.Dimension(250, 25));
+        namaJabatan.setMinimumSize(new java.awt.Dimension(250, 25));
+        namaJabatan.setPreferredSize(new java.awt.Dimension(250, 25));
         namaJabatan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 namaJabatanActionPerformed(evt);
@@ -173,45 +193,49 @@ public class data_jabatan extends javax.swing.JPanel {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel5.setText("Master > Position Data");
+        jLabel5.setText("DATA UTAMA > JABATAN");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(bEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(bHapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel5))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(namaJabatan, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
-                                .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(37, 37, 37)
-                                .addComponent(bCari))
-                            .addComponent(jScrollPane1)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(namaJabatan, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(idJabatan, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(idJabatan, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addGap(25, 25, 25))
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(15, 15, 15)
+                                .addComponent(bCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(bTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                                .addComponent(bEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(65, 65, 65)
+                                .addComponent(bHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(65, 65, 65)
+                                .addComponent(bBersihkan, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1))))
+                .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,23 +245,25 @@ public class data_jabatan extends javax.swing.JPanel {
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(idJabatan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(idJabatan, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bCari)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(namaJabatan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(namaJabatan, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bTambah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(bKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(bHapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(30, 30, 30))
+                        .addComponent(bEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bBersihkan, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -296,19 +322,9 @@ public class data_jabatan extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_bHapusActionPerformed
 
-    private void bKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKeluarActionPerformed
-        int konfirmasi = JOptionPane.showConfirmDialog (
-            this,
-            "Apakah Anda yakin ingin keluar?",
-            "Konfirmasi Keluar",
-            JOptionPane.YES_NO_OPTION,
-            JOptionPane.QUESTION_MESSAGE
-        );
-
-        if (konfirmasi == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
-    }//GEN-LAST:event_bKeluarActionPerformed
+    private void bBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBersihkanActionPerformed
+        kosong();
+    }//GEN-LAST:event_bBersihkanActionPerformed
 
     private void bTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTambahActionPerformed
         Object[] baris = {"id_jabatan", "nama_jabatan"};
@@ -354,10 +370,10 @@ public class data_jabatan extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bBersihkan;
     private javax.swing.JButton bCari;
     private javax.swing.JButton bEdit;
     private javax.swing.JButton bHapus;
-    private javax.swing.JButton bKeluar;
     private javax.swing.JButton bTambah;
     private javax.swing.JTextField cari;
     private javax.swing.JTextField idJabatan;

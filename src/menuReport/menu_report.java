@@ -40,6 +40,9 @@ public class menu_report extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         pn_utama1 = new javax.swing.JPanel();
 
+        setMaximumSize(new java.awt.Dimension(1040, 600));
+        setMinimumSize(new java.awt.Dimension(1040, 600));
+        setPreferredSize(new java.awt.Dimension(1040, 600));
         setLayout(new java.awt.BorderLayout());
 
         kGradientPanel1.setkEndColor(new java.awt.Color(41, 76, 55));
@@ -74,9 +77,9 @@ public class menu_report extends javax.swing.JPanel {
             }
         });
 
-        btn_rtanggal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_rtanggal.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_rtanggal.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_rtanggal.setText("REPORT BY DATE");
+        btn_rtanggal.setText("LAPORAN PER TANGGAL");
         btn_rtanggal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_rtanggalMouseClicked(evt);
@@ -146,9 +149,9 @@ public class menu_report extends javax.swing.JPanel {
             }
         });
 
-        btn_rdivisi.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_rdivisi.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_rdivisi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_rdivisi.setText("REPORT BY DIVISION");
+        btn_rdivisi.setText("LAPORAN PER DIVISI");
         btn_rdivisi.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_rdivisiMouseClicked(evt);
@@ -170,7 +173,7 @@ public class menu_report extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_rdivisi)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
             .addGroup(pn_rdivisiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pn_rdivisiLayout.createSequentialGroup()
                     .addContainerGap()
@@ -216,26 +219,26 @@ public class menu_report extends javax.swing.JPanel {
         add(kGradientPanel1, java.awt.BorderLayout.LINE_START);
 
         pn_utama1.setBackground(new java.awt.Color(255, 255, 255));
-        pn_utama1.setMaximumSize(new java.awt.Dimension(550, 550));
-        pn_utama1.setMinimumSize(new java.awt.Dimension(550, 550));
-        pn_utama1.setPreferredSize(new java.awt.Dimension(550, 550));
+        pn_utama1.setMaximumSize(new java.awt.Dimension(685, 550));
+        pn_utama1.setMinimumSize(new java.awt.Dimension(685, 550));
+        pn_utama1.setPreferredSize(new java.awt.Dimension(685, 550));
         pn_utama1.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(pn_utama1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(25, 25, 25))
+                .addComponent(pn_utama1, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(pn_utama1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(25, 25, 25))
+                .addComponent(pn_utama1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         add(jPanel1, java.awt.BorderLayout.CENTER);

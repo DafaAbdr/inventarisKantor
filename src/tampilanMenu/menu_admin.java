@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -26,7 +27,7 @@ public class menu_admin extends javax.swing.JFrame {
         initComponents();
         
         setTitle("Inventaris Perkantoran");
-        ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
+        ImageIcon icon = new ImageIcon(getClass().getResource("/iconBaru/logo.png"));
         setIconImage(icon.getImage());
         
         pathFoto = new JTextField();
@@ -157,7 +158,7 @@ public class menu_admin extends javax.swing.JFrame {
         jLabel3.setBackground(new java.awt.Color(204, 204, 204));
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel3.setText("MASTER DATA");
+        jLabel3.setText("DATA UTAMA");
 
         pn_acc.setBackground(new java.awt.Color(255, 255, 255));
         pn_acc.setPreferredSize(new java.awt.Dimension(210, 37));
@@ -186,7 +187,7 @@ public class menu_admin extends javax.swing.JFrame {
 
         btn_acc.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_acc.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_acc.setText("Account Data");
+        btn_acc.setText("Data Akun");
         btn_acc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_acc.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -257,7 +258,7 @@ public class menu_admin extends javax.swing.JFrame {
 
         btn_div.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_div.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_div.setText("Division Data");
+        btn_div.setText("Data Divisi");
         btn_div.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_div.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -328,7 +329,7 @@ public class menu_admin extends javax.swing.JFrame {
 
         btn_employee.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_employee.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_employee.setText("Employee Data");
+        btn_employee.setText("Data Karyawan");
         btn_employee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_employee.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -399,7 +400,7 @@ public class menu_admin extends javax.swing.JFrame {
 
         btn_itemD.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_itemD.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_itemD.setText("Item Data");
+        btn_itemD.setText("Data Barang");
         btn_itemD.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_itemD.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -471,7 +472,7 @@ public class menu_admin extends javax.swing.JFrame {
 
         btn_itemR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_itemR.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_itemR.setText("Item Return Data");
+        btn_itemR.setText("Pengembalian Barang");
         btn_itemR.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_itemR.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -493,7 +494,7 @@ public class menu_admin extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_itemR, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_itemR)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(pn_itemRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pn_itemRLayout.createSequentialGroup()
@@ -543,7 +544,7 @@ public class menu_admin extends javax.swing.JFrame {
 
         btn_stock.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_stock.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_stock.setText("Stock Inventory");
+        btn_stock.setText("Stok Barang");
         btn_stock.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_stock.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -615,7 +616,7 @@ public class menu_admin extends javax.swing.JFrame {
 
         btn_position.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_position.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_position.setText("Position Data");
+        btn_position.setText("Jabatan");
         btn_position.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_position.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -687,7 +688,7 @@ public class menu_admin extends javax.swing.JFrame {
 
         btn_trans.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_trans.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_trans.setText("Transaction Data");
+        btn_trans.setText("Transaksi");
         btn_trans.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_trans.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -759,7 +760,7 @@ public class menu_admin extends javax.swing.JFrame {
 
         btn_transI.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_transI.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_transI.setText("Transaction Info");
+        btn_transI.setText("Detail Transaksi");
         btn_transI.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_transI.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -807,7 +808,7 @@ public class menu_admin extends javax.swing.JFrame {
         jLabel13.setBackground(new java.awt.Color(204, 204, 204));
         jLabel13.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel13.setText("TRANSACTION DATA");
+        jLabel13.setText("DATA TRANSAKSI");
 
         pn_itemB.setBackground(new java.awt.Color(255, 255, 255));
         pn_itemB.setPreferredSize(new java.awt.Dimension(222, 37));
@@ -836,7 +837,7 @@ public class menu_admin extends javax.swing.JFrame {
 
         btn_itemB.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_itemB.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_itemB.setText("Item Borrowing");
+        btn_itemB.setText("Peminjaman Barang");
         btn_itemB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_itemB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -858,7 +859,7 @@ public class menu_admin extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_itemB, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_itemB, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(pn_itemBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pn_itemBLayout.createSequentialGroup()
@@ -908,7 +909,7 @@ public class menu_admin extends javax.swing.JFrame {
 
         btn_itemIn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_itemIn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_itemIn.setText("Item Incoming");
+        btn_itemIn.setText("Barang Masuk");
         btn_itemIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_itemIn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -980,7 +981,7 @@ public class menu_admin extends javax.swing.JFrame {
 
         btn_itemO.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_itemO.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_itemO.setText("Item Outgoing");
+        btn_itemO.setText("Barang Keluar");
         btn_itemO.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_itemO.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1052,7 +1053,7 @@ public class menu_admin extends javax.swing.JFrame {
 
         btn_itemRe.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_itemRe.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_itemRe.setText("Item Return");
+        btn_itemRe.setText("Pengembalian Barang");
         btn_itemRe.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_itemRe.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1074,7 +1075,7 @@ public class menu_admin extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_itemRe, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_itemRe, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(pn_itemReLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pn_itemReLayout.createSequentialGroup()
@@ -1124,7 +1125,7 @@ public class menu_admin extends javax.swing.JFrame {
 
         btn_itemReq.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_itemReq.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_itemReq.setText("Item Request");
+        btn_itemReq.setText("Permintaan Barang");
         btn_itemReq.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_itemReq.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1172,7 +1173,7 @@ public class menu_admin extends javax.swing.JFrame {
         jLabel19.setBackground(new java.awt.Color(204, 204, 204));
         jLabel19.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel19.setText("REPORT");
+        jLabel19.setText("LAPORAN");
 
         pn_report.setBackground(new java.awt.Color(255, 255, 255));
         pn_report.setPreferredSize(new java.awt.Dimension(222, 37));
@@ -1201,7 +1202,7 @@ public class menu_admin extends javax.swing.JFrame {
 
         btn_report.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_report.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_report.setText("Reports");
+        btn_report.setText("Laporan");
         btn_report.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_report.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1343,7 +1344,7 @@ public class menu_admin extends javax.swing.JFrame {
         namaKaryawan.setText("nama karyawan");
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconBaru/exit.png"))); // NOI18N
-        jLabel22.setText("Logout");
+        jLabel22.setText("Keluar");
         jLabel22.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel22.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1363,7 +1364,7 @@ public class menu_admin extends javax.swing.JFrame {
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 425, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 429, Short.MAX_VALUE)
                 .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(namaKaryawan)
@@ -1406,9 +1407,9 @@ public class menu_admin extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
 
         pn_utama.setBackground(new java.awt.Color(255, 255, 255));
-        pn_utama.setMaximumSize(new java.awt.Dimension(910, 600));
-        pn_utama.setMinimumSize(new java.awt.Dimension(910, 600));
-        pn_utama.setPreferredSize(new java.awt.Dimension(910, 600));
+        pn_utama.setMaximumSize(new java.awt.Dimension(1040, 600));
+        pn_utama.setMinimumSize(new java.awt.Dimension(1040, 600));
+        pn_utama.setPreferredSize(new java.awt.Dimension(1040, 600));
         pn_utama.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -1417,14 +1418,14 @@ public class menu_admin extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(pn_utama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pn_utama, javax.swing.GroupLayout.PREFERRED_SIZE, 1040, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(pn_utama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pn_utama, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );
 
@@ -1799,8 +1800,18 @@ public class menu_admin extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_reportMouseExited
 
     private void jLabel22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel22MouseClicked
+    int konfirmasi = JOptionPane.showConfirmDialog(
+        this,
+        "Apakah Anda yakin ingin keluar?",
+        "Konfirmasi Keluar",
+        JOptionPane.YES_NO_OPTION,
+        JOptionPane.QUESTION_MESSAGE
+    );
+
+    if (konfirmasi == JOptionPane.YES_OPTION) {
         this.dispose();
         new tampilanMenu.loginPage().setVisible(true);
+    }
     }//GEN-LAST:event_jLabel22MouseClicked
 
     /**

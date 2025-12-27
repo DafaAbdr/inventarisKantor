@@ -144,7 +144,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="cc" red="cc" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="TRANSACTION DATA"/>
+                    <Property name="text" type="java.lang.String" value="DATA TRANSAKSI"/>
                   </Properties>
                 </Component>
                 <Container class="javax.swing.JPanel" name="pn_itemB">
@@ -164,8 +164,8 @@
                               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                               <Component id="jLabel14" min="-2" pref="34" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btn_itemB" min="-2" pref="110" max="-2" attributes="0"/>
-                              <EmptySpace pref="49" max="32767" attributes="0"/>
+                              <Component id="btn_itemB" min="-2" pref="122" max="-2" attributes="0"/>
+                              <EmptySpace pref="37" max="32767" attributes="0"/>
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -237,7 +237,7 @@
                           <Font name="Segoe UI" size="12" style="1"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="2"/>
-                        <Property name="text" type="java.lang.String" value="Item Borrowing"/>
+                        <Property name="text" type="java.lang.String" value="Peminjaman Barang"/>
                       </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_itemBMouseClicked"/>
@@ -264,7 +264,7 @@
                               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                               <Component id="jLabel17" min="-2" pref="34" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btn_itemRe" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Component id="btn_itemRe" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -337,7 +337,7 @@
                           <Font name="Segoe UI" size="12" style="1"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="2"/>
-                        <Property name="text" type="java.lang.String" value="Item Return"/>
+                        <Property name="text" type="java.lang.String" value="Pengembalian Barang"/>
                       </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_itemReMouseClicked"/>
@@ -437,7 +437,7 @@
                           <Font name="Segoe UI" size="12" style="1"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="2"/>
-                        <Property name="text" type="java.lang.String" value="Item Request"/>
+                        <Property name="text" type="java.lang.String" value="Permintaan Barang"/>
                       </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_itemReqMouseClicked"/>
@@ -452,7 +452,7 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/iconBaru/exit.png"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Logout"/>
+                    <Property name="text" type="java.lang.String" value="Keluar"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Hand Cursor"/>
                     </Property>
@@ -590,7 +590,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Component id="pn_utama" max="32767" attributes="0"/>
+                          <Component id="pn_utama" min="-2" pref="1040" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -599,7 +599,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Component id="pn_utama" max="32767" attributes="0"/>
+                          <Component id="pn_utama" min="-2" pref="600" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -612,13 +612,13 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[910, 600]"/>
+                      <Dimension value="[1040, 600]"/>
                     </Property>
                     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[910, 600]"/>
+                      <Dimension value="[1040, 600]"/>
                     </Property>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[910, 600]"/>
+                      <Dimension value="[1040, 600]"/>
                     </Property>
                   </Properties>
 

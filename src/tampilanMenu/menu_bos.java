@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -28,7 +29,7 @@ public class menu_bos extends javax.swing.JFrame {
         initComponents();
         
         setTitle("Inventaris Perkantoran");
-        ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
+        ImageIcon icon = new ImageIcon(getClass().getResource("/iconBaru/logo.png"));
         setIconImage(icon.getImage());
         
         pathFoto = new JTextField();
@@ -102,7 +103,7 @@ public class menu_bos extends javax.swing.JFrame {
         jPanel5.setPreferredSize(new java.awt.Dimension(250, 700));
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconBaru/exit.png"))); // NOI18N
-        jLabel22.setText("Logout");
+        jLabel22.setText("Keluar");
         jLabel22.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel22.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -119,7 +120,7 @@ public class menu_bos extends javax.swing.JFrame {
         jLabel5.setBackground(new java.awt.Color(204, 204, 204));
         jLabel5.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel5.setText("MASTER DATA");
+        jLabel5.setText("DATA UTAMA");
 
         pn_acc.setBackground(new java.awt.Color(255, 255, 255));
         pn_acc.setPreferredSize(new java.awt.Dimension(210, 37));
@@ -148,7 +149,7 @@ public class menu_bos extends javax.swing.JFrame {
 
         btn_acc.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_acc.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_acc.setText("Employee Data");
+        btn_acc.setText("Data Karyawan");
         btn_acc.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_accMouseClicked(evt);
@@ -195,7 +196,7 @@ public class menu_bos extends javax.swing.JFrame {
         jLabel19.setBackground(new java.awt.Color(204, 204, 204));
         jLabel19.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel19.setText("REPORT");
+        jLabel19.setText("LAPORAN");
 
         pn_report.setBackground(new java.awt.Color(255, 255, 255));
         pn_report.setMaximumSize(new java.awt.Dimension(222, 37));
@@ -225,7 +226,7 @@ public class menu_bos extends javax.swing.JFrame {
 
         btn_report.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_report.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_report.setText("Reports");
+        btn_report.setText("Laporan");
         btn_report.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_reportMouseClicked(evt);
@@ -379,9 +380,9 @@ public class menu_bos extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
 
         pn_utama.setBackground(new java.awt.Color(255, 255, 255));
-        pn_utama.setMaximumSize(new java.awt.Dimension(910, 600));
-        pn_utama.setMinimumSize(new java.awt.Dimension(910, 600));
-        pn_utama.setPreferredSize(new java.awt.Dimension(910, 600));
+        pn_utama.setMaximumSize(new java.awt.Dimension(1040, 600));
+        pn_utama.setMinimumSize(new java.awt.Dimension(1040, 600));
+        pn_utama.setPreferredSize(new java.awt.Dimension(1040, 600));
         pn_utama.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -390,15 +391,15 @@ public class menu_bos extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(pn_utama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(15, 15, 15))
+                .addComponent(pn_utama, javax.swing.GroupLayout.PREFERRED_SIZE, 1040, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(pn_utama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(15, 15, 15))
+                .addComponent(pn_utama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jPanel3.add(jPanel4, java.awt.BorderLayout.CENTER);
@@ -460,8 +461,18 @@ public class menu_bos extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_reportMouseExited
 
     private void jLabel22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel22MouseClicked
+        int konfirmasi = JOptionPane.showConfirmDialog(
+        this,
+        "Apakah Anda yakin ingin keluar?",
+        "Konfirmasi Keluar",
+        JOptionPane.YES_NO_OPTION,
+        JOptionPane.QUESTION_MESSAGE
+    );
+
+    if (konfirmasi == JOptionPane.YES_OPTION) {
         this.dispose();
         new tampilanMenu.loginPage().setVisible(true);
+    }
     }//GEN-LAST:event_jLabel22MouseClicked
 
     /**
