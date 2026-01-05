@@ -243,7 +243,7 @@ public class data_akun extends javax.swing.JPanel {
 
         jLabel4.setText("Hak Akses");
 
-        hakAkses.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Karyawan" }));
+        hakAkses.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Karyawan Inventaris", "Karyawan", "Direktur Utama", " " }));
         hakAkses.setMaximumSize(new java.awt.Dimension(250, 25));
         hakAkses.setMinimumSize(new java.awt.Dimension(250, 25));
         hakAkses.setPreferredSize(new java.awt.Dimension(250, 25));

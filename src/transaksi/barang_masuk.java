@@ -154,7 +154,6 @@ public class barang_masuk extends javax.swing.JPanel {
     }
     
     protected void kosong2(){
-        
         namaBarang.setSelectedIndex(0);
         jumlah.setText("");
         tanggal.setDate(null);
@@ -452,17 +451,7 @@ public class barang_masuk extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBersihkanActionPerformed
-        int konfirmasi = JOptionPane.showConfirmDialog (
-            this,
-            "Apakah Anda yakin ingin keluar?",
-            "Konfirmasi Keluar",
-            JOptionPane.YES_NO_OPTION,
-            JOptionPane.QUESTION_MESSAGE
-        );
-
-        if (konfirmasi == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
+        kosong();
     }//GEN-LAST:event_bBersihkanActionPerformed
 
     private void bCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCetakActionPerformed

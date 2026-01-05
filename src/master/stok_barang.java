@@ -44,6 +44,12 @@ public class stok_barang extends javax.swing.JPanel {
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/logof.png"));
         JLabel label = new JLabel(icon);
         this.add(label);
+        
+        idBarang.addActionListener(e -> {
+            if (idBarang.getSelectedItem() != null) {
+                loadDataBarang(idBarang.getSelectedItem().toString());
+            }
+        });
     }
     
     protected void isiComboBoxIdBarang() {
@@ -56,65 +62,13 @@ public class stok_barang extends javax.swing.JPanel {
         while (rs.next()) {
             model.addElement(rs.getString("id_barang"));
         }
-
         idBarang.setModel(model);
-
-        idBarang.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    String selectedId = idBarang.getSelectedItem().toString();
-
-                    String query = "SELECT db.nama_barang, db.gambar, sb.satuan " +
-                                   "FROM dataBarang db " +
-                                   "JOIN stokbarang sb ON db.id_barang = sb.id_barang " +
-                                   "WHERE db.id_barang = ?";
-                    PreparedStatement ps = conn.prepareStatement(query);
-                    ps.setString(1, selectedId);
-                    ResultSet rs = ps.executeQuery();
-
-                    if (rs.next()) {
-                        namaBarang.setText(rs.getString("nama_barang"));
-                        satuan.setText(rs.getString("satuan"));
-
-                        String namaGambar = rs.getString("gambar");
-                        if (namaGambar != null && !namaGambar.isEmpty()) {
-                            String pathGambar = System.getProperty("user.dir") + File.separator +
-                                                "src" + File.separator + "imagesBarang" + File.separator + namaGambar;
-                            File file = new File(pathGambar);
-                            if (file.exists()) {
-                                ImageIcon icon = new ImageIcon(pathGambar);
-                                Image img = icon.getImage().getScaledInstance(
-                                        foto.getWidth(),
-                                        foto.getHeight(),
-                                        Image.SCALE_SMOOTH);
-                                foto.setIcon(new ImageIcon(img));
-                            } else {
-                                foto.setIcon(null);
-                                JOptionPane.showMessageDialog(null, "File gambar tidak ditemukan!");
-                            }
-                        } else {
-                            foto.setIcon(null);
-                        }
-                    } else {
-                        namaBarang.setText("Tidak ditemukan");
-                        satuan.setText(""); // reset satuan
-                        foto.setIcon(null);
-                    }
-
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Gagal mengambil data barang: " + ex.getMessage());
-                }
-            }
-        });
-
     } catch (Exception e) {
         JOptionPane.showMessageDialog(null, "Gagal mengisi ComboBox ID: " + e.getMessage());
     }
-}
+    }
 
-    
     protected void kosong(){
-        idBarang.setSelectedIndex(0);
         namaBarang.setText("");
         jumlah.setText("");
         satuan.setText("");
@@ -126,7 +80,7 @@ public class stok_barang extends javax.swing.JPanel {
         Object[] baris = {"id_barang", "nama_barang", "stok_barang", "satuan"};
         tabmode = new DefaultTableModel(null, baris);
         tableStokBarang.setModel(tabmode);
-        String sql = "SELECT * FROM stokBarang";
+        String sql = "SELECT * FROM stokBarang ORDER BY id_barang ASC";
         try{
             java.sql.Statement stat = conn.createStatement();
             ResultSet hasil = stat.executeQuery(sql);
@@ -142,7 +96,52 @@ public class stok_barang extends javax.swing.JPanel {
         }catch (Exception e){
         }
     }
+    
+    private void loadDataBarang(String id) {
+        try {
+            String query =
+                "SELECT db.nama_barang AS nama_barang, " +
+                "       db.gambar AS gambar, " +
+                "       sb.satuan AS satuan, " +
+                "       sb.stok_barang AS stok_barang " +
+                "FROM dataBarang db " +
+                "LEFT JOIN stokbarang sb ON db.id_barang = sb.id_barang " +
+                "WHERE db.id_barang = ?";
 
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                namaBarang.setText(rs.getString("nama_barang"));
+                satuan.setText(rs.getString("satuan") != null ? rs.getString("satuan") : "");
+                jumlah.setText(rs.getString("stok_barang") != null ? rs.getString("stok_barang") : "");
+
+                String namaGambar = rs.getString("gambar");
+                if (namaGambar != null && !namaGambar.isEmpty()) {
+                    String pathGambar = System.getProperty("user.dir") + File.separator +
+                            "src" + File.separator + "imagesBarang" + File.separator + namaGambar;
+
+                    File file = new File(pathGambar);
+                    if (file.exists()) {
+                        ImageIcon icon = new ImageIcon(pathGambar);
+                        Image img = icon.getImage().getScaledInstance(
+                                foto.getWidth(),
+                                foto.getHeight(),
+                                Image.SCALE_SMOOTH);
+                        foto.setIcon(new ImageIcon(img));
+                    } else {
+                        foto.setIcon(null);
+                    }
+                } else {
+                    foto.setIcon(null);
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Gagal memuat data barang: " + e.getMessage());
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -485,27 +484,33 @@ public class stok_barang extends javax.swing.JPanel {
     }//GEN-LAST:event_tableStokBarangMouseClicked
 
     private void bTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTambahActionPerformed
-        Object[] baris = {"id_barang", "nama_barang", "stok_barang", "satuan"};
-        tabmode = new DefaultTableModel(null, baris);
-        tableStokBarang.setModel(tabmode);
-
-        String sql = "INSERT INTO stokBarang (id_barang, nama_barang, stok_barang, satuan) VALUES (?, ?, ?, ?)";
-
         try {
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, idBarang.getSelectedItem().toString());
-            ps.setString(2, namaBarang.getText());
-            ps.setString(3, jumlah.getText());
-            ps.setString(4, satuan.getText());
-            
-            ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Data Stok Barang Berhasil Disimpan");
+        String cek = "SELECT id_barang FROM stokBarang WHERE id_barang=?";
+        PreparedStatement c = conn.prepareStatement(cek);
+        c.setString(1, idBarang.getSelectedItem().toString());
+        ResultSet r = c.executeQuery();
 
-            kosong();
-            dataTable();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Gagal Menyimpan Data Stok Barang: " + e.getMessage());
+        if (r.next()) {
+            JOptionPane.showMessageDialog(null, "Stok barang sudah ada");
+            return;
         }
+
+        String sql = "INSERT INTO stokbarang (id_barang, nama_barang, stok_barang, satuan) VALUES (?, ?, ?, ?)";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setString(1, idBarang.getSelectedItem().toString());
+        ps.setString(2, namaBarang.getText());
+        ps.setString(3, jumlah.getText());
+        ps.setString(4, satuan.getText());
+
+        ps.executeUpdate();
+        JOptionPane.showMessageDialog(null, "Data Stok Barang Berhasil Disimpan");
+
+        dataTable();
+        kosong();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, e.getMessage());
+    }
     }//GEN-LAST:event_bTambahActionPerformed
 
     private void bEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditActionPerformed
@@ -541,17 +546,7 @@ public class stok_barang extends javax.swing.JPanel {
     }//GEN-LAST:event_bHapusActionPerformed
 
     private void bBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBersihkanActionPerformed
-        int konfirmasi = JOptionPane.showConfirmDialog (
-            this,
-            "Apakah Anda yakin ingin keluar?",
-            "Konfirmasi Keluar",
-            JOptionPane.YES_NO_OPTION,
-            JOptionPane.QUESTION_MESSAGE
-        );
-
-        if (konfirmasi == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
+        kosong();
     }//GEN-LAST:event_bBersihkanActionPerformed
 
     private void satuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_satuanActionPerformed

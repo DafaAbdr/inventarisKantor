@@ -422,7 +422,7 @@ public class data_transaksiInfo extends javax.swing.JPanel {
         tabmode = new DefaultTableModel(null, baris);
         tableTransaksi.setModel(tabmode);
 
-        String sql = "INSERT INTO dataTransaksiInfo (id_transaksi, id_barang, nama_barang, jumlah_barang, tanggal) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO datatransaksiinfo (id_transaksi, id_barang, nama_barang, jumlah_barang, tanggal) VALUES (?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -447,7 +447,7 @@ public class data_transaksiInfo extends javax.swing.JPanel {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String tanggal2 = sdf.format(tanggal.getDate());
             
-            String sql = "UPDATE dataPeminjamanInfo SET `id_barang`=?, `nama_barang`=?, `jumlah_barang`=?, `tanggal`=?  WHERE `id_Transaksi`=?";
+            String sql = "UPDATE datatransaksiinfo SET `id_barang`=?, `nama_barang`=?, `jumlah_barang`=?, `tanggal`=?  WHERE `id_Transaksi`=?";
             
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, idBarang.getText());

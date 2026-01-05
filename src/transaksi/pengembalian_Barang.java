@@ -48,7 +48,7 @@ public class pengembalian_Barang extends javax.swing.JPanel {
     }
     
     private void dataTable(){
-        String[] kolom = {"id Pengembalian", "id_barang", "nama_barang", "Jumlah_barang", "tanggal"};
+        String[] kolom = {"id Pengembalian", "id_transaksi", "id_barang", "nama_barang", "Jumlah_barang", "tanggal"};
         tabmode = new DefaultTableModel(null, kolom);
         tablePengembalian.setModel(tabmode);
     }
@@ -74,7 +74,6 @@ public class pengembalian_Barang extends javax.swing.JPanel {
         idBarang.setSelectedIndex(0);
         namaBarang.setText("");
         jumlah.setText("");
-        idPeminjaman.setText("");
     }
 
     /**
@@ -456,7 +455,7 @@ public class pengembalian_Barang extends javax.swing.JPanel {
             psUpdate.setString(2, idBarang1);
             psUpdate.executeUpdate();
 
-            String[] data = {idPengembalian, idPeminjaman1, idBarang1, jumlahBarang, tanggalKembalian};
+            String[] data = {idPengembalian, idPeminjaman1, idBarang1, namaBarang, jumlahBarang, tanggalKembalian};
             tabmode.insertRow(0, data);
 
             kosong();

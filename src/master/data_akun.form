@@ -320,9 +320,12 @@
     <Component class="javax.swing.JComboBox" name="hakAkses">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="2">
+          <StringArray count="5">
             <StringItem index="0" value="Admin"/>
-            <StringItem index="1" value="Karyawan"/>
+            <StringItem index="1" value="Karyawan Inventaris"/>
+            <StringItem index="2" value="Karyawan"/>
+            <StringItem index="3" value="Direktur Utama"/>
+            <StringItem index="4" value=" "/>
           </StringArray>
         </Property>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">

@@ -459,7 +459,6 @@ public class data_barang extends javax.swing.JPanel {
         tableBarangPermintaan.setModel(tabmode);
         
         String sql = "INSERT INTO databarang (id_barang, nama_barang, harga_barang, kondisi, spesifikasi, gambar) VALUES (?, ?, ?, ?, ?, ?)";
-    
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, idBarang.getText());
