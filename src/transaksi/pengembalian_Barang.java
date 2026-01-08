@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package transaksi;
+
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.sql.*;
@@ -479,25 +480,6 @@ public class pengembalian_Barang extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Masukkan ID Peminjaman terlebih dahulu!");
                 return; 
             }   
-        
-            /*
-                String sql = """ 
-                     SELECT 
-                         dti.id_transaksi,
-                         dti.id_barang,
-                         dti.nama_barang,
-                         dti.jumlah_barang AS total_pinjam,
-                         IFNULL(SUM(dp.jumlah_kembali), 0) AS total_kembali,
-                         (dti.jumlah_barang - IFNULL(SUM(dp.jumlah_kembali), 0)) AS sisa_belum_kembali
-                     FROM datatransaksiinfo dti
-                     LEFT JOIN datapengembalian dp
-                         ON dti.id_transaksi COLLATE utf8mb4_general_ci = dp.id_transaksi COLLATE utf8mb4_general_ci
-                         AND dti.id_barang COLLATE utf8mb4_general_ci = dp.id_barang COLLATE utf8mb4_general_ci
-                     WHERE dti.id_transaksi COLLATE utf8mb4_general_ci = ?
-                     GROUP BY dti.id_transaksi, dti.id_barang, dti.nama_barang, dti.jumlah_barang
-                     HAVING sisa_belum_kembali > 0;
-                """;
-            */
             
             String sql = """ 
                     SELECT 

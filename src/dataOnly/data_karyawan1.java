@@ -105,7 +105,7 @@ public class data_karyawan1 extends javax.swing.JPanel {
         jabatan = new javax.swing.JTextField();
         jenisKelamin = new javax.swing.JTextField();
         tanggalLahir = new javax.swing.JTextField();
-        bKembali1 = new javax.swing.JButton();
+        bBersihkan = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -252,14 +252,14 @@ public class data_karyawan1 extends javax.swing.JPanel {
             }
         });
 
-        bKembali1.setBackground(new java.awt.Color(41, 76, 55));
-        bKembali1.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
-        bKembali1.setForeground(new java.awt.Color(255, 255, 255));
-        bKembali1.setText("Bersihkan");
-        bKembali1.setPreferredSize(new java.awt.Dimension(74, 23));
-        bKembali1.addActionListener(new java.awt.event.ActionListener() {
+        bBersihkan.setBackground(new java.awt.Color(41, 76, 55));
+        bBersihkan.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        bBersihkan.setForeground(new java.awt.Color(255, 255, 255));
+        bBersihkan.setText("Bersihkan");
+        bBersihkan.setPreferredSize(new java.awt.Dimension(74, 23));
+        bBersihkan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bKembali1ActionPerformed(evt);
+                bBersihkanActionPerformed(evt);
             }
         });
 
@@ -298,7 +298,6 @@ public class data_karyawan1 extends javax.swing.JPanel {
                                     .addComponent(jLabel9)
                                     .addComponent(jLabel10)
                                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(35, 35, 35)
@@ -319,7 +318,7 @@ public class data_karyawan1 extends javax.swing.JPanel {
                                 .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(bCari))
-                            .addComponent(bKembali1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(bBersihkan, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(25, 25, 25))
         );
         layout.setVerticalGroup(
@@ -379,7 +378,7 @@ public class data_karyawan1 extends javax.swing.JPanel {
                             .addComponent(jLabel10)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
-                .addComponent(bKembali1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bBersihkan, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(24, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -499,7 +498,7 @@ public class data_karyawan1 extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tanggalLahirActionPerformed
 
-    private void bKembali1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKembali1ActionPerformed
+    private void bBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBersihkanActionPerformed
         idKaryawan.setText("");
         namaKaryawan.setText("");
         tempatLahir.setText("");
@@ -511,13 +510,13 @@ public class data_karyawan1 extends javax.swing.JPanel {
         alamat.setText("");
         cari.setText("");
         foto.setIcon(null);
-    }//GEN-LAST:event_bKembali1ActionPerformed
+    }//GEN-LAST:event_bBersihkanActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea alamat;
+    private javax.swing.JButton bBersihkan;
     private javax.swing.JButton bCari;
-    private javax.swing.JButton bKembali1;
     private javax.swing.JTextField cari;
     private javax.swing.JTextField divisi;
     private javax.swing.JLabel foto;

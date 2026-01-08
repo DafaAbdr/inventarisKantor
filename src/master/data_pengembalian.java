@@ -4,6 +4,7 @@
  */
 
 package master;
+
 import java.awt.Image;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
